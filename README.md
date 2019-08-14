@@ -1,22 +1,29 @@
-### 安装 yarn
-```
+# Salesforce Alternative
+
+## Run your salesforce
+
+### Install dependences
+
+- [NodeJS v10.0 or above](https://nodejs.org/en/)
+- [MongoDB Community Server v3.4 or above](https://www.mongodb.com/download-center/community)
+
+### Install node modules
+
+```bash
 npm i yarn -g
-```
-
-### 国内建议使用npm淘宝镜像
-```
-npm config set registry http://registry.npm.taobao.org/
-```
-
-### 使用yarn安装依赖包
-```
 yarn
 ```
 
-### 启动服务器
-```
+### Run Server
+
+```bash
 yarn start
 ```
 
-### 了解更多
-- [开发文档](https://steedos.github.io)
+navigate to http://127.0.0.1:5000
+
+## Customize your salesforce
+
+- [Configuration](./steedos-config.yml)
+- [Apps](./src/apps)
+- [Objects](./src/objects)
