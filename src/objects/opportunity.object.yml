@@ -1,0 +1,114 @@
+name: opportunity
+label: 业务机会
+icon: opportunity
+enable_files: true
+enable_search: true
+enable_tasks: true
+enable_events: true
+enable_notes: false
+enable_api: true
+enable_share: true
+enable_chatter: true
+fields:
+  owner:
+    label: 业务机会所有人
+    omit: false
+    readonly: false
+    hidden: false
+    type: lookup
+    reference_to: users
+  amount:
+    label: 金额
+    type: currency
+  private:
+    label: 私有
+    type: boolean
+  due_date:
+    label: 结束日期
+    type: datetime
+    required: true
+  name:
+    label: 业务机会名称
+    type: text
+    searchable: true
+    required: true
+    sortable: true
+  next_step:
+    label: 下一步
+    type: text
+  account:
+    label: 客户名
+    type: master_detail
+    reference_to: accounts
+    sortable: true
+    filterable: true
+  stage:
+    label: 阶段
+    type: select
+    options:
+      - label: Prospecting
+        value: Prospecting
+      - label: Qualification
+        value: Qualification
+      - label: Needs Analysis
+        value: Needs_Analysis
+      - label: Value Proposition
+        value: Value_Proposition
+      - label: Id. Decision Makers
+        value: Id__Decision_Makers
+      - label: Perception Analysis
+        value: Perception_Analysis
+      - label: Proposal/Price Quote
+        value: Proposal_Price_Quote
+      - label: Negotiation/Review
+        value: Negotiation_Review
+      - label: Closed Won
+        value: Closed_Won
+      - label: Closed Lost
+        value: Closed_Lost
+list_views:
+  all:
+    label: 全部业务机会
+    columns:
+      - name
+      - account
+      - amount
+      - due_date
+      - stage
+      - owner
+    filter_scope: space
+  recent:
+    label: 最近查看
+    columns:
+      - name
+      - account
+      - amount
+      - due_date
+      - stage
+      - owner
+    filter_scope: space
+  mine:
+    label: 我的客户
+    columns:
+      - name
+      - account
+      - amount
+      - due_date
+      - stage
+      - owner
+    filter_scope: mine
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: false
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true
