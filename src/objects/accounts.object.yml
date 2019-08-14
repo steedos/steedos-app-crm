@@ -1,0 +1,95 @@
+name: accounts
+label: 客户
+icon: account
+enable_files: true
+enable_search: true
+enable_tasks: true
+enable_events: true
+enable_notes: false
+enable_api: true
+enable_share: true
+enable_chatter: true
+fields:
+  owner:
+    label: 客户所有人
+    omit: false
+    readonly: false
+    hidden: false
+    type: lookup
+    reference_to: users
+  priority:
+    label: 分级
+    type: select
+    sortable: true
+    options:
+      - label: Hot
+        value: high
+      - label: Warn
+        value: normal
+      - label: Cold
+        value: low
+    filterable: true
+  name:
+    label: 客户名
+    type: text
+    defaultValue: ''
+    description: ''
+    inlineHelpText: ''
+    searchable: true
+    required: true
+    sortable: true
+  phone:
+    type: text
+    label: 电话
+    defaultValue: ''
+  website:
+    type: url
+    label: 网站
+  email:
+    type: text
+    label: 邮箱
+  description:
+    label: 描述
+    type: textarea
+    is_wide: true
+    name: description
+list_views:
+  all:
+    label: 所有客户
+    columns:
+      - name
+      - priority
+      - owner
+      - modified
+    filter_scope: space
+  recent:
+    label: 最近查看
+    columns:
+      - name
+      - priority
+      - owner
+      - modified
+    filter_scope: space
+  mine:
+    label: 我的客户
+    columns:
+      - name
+      - priority
+      - owner
+      - modified
+    filter_scope: mine
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: false
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true
