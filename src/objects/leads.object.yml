@@ -1,6 +1,6 @@
 name: leads
 label: 潜在客户
-icon: contact
+icon: lead
 enable_files: true
 enable_search: true
 enable_events: true
