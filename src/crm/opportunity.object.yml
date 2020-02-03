@@ -10,38 +10,22 @@ enable_api: true
 enable_share: true
 enable_chatter: true
 fields:
-  owner:
-    label: 业务机会所有人
-    omit: false
-    readonly: false
-    hidden: false
-    type: lookup
-    reference_to: users
-  amount:
-    label: 金额
-    type: currency
-  private:
-    label: 私有
-    type: boolean
-  due_date:
-    label: 结束日期
-    type: datetime
-    required: true
   name:
     label: 业务机会名称
     type: text
     searchable: true
     required: true
     sortable: true
-  next_step:
-    label: 下一步
-    type: text
   account:
     label: 客户名
     type: master_detail
     reference_to: accounts
     sortable: true
     filterable: true
+  due_date:
+    label: 结束日期
+    type: datetime
+    required: true
   stage:
     label: 阶段
     type: select
@@ -66,6 +50,24 @@ fields:
         value: Closed_Won
       - label: Closed Lost
         value: Closed_Lost
+  probability	:
+    label: 可能性
+    type: number
+    sortable: true
+  amount:
+    label: 金额
+    type: currency
+  private:
+    label: 私有
+    type: boolean
+  next_step:
+    label: 下一步
+    type: text
+  description:
+    label: 描述
+    type: textarea
+    is_wide: true
+    rows: 4
 list_views:
   all:
     label: 全部业务机会
