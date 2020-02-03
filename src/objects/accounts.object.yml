@@ -10,14 +10,42 @@ enable_api: true
 enable_share: true
 enable_chatter: true
 fields:
-  owner:
-    label: 客户所有人
-    omit: false
-    readonly: false
-    hidden: false
-    type: lookup
-    reference_to: users
-  priority:
+  name:
+    label: 客户名
+    type: text
+    defaultValue: ''
+    description: ''
+    inlineHelpText: ''
+    searchable: true
+    required: true
+    sortable: true
+  type:
+    label: 类型
+    type: select
+    sortable: true
+    options:
+      - label: Analyst
+        value: Analyst
+      - label: Competitor	
+        value: Competitor	
+      - label: Customer
+        value: Customer		
+      - label: Integrator
+        value: Integrator
+      - label: Investor
+        value: Investor	
+      - label: Partner
+        value: Partner
+      - label: Press
+        value: Press
+      - label: Prospect
+        value: Prospect
+      - label: Reseller
+        value: Reseller
+      - label: Other
+        value: Other
+    filterable: true
+  rating:
     label: 分级
     type: select
     sortable: true
@@ -29,22 +57,13 @@ fields:
       - label: Cold
         value: low
     filterable: true
-  name:
-    label: 客户名
-    type: text
-    defaultValue: ''
-    description: ''
-    inlineHelpText: ''
-    searchable: true
-    required: true
-    sortable: true
+  website:
+    type: url
+    label: 网站
   phone:
     type: text
     label: 电话
     defaultValue: ''
-  website:
-    type: url
-    label: 网站
   email:
     type: text
     label: 邮箱
@@ -53,30 +72,79 @@ fields:
     type: textarea
     is_wide: true
     name: description
+  industry:
+    type: select
+    label: 行业
+    searchable: true
+    sortable: true
+    options:
+      - label: 农业
+        value: Agriculture
+      - label: 信息
+        value: IT
+    filterable: true
+  shippingaddress:
+    type: text
+    label: 发货地址
+  billingaddress:
+    type: text
+    label: 开单地址
+  numberofemployees:
+    label: 职员数
+    type: number
+    sortable: true
+  fax:
+    label: 传真
+    type: text
+  annualrevenue	:
+    label: 年收入
+    type: number
+  accountsource:
+    type: select
+    label: 来源
+    searchable: true
+    sortable: true
+    options:
+      - label: Advertisement
+        value: Advertisement
+      - label: Customer Event
+        value: Customer Event
+      - label: Employee Referral
+        value: Employee Referral
+      - label: Other
+        value: Other
+      - label: Partner
+        value: Partner
+      - label: Purchased List
+        value: Purchased List
+      - label: Trade
+        value: Trade
+    filterable: true
 list_views:
   all:
     label: 所有客户
     columns:
       - name
-      - priority
+      - rating
+      - type
       - owner
-      - modified
+      - phone
     filter_scope: space
   recent:
     label: 最近查看
     columns:
       - name
-      - priority
-      - owner
-      - modified
+      - rating
+      - type
+      - phone
     filter_scope: space
   mine:
     label: 我的客户
     columns:
       - name
-      - priority
-      - owner
-      - modified
+      - rating
+      - type
+      - phone
     filter_scope: mine
 permission_set:
   user:
