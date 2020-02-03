@@ -925,6 +925,15 @@
   resolved "http://r.cnpmjs.org/@steedos/standard-objects/download/@steedos/standard-objects-1.15.5.tgz#14e52e57c2ebb776577828e675ac47e82c80fdb5"
   integrity sha1-FOUuV8Lrt3ZXeCjmdaxH6CyA/bU=
 
+"@steedos/steedos-plugin-workflow@^2.0.4":
+  version "2.0.4"
+  resolved "http://r.cnpmjs.org/@steedos/steedos-plugin-workflow/download/@steedos/steedos-plugin-workflow-2.0.4.tgz#74bb731c090e9ec8475fa942da9ec11605d1c9b6"
+  integrity sha1-dLtzHAkOnshHX6lC2p7BFgXRybY=
+  dependencies:
+    body-parser "^1.19.0"
+    express "^4.17.1"
+    underscore "^1.9.1"
+
 "@types/body-parser@*":
   version "1.17.1"
   resolved "http://r.cnpmjs.org/@types/body-parser/download/@types/body-parser-1.17.1.tgz#18fcf61768fb5c30ccc508c21d6fd2e8b3bf7897"
@@ -1808,7 +1817,7 @@ bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   resolved "http://r.cnpmjs.org/bn.js/download/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
   integrity sha1-LN4J617jQfSEdGuwMJsyU7GxRC8=
 
-body-parser@1.19.0, body-parser@^1.18.1, body-parser@^1.18.3:
+body-parser@1.19.0, body-parser@^1.18.1, body-parser@^1.18.3, body-parser@^1.19.0:
   version "1.19.0"
   resolved "http://r.cnpmjs.org/body-parser/download/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
   integrity sha1-lrJwnlfJxOCab9Zqj9l5hE9p8Io=
@@ -3339,7 +3348,7 @@ express-unless@^0.3.0:
   resolved "http://r.cnpmjs.org/express-unless/download/express-unless-0.3.1.tgz#2557c146e75beb903e2d247f9b5ba01452696e20"
   integrity sha1-JVfBRudb65A+LSR/m1ugFFJpbiA=
 
-express@^4.15.4, express@^4.16.4:
+express@^4.15.4, express@^4.16.4, express@^4.17.1:
   version "4.17.1"
   resolved "http://r.cnpmjs.org/express/download/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
   integrity sha1-RJH8OGBc9R+GKdOcK10Cb5ikwTQ=
