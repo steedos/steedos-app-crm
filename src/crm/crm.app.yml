@@ -1,0 +1,13 @@
+_id: crm
+name: 销售
+description: 管理客户、业务机会、潜在客户，以及相关任务和日程。
+icon_slds: opportunity
+is_creator: true
+objects:
+  - accounts
+  - contacts
+  - leads
+  - opportunity
+  - tasks
+  - events  
+  - reports

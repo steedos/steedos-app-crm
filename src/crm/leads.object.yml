@@ -1,0 +1,184 @@
+name: leads
+label: 潜在客户
+icon: lead
+enable_files: true
+enable_search: true
+enable_events: true
+enable_tasks: true
+enable_api: true
+enable_chatter: true
+fields:
+  status:
+    type: select
+    label: 状态
+    required: true
+    searchable: true
+    sortable: true
+    options:
+      - label: New
+        value: New
+      - label: Working
+        value: Working
+      - label: Nurturing
+        value: Nurturing
+      - label: Qualified
+        value: Qualified
+      - label: Unqualified
+        value: Unqualified
+    filterable: true
+  name:
+    type: text
+    label: 姓名
+    required: true
+    searchable: true
+    index: true 
+  website:
+    label: 网址
+    type: text
+  title:
+    label: 职务
+    type: text
+    sortable: true
+  company:
+    label: 公司
+    type: text
+    sortable: true
+    filterable: true
+  email:
+    label: 电子邮件
+    type: email
+  industry:
+    type: select
+    label: 行业
+    searchable: true
+    sortable: true
+    options:
+      - label: 农业
+        value: Agriculture
+      - label: 信息
+        value: IT
+    filterable: true
+  phone:
+    label: 工作电话
+    type: text
+  numberofemployees:
+    label: 职员数
+    type: number
+    sortable: true
+  mobilephone:
+    label: 手机
+    type: text
+  LeadSource:
+    type: select
+    label: 来源
+    required: true
+    searchable: true
+    sortable: true
+    options:
+      - label: Advertisement
+        value: Advertisement
+      - label: Customer Event
+        value: Customer Event
+      - label: Employee Referral
+        value: Employee Referral
+      - label: Other
+        value: Other
+      - label: Partner
+        value: Partner
+      - label: Purchased List
+        value: Purchased List
+      - label: Trade
+        value: Trade
+    filterable: true
+  rating:
+    type: select
+    label: 分级
+    required: true
+    searchable: true
+    sortable: true
+    options:
+      - label: Hot
+        value: Hot
+      - label: Warm
+        value: Warm
+      - label: Cold
+        value: Cold
+    filterable: true
+  address:
+    label: 地址
+    type: text
+  department:
+    label: 部门
+    type: text
+    sortable: true
+  fax:
+    label: 传真
+    type: text
+  home_phone:
+    label: 家庭电话
+    type: text
+  birthdate:
+    label: 生日
+    type: date
+    sortable: true
+  annualrevenue	:
+    label: 年收入
+    type: number
+  description:
+    label: 描述
+    type: textarea
+    is_wide: true
+    rows: 4
+list_views:
+  all:
+    label: 所有潜在客户
+    columns:
+      - status
+      - level
+      - name
+      - company
+      - title
+      - industry
+      - mobile
+      - phone
+      - email
+  recent:
+    label: 最近查看的潜在客户
+    columns:
+      - status
+      - level
+      - name
+      - company
+      - title
+      - industry
+      - mobile
+      - phone
+      - email
+  mine:
+    label: 我的潜在客户
+    columns:
+      - status
+      - level
+      - name
+      - company
+      - title
+      - industry
+      - mobile
+      - phone
+      - email
+    filter_scope: mine
+permission_set:
+  user:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: true
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true
