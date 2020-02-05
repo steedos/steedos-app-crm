@@ -180,10 +180,10 @@ list_views:
       - name
       - company
       - title
-      - industry
-      - mobile
       - phone
+      - mobile
       - email
+      - owner
   recent:
     label: 最近查看的潜在客户
     columns:
@@ -192,10 +192,10 @@ list_views:
       - name
       - company
       - title
-      - industry
-      - mobile
       - phone
+      - mobile
       - email
+      - owner
   mine:
     label: 我的潜在客户
     columns:
@@ -204,10 +204,10 @@ list_views:
       - name
       - company
       - title
-      - industry
-      - mobile
       - phone
+      - mobile
       - email
+      - owner
     filter_scope: mine
 permission_set:
   user:

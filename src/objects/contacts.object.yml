@@ -70,22 +70,31 @@ list_views:
     columns:
       - name
       - account
-      - email
+      - title
       - phone
+      - mobile
+      - email
+      - owner
   recent:
     label: 最近查看
     columns:
       - name
       - account
-      - email
+      - title
       - phone
+      - mobile
+      - email
+      - owner
   mine:
     label: 我的联系人
     columns:
       - name
       - account
-      - email
+      - title
       - phone
+      - mobile
+      - email
+      - owner
     filter_scope: mine
 permission_set:
   user:

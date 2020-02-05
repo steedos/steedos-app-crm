@@ -25,7 +25,7 @@ fields:
     required: true
   due_date:
     label: 结束日期
-    type: datetime
+    type: date
     required: true
   stage:
     label: 阶段
@@ -121,6 +121,8 @@ list_views:
       - amount
       - due_date
       - stage
+      - probability
+      - lead_source
       - owner
     filter_scope: space
   recent:
@@ -131,6 +133,8 @@ list_views:
       - amount
       - due_date
       - stage
+      - probability
+      - lead_source
       - owner
     filter_scope: space
   mine:
@@ -141,6 +145,8 @@ list_views:
       - amount
       - due_date
       - stage
+      - probability
+      - lead_source
       - owner
     filter_scope: mine
 permission_set:

@@ -154,26 +154,28 @@ list_views:
     label: 所有客户
     columns:
       - name
-      - rating
-      - type
-      - owner
       - phone
+      - type
+      - rating
+      - owner
     filter_scope: space
   recent:
     label: 最近查看
     columns:
       - name
-      - rating
-      - type
       - phone
+      - type
+      - rating
+      - owner
     filter_scope: space
   mine:
     label: 我的客户
     columns:
       - name
-      - rating
-      - type
       - phone
+      - type
+      - rating
+      - owner
     filter_scope: mine
 permission_set:
   user:
