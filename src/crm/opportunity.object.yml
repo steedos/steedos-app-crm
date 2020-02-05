@@ -30,22 +30,14 @@ fields:
     label: 阶段
     type: select
     options:
-      - label: Prospecting
-        value: Prospecting
       - label: Qualification
         value: Qualification
       - label: Needs Analysis
         value: Needs_Analysis
-      - label: Value Proposition
-        value: Value_Proposition
-      - label: Id. Decision Makers
-        value: Id__Decision_Makers
-      - label: Perception Analysis
-        value: Perception_Analysis
-      - label: Proposal/Price Quote
-        value: Proposal_Price_Quote
-      - label: Negotiation/Review
-        value: Negotiation_Review
+      - label: Proposal
+        value: Proposal
+      - label: Negotiation
+        value: Negotiation
       - label: Closed Won
         value: Closed_Won
       - label: Closed Lost
@@ -63,11 +55,63 @@ fields:
   next_step:
     label: 下一步
     type: text
+  lead_source:
+    type: select
+    label: 潜在客户来源
+    required: true
+    searchable: true
+    sortable: true
+    options:
+      - label: Advertisement
+        value: Advertisement
+      - label: Customer Event
+        value: Customer_Event
+      - label: Employee Referral
+        value: Employee_Referral
+      - label: Other
+        value: Other
+      - label: Partner
+        value: Partner
+      - label: Purchased List
+        value: Purchased_List
+      - label: Trade Show
+        value: Trade_Show
+      - label: Webinar
+        value: Webinar
+      - label: Website
+        value: Website
+    filterable: true
+  budget_confirmed:
+    label: 预算已批准
+    type: boolean
+  discovery_completed:
+    label: Discovery已完成
+    type: boolean
+  ROI_analysis_completed:
+    label: ROI分析已完成
+    type: boolean
   description:
     label: 描述
     type: textarea
     is_wide: true
     rows: 4
+  loss_reason:
+    type: select
+    label: 失败原因
+    required: true
+    searchable: true
+    sortable: true
+    options:
+      - label: Lost to Competitor
+        value: Lost_to_Competitor
+      - label: No Budget / Lost Funding	
+        value: No_Budget_/_Lost_Funding	
+      - label: No Decision / Non-Responsive	
+        value: No_Decision_/_Non-Responsive	
+      - label: Price
+        value: Price
+      - label: Other
+        value: Other
 list_views:
   all:
     label: 全部业务机会
