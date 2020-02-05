@@ -15,15 +15,15 @@ fields:
     searchable: true
     sortable: true
     options:
-      - label: New
+      - label: 新
         value: New
       - label: Working
         value: Working
-      - label: Nurturing
+      - label: 培育中
         value: Nurturing
-      - label: Qualified
+      - label: 已转化
         value: Qualified
-      - label: Unqualified
+      - label: 未能转化
         value: Unqualified
     filterable: true
     defaultValue: 'New'
@@ -55,69 +55,69 @@ fields:
     searchable: true
     sortable: true
     options:
-      - label: Agriculture
+      - label: 农业
         value: Agriculture
-      - label: Apparel
+      - label: 服饰
         value: Apparel
-      - label: Banking
+      - label: 银行
         value: Banking
-      - label: Biotechnology
+      - label: 生物科技
         value: Biotechnology
-      - label: Chemicals
+      - label: 化工
         value: Chemicals
-      - label: Communications
+      - label: 通信
         value: Communications 
-      - label: Construction
+      - label: 建筑
         value: Construction
-      - label: Consulting
+      - label: 咨询
         value: Consulting
-      - label: Education
+      - label: 教育
         value: Education
-      - label: Electronics
+      - label: 电子
         value: Electronics
-      - label: Energy
+      - label: 能源
         value: Energy
-      - label: Engineering
+      - label: 工程
         value: Engineering
-      - label: Entertainment
+      - label: 娱乐
         value: Entertainment
-      - label: Environmental
+      - label: 环保
         value: Environmental
-      - label: Finance
+      - label: 金融
         value: Finance
-      - label: Food & Beverage
+      - label: 食品饮料
         value: Food_&_Beverage
-      - label: Government
+      - label: 政府组织
         value: Government
-      - label: Healthcare
+      - label: 医疗保健
         value: Healthcare
-      - label: Hospitality
+      - label: 服务
         value: Hospitality
-      - label: Insurance
+      - label: 保险
         value: Insurance
-      - label: Machinery
+      - label: 机械
         value: Machinery
-      - label: Manufacturing
+      - label: 制造
         value: Manufacturing
-      - label: Media
+      - label: 媒体
         value: Media
-      - label: Not For Profit
+      - label: 非牟利组织
         value: Not_For_Profit
-      - label: Other
+      - label: 其他
         value: Other
-      - label: Recreation
+      - label: 休闲
         value: Recreation
-      - label: Retail
+      - label: 零售
         value: Retail
-      - label: Shipping
+      - label: 航运
         value: Shipping
-      - label: Technology
+      - label: 科技
         value: Technology
-      - label: Telecommunications
+      - label: 电讯
         value: Telecommunications
-      - label: Transportation
+      - label: 交通运输
         value: Transportation
-      - label: Utilities
+      - label: 公用事业
         value: Utilities
     filterable: true
   phone:
@@ -136,23 +136,23 @@ fields:
     searchable: true
     sortable: true
     options:
-      - label: Advertisement
+      - label: 广告
         value: Advertisement
-      - label: Customer Event
+      - label: 客户活动
         value: Customer_Event
-      - label: Employee Referral
+      - label: 员工推荐
         value: Employee_Referral
-      - label: Other
+      - label: 其他
         value: Other
-      - label: Partner
+      - label: 合作伙伴
         value: Partner
-      - label: Purchased List
+      - label: 采购清单
         value: Purchased_List
-      - label: Trade Show
+      - label: 贸易展览
         value: Trade_Show
-      - label: Webinar
+      - label: 线上研讨
         value: Webinar
-      - label: Website
+      - label: 网站
         value: Website
     filterable: true
   rating:

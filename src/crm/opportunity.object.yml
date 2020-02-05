@@ -31,17 +31,17 @@ fields:
     label: 阶段
     type: select
     options:
-      - label: Qualification
+      - label: 机会确认
         value: Qualification
-      - label: Needs Analysis
+      - label: 需求分析
         value: Needs_Analysis
-      - label: Proposal
+      - label: 方案提交
         value: Proposal
-      - label: Negotiation
+      - label: 商务谈判
         value: Negotiation
-      - label: Closed Won
+      - label: 已结束，已签单
         value: Closed_Won
-      - label: Closed Lost
+      - label: 已结束，未签单
         value: Closed_Lost
     required: true
   probability	:
@@ -63,23 +63,23 @@ fields:
     searchable: true
     sortable: true
     options:
-      - label: Advertisement
+      - label: 广告
         value: Advertisement
-      - label: Customer Event
+      - label: 客户活动
         value: Customer_Event
-      - label: Employee Referral
+      - label: 员工推荐
         value: Employee_Referral
-      - label: Other
+      - label: 其他
         value: Other
-      - label: Partner
+      - label: 合作伙伴
         value: Partner
-      - label: Purchased List
+      - label: 采购清单
         value: Purchased_List
-      - label: Trade Show
+      - label: 贸易展览
         value: Trade_Show
-      - label: Webinar
+      - label: 线上研讨
         value: Webinar
-      - label: Website
+      - label: 网站
         value: Website
     filterable: true
   budget_confirmed:
@@ -102,15 +102,15 @@ fields:
     searchable: true
     sortable: true
     options:
-      - label: Lost to Competitor
+      - label: 输给竞争对手
         value: Lost_to_Competitor
-      - label: No Budget / Lost Funding	
+      - label: 没有预算 / 资金有损	
         value: No_Budget_/_Lost_Funding	
-      - label: No Decision / Non-Responsive	
+      - label: 无果而终 / 没有响应	
         value: No_Decision_/_Non-Responsive	
-      - label: Price
+      - label: 价格
         value: Price
-      - label: Other
+      - label: 其他
         value: Other
 list_views:
   all:
