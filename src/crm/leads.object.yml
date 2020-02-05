@@ -61,14 +61,14 @@ fields:
   phone:
     label: 工作电话
     type: text
-  numberofemployees:
+  number_of_employees:
     label: 职员数
     type: number
     sortable: true
   mobilephone:
     label: 手机
     type: text
-  LeadSource:
+  lead_source:
     type: select
     label: 来源
     required: true
@@ -107,28 +107,6 @@ fields:
   address:
     label: 地址
     type: text
-  department:
-    label: 部门
-    type: text
-    sortable: true
-  fax:
-    label: 传真
-    type: text
-  home_phone:
-    label: 家庭电话
-    type: text
-  birthdate:
-    label: 生日
-    type: date
-    sortable: true
-  annualrevenue	:
-    label: 年收入
-    type: number
-  description:
-    label: 描述
-    type: textarea
-    is_wide: true
-    rows: 4
 list_views:
   all:
     label: 所有潜在客户

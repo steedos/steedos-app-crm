@@ -83,43 +83,12 @@ fields:
       - label: 信息
         value: IT
     filterable: true
-  shippingaddress:
+  shipping_address:
     type: text
     label: 发货地址
-  billingaddress:
+  billing_address:
     type: text
     label: 开单地址
-  numberofemployees:
-    label: 职员数
-    type: number
-    sortable: true
-  fax:
-    label: 传真
-    type: text
-  annualrevenue	:
-    label: 年收入
-    type: number
-  accountsource:
-    type: select
-    label: 来源
-    searchable: true
-    sortable: true
-    options:
-      - label: Advertisement
-        value: Advertisement
-      - label: Customer Event
-        value: Customer Event
-      - label: Employee Referral
-        value: Employee Referral
-      - label: Other
-        value: Other
-      - label: Partner
-        value: Partner
-      - label: Purchased List
-        value: Purchased List
-      - label: Trade
-        value: Trade
-    filterable: true
 list_views:
   all:
     label: 所有客户

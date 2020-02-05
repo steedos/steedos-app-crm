@@ -6,6 +6,7 @@ enable_search: true
 enable_events: true
 enable_tasks: true
 enable_api: true
+enable_chatter: true
 fields:
   name:
     type: text
@@ -40,6 +41,10 @@ fields:
     label: 工作电话
     type: text
     group: 联系方式
+  fax:
+    label: 传真
+    type: text
+    group: 联系方式
   home_phone:
     label: 家庭电话
     type: text
@@ -48,10 +53,16 @@ fields:
     label: 生日
     type: date
     sortable: true
+    group: 其他
   description:
     label: 描述
     type: textarea
     is_wide: true
+    group: 其他
+  mailing_address:
+    type: text
+    label: 邮寄地址
+    group: 联系方式
 list_views:
   all:
     label: 所有联系人
