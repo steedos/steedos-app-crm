@@ -44,6 +44,7 @@ fields:
     label: 公司
     type: text
     sortable: true
+    required: true
     filterable: true
   email:
     label: 电子邮件
@@ -132,7 +133,6 @@ fields:
   lead_source:
     type: select
     label: 潜在客户来源
-    required: true
     searchable: true
     sortable: true
     options:
@@ -158,7 +158,6 @@ fields:
   rating:
     type: select
     label: 分级
-    required: true
     searchable: true
     sortable: true
     options:

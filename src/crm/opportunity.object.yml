@@ -22,6 +22,7 @@ fields:
     reference_to: accounts
     sortable: true
     filterable: true
+    required: true
   due_date:
     label: 结束日期
     type: datetime
@@ -42,6 +43,7 @@ fields:
         value: Closed_Won
       - label: Closed Lost
         value: Closed_Lost
+    required: true
   probability	:
     label: 可能性
     type: number
@@ -58,7 +60,6 @@ fields:
   lead_source:
     type: select
     label: 潜在客户来源
-    required: true
     searchable: true
     sortable: true
     options:
@@ -98,7 +99,6 @@ fields:
   loss_reason:
     type: select
     label: 失败原因
-    required: true
     searchable: true
     sortable: true
     options:
