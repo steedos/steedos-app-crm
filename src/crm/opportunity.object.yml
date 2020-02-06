@@ -86,10 +86,10 @@ fields:
     label: 预算已批准
     type: boolean
   discovery_completed:
-    label: Discovery已完成
+    label: 需求分析已完成
     type: boolean
   ROI_analysis_completed:
-    label: ROI分析已完成
+    label: 投资回报分析已完成
     type: boolean
   description:
     label: 描述
