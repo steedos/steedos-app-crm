@@ -53,7 +53,7 @@ fields:
       - label: 高
         value: Hot
       - label: 中
-        value: Warn
+        value: Warm
       - label: 低
         value: Cold
     filterable: true
