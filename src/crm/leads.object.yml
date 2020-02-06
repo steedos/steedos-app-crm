@@ -17,7 +17,7 @@ fields:
     options:
       - label: 新
         value: New
-      - label: Working
+      - label: 已联系
         value: Working
       - label: 培育中
         value: Nurturing
@@ -161,11 +161,11 @@ fields:
     searchable: true
     sortable: true
     options:
-      - label: Hot
+      - label: 高
         value: Hot
-      - label: Warm
+      - label: 中
         value: Warm
-      - label: Cold
+      - label: 低
         value: Cold
     filterable: true
   address:

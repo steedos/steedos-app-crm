@@ -38,7 +38,7 @@ fields:
         value: Partner
       - label: 新闻界
         value: Press
-      - label: Prospect
+      - label: 潜在
         value: Prospect
       - label: 代理商
         value: Reseller
@@ -50,12 +50,12 @@ fields:
     type: select
     sortable: true
     options:
-      - label: Hot
-        value: high
-      - label: Warn
-        value: normal
-      - label: Cold
-        value: low
+      - label: 高
+        value: Hot
+      - label: 中
+        value: Warn
+      - label: 低
+        value: Cold
     filterable: true
   website:
     type: url
