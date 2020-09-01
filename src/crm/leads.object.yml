@@ -7,6 +7,7 @@ enable_events: true
 enable_tasks: true
 enable_api: true
 enable_chatter: true
+enable_audit: true
 fields:
   status:
     type: select
@@ -15,37 +16,50 @@ fields:
     searchable: true
     sortable: true
     options:
-      - label: 新
+      - label: 新建
         value: New
-      - label: 已联系
+      - label: 合作中
         value: Working
-      - label: 培育中
+      - label: 培养中
         value: Nurturing
-      - label: 已转化
+      - label: 已认证
         value: Qualified
-      - label: 未能转化
+      - label: 未认证
         value: Unqualified
     filterable: true
     defaultValue: 'New'
+  lead_owner:
+    type: lookup
+    label: 我方客户经理
+    reference_to: space_users
+    create: false
   name:
     type: text
     label: 姓名
     required: true
     searchable: true
     index: true 
+  salutation:
+    type: select
+    label: 性别
+    options:
+      - label: 男
+        value: Male
+      - label: 女
+        value: Female
   website:
     label: 网址
-    type: text
+    type: url
   title:
     label: 职务
     type: text
-    sortable: true
   company:
     label: 公司
     type: text
     sortable: true
     required: true
     filterable: true
+    index: true
   email:
     label: 电子邮件
     type: email
@@ -121,7 +135,7 @@ fields:
         value: Utilities
     filterable: true
   phone:
-    label: 工作电话
+    label: 电话
     type: text
   number_of_employees:
     label: 职员数
@@ -142,6 +156,8 @@ fields:
         value: Customer_Event
       - label: 员工推荐
         value: Employee_Referral
+      - label: 百度搜索
+        value: Baidu_AdWords
       - label: 其他
         value: Other
       - label: 合作伙伴
@@ -161,52 +177,71 @@ fields:
     searchable: true
     sortable: true
     options:
-      - label: 高
+      - label: 非常重要
         value: Hot
-      - label: 中
+      - label: 重要
         value: Warm
-      - label: 低
+      - label: 普通
         value: Cold
     filterable: true
   address:
     label: 地址
     type: text
+    is_wide: true
+    group: 地址信息
+  campaign:
+    label: 市场活动
+    type: text
+    readonly: true
+    hidden: true
 list_views:
-  all:
-    label: 所有潜在客户
+  today:
+    label: 今天的潜在客户
     columns:
-      - status
-      - level
       - name
-      - company
       - title
+      - company
       - phone
       - mobile
       - email
+      - status
+      - level
+      - owner
+  all:
+    label: 所有潜在客户
+    columns:
+      - name
+      - title
+      - company
+      - phone
+      - mobile
+      - email
+      - status
+      - level
       - owner
   recent:
     label: 最近查看的潜在客户
     columns:
-      - status
-      - level
       - name
-      - company
       - title
+      - company
       - phone
       - mobile
       - email
+      - status
+      - level
       - owner
   mine:
     label: 我的潜在客户
     columns:
-      - status
-      - level
       - name
-      - company
       - title
+      - company
       - phone
       - mobile
       - email
+      - status
+      - level
       - owner
     filter_scope: mine
 permission_set:

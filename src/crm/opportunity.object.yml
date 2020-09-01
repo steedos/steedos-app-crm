@@ -1,5 +1,5 @@
 name: opportunity
-label: 业务机会
+label: 商机
 icon: opportunity
 enable_files: true
 enable_search: true
@@ -7,56 +7,109 @@ enable_tasks: true
 enable_events: true
 enable_notes: false
 enable_api: true
-enable_share: true
-enable_chatter: true
+enable_audit: true
 fields:
   name:
-    label: 业务机会名称
+    label: 商机名
     type: text
     searchable: true
     required: true
     sortable: true
+    index: true
+  lead_owner:
+    type: lookup
+    label: 我方客户经理
+    reference_to: space_users
+    create: false
   account:
-    label: 客户名
+    label: 客户
     type: master_detail
     reference_to: accounts
     sortable: true
     filterable: true
     required: true
   due_date:
-    label: 结束日期
+    label: 结单日期
     type: date
     required: true
-  stage:
-    label: 阶段
+  type:
+    label: 商机类型
     type: select
     options:
-      - label: 机会确认
+      - label: 现有业务
+        value: Existing_Business
+      - label: 新业务
+        value: New_Business
+  stage:
+    label: 商机阶段
+    type: select
+    options:
+      - label: 初期沟通
         value: Qualification
-      - label: 需求分析
+      - label: 立项跟踪
         value: Needs_Analysis
-      - label: 方案提交
+      - label: 呈报方案
         value: Proposal
       - label: 商务谈判
         value: Negotiation
-      - label: 已结束，已签单
+      - label: 赢单
         value: Closed_Won
-      - label: 已结束，未签单
+      - label: 输单
         value: Closed_Lost
     required: true
+  primary_campaign_source:
+    label: 主要市场活动源
+    type: text
+    index: true
   probability	:
-    label: 可能性
+    label: 商机赢率（%）
     type: number
     sortable: true
+  rating:
+    type: select
+    label: 分级
+    searchable: true
+    sortable: true
+    options:
+      - label: 非常重要
+        value: Hot
+      - label: 重要
+        value: Warm
+      - label: 普通
+        value: Cold
+    filterable: true
+  budget_confirmed:
+    label: 有预算
+    type: boolean
   amount:
     label: 金额
     type: currency
-  private:
-    label: 私有
+  discovery_completed:
+    label: 勘察结束
     type: boolean
+  ROI_analysis_completed:
+    label: 完成ROI分析
+    type: boolean
+  loss_reason:
+    type: select
+    label: 失败原因
+    searchable: true
+    sortable: true
+    options:
+      - label: 竞争失败
+        value: Lost_to_Competitor
+      - label: 没有预算
+        value: No_Budget_Lost_Funding
+      - label: 没有回应
+        value: No_Decision_Non-Responsive
+      - label: 价格因素
+        value: Price
+      - label: 其他
+        value: Other
   next_step:
     label: 下一步
     type: text
+    group: 其他信息
   lead_source:
     type: select
     label: 潜在客户来源
@@ -69,6 +122,8 @@ fields:
         value: Customer_Event
       - label: 员工推荐
         value: Employee_Referral
+      - label: 百度搜索
+        value: Baidu_AdWords
       - label: 其他
         value: Other
       - label: 合作伙伴
@@ -82,39 +137,20 @@ fields:
       - label: 网站
         value: Website
     filterable: true
-  budget_confirmed:
-    label: 预算已批准
-    type: boolean
-  discovery_completed:
-    label: 需求分析已完成
-    type: boolean
-  ROI_analysis_completed:
-    label: 投资回报分析已完成
-    type: boolean
+    group: 其他信息
   description:
     label: 描述
     type: textarea
     is_wide: true
     rows: 4
-  loss_reason:
-    type: select
-    label: 失败原因
-    searchable: true
-    sortable: true
-    options:
-      - label: 输给竞争对手
-        value: Lost_to_Competitor
-      - label: 没有预算 / 资金有损	
-        value: No_Budget_/_Lost_Funding	
-      - label: 无果而终 / 没有响应	
-        value: No_Decision_/_Non-Responsive	
-      - label: 价格
-        value: Price
-      - label: 其他
-        value: Other
+    group: 其他信息
+  private:
+    label: 私有
+    type: boolean
+    hidden: true
 list_views:
   all:
-    label: 全部业务机会
+    label: 全部商机
     columns:
       - name
       - account
