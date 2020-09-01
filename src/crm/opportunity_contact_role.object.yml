@@ -8,7 +8,7 @@ fields:
   number:
     label: 序号
     type: autonumber
-    formula: "{YYYY}-{0000}"
+    formula: "{00000}"
     omit: true
     readonly: true
     searchable: true

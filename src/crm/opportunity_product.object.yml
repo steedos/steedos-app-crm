@@ -1,0 +1,80 @@
+name: opportunity_product
+label: 商机产品
+icon: opportunity
+enable_audit: true
+fields:
+  number:
+    label: 序号
+    type: autonumber
+    formula: "{00000}"
+    omit: true
+    readonly: true
+    searchable: true
+  contact:
+    label: 产品
+    type: text
+    required: true
+  quantity:
+    label: 数量
+    type: number
+    required: true
+  sales_price:
+    label: 销售价格
+    type: currency
+    required: true
+  date:
+    label: 日期
+    type: date
+  line_description:
+    label: 行描述
+    type: text
+  discount:
+    label: 折扣（%）
+    type: currency
+    hidden: true
+  subtotal:
+    label: 小计
+    type: number
+    hidden: true
+  total_price:
+    label: 总价
+    type: currency
+    readonly: true
+  list_price:
+    label: 价目表价格
+    type: currency
+    readonly: true
+  product_code:
+    label: 产品代码
+    type: text
+    readonly: true
+  opportunity:
+    label: 商机名
+    type: master_detail
+    reference_to: opportunity
+    hidden: true
+list_views:
+  all:
+    label: 全部商机联系人
+    columns:
+      - number
+      - opportunity
+      - contact
+      - primary
+      - role
+    filter_scope: space
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: false
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true
