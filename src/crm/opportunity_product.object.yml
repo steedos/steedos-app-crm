@@ -22,27 +22,33 @@ fields:
     label: 销售价格
     type: currency
     required: true
+    inlineHelpText: 商机产品中产品的价格。对于没有相关计划的商机产品，销售价格可以编辑。当计划与商机产品相关时，销售价格变为只读。
   date:
     label: 日期
     type: date
+    inlineHelpText: 某个商机产品的关闭日期。
   line_description:
     label: 行描述
     type: text
   discount:
     label: 折扣（%）
     type: currency
-    hidden: true
+    inlineHelpText: 产品的百分比折扣。
+    #hidden: true
   subtotal:
     label: 小计
     type: number
-    hidden: true
+    inlineHelpText: 标准和折扣价格之间的差值。商机币种与用户币种不同时转换后的币种金额。
+    #hidden: true
   total_price:
     label: 总价
     type: currency
+    inlineHelpText: 商机产品所有产品金额的总计。
     readonly: true
   list_price:
     label: 价目表价格
     type: currency
+    inlineHelpText: 价格手册中的产品价格（包含币种）。只读。
     readonly: true
   product_code:
     label: 产品代码
@@ -52,7 +58,7 @@ fields:
     label: 商机名
     type: master_detail
     reference_to: opportunity
-    hidden: true
+    #hidden: true
 list_views:
   all:
     label: 全部商机联系人

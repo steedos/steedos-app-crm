@@ -18,14 +18,17 @@ fields:
     reference_to: opportunity
     searchable: true
     required: true
+    inlineHelpText: 与联系人相关的商机的名称。
   contact:
     label: 联系人
     type: lookup
     reference_to: contacts
     required: true
+    inlineHelpText: 联系人或个人客户的姓名。
   primary:
     label: 主要
     type: boolean
+    inlineHelpText: 打✔，则该联系人为商机的主要联系人。
   role:
     label: 角色
     type: select
@@ -47,6 +50,7 @@ fields:
       - label: 意见影响人
         value: Opinions_People
     multiple: true
+    inlineHelpText: 联系人在商机中的参与角色；例如：购买者、决策者或评估者。您可以为一个联系人选择多个角色。
 list_views:
   all:
     label: 全部商机联系人

@@ -184,16 +184,86 @@ fields:
       - label: 普通
         value: Cold
     filterable: true
-  address:
-    label: 地址
+  city:
+    label: 城市
     type: text
-    is_wide: true
+    group: 地址信息
+  streety:
+    label: 街道
+    type: text
+    group: 地址信息
+  zip:
+    label: 邮政编码
+    type: text
     group: 地址信息
   campaign:
     label: 市场活动
     type: text
     readonly: true
-    hidden: true
+    omit: true
+  individual:
+    label: 个人
+    type: text
+    #hidden: true
+  fax:
+    label: 传真
+    type: text
+    #hidden: true
+  annual_revenue:
+    label: 年收入
+    type: currency
+    #hidden: true
+  description:
+    label: 描述
+    type: textarea
+    #hidden: true
+  do_not_call:
+    label: 请勿致电
+    type: boolean
+    #hidden: true
+  email_opt_out:
+    label: 退出邮件列表
+    type: boolean
+    #hidden: true
+  fax_opt_out:
+    label: 退出传真列表
+    type: boolean
+    #hidden: true
+  last_transfer_date:
+    label: 上次更改客户经理日期
+    type: date
+    #hidden: true
+  partner_account:
+    label: 合作伙伴客户
+    type: text
+    #hidden: true
+  read:
+    label: 读取
+    type: boolean
+    #hidden: true
+  unread:
+    label: 未读
+    type: boolean
+    #hidden: true
+  converted:
+    label: 已转换
+    type: boolean
+    #hidden: true
+  converted_account:
+    label: 已转换的客户
+    type: select
+    reference_to: accounts
+    #hidden: true
+  converted_contact:
+    label: 已转换的联系人
+    type: select
+    reference_to: contacts
+    #hidden: true
+  converted_opportunity:
+    label: 已转换的商机
+    type: select
+    reference_to: opportunity
+    #hidden: true
 list_views:
   today:
     label: 今天的潜在客户

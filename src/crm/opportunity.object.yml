@@ -25,6 +25,7 @@ fields:
     label: 客户
     type: master_detail
     reference_to: accounts
+    inlineHelpText: 商机所链接的客户名。您可输入客户名或使用查找图标选择客户。如果您更改的客户有合作伙伴，则将从“合作伙伴”相关列表删除所有合作伙伴。
     sortable: true
     filterable: true
     required: true
@@ -32,6 +33,7 @@ fields:
     label: 结单日期
     type: date
     required: true
+    inlineHelpText: 您计划关闭商机的日期。您可以输入一个日期，或从您将光标放在字段中时显示的日历中选择一个日期。在指定期限内具有关闭日期的商机计入该时期的预测，除非您将其分配到“忽略”类别，或按计划或产品日期预测。当您将未处理商机的阶段设为“已结束/赢得客户”，如果最初的日期是在未来，则关闭日期设为协调世界时 (UTC) 的当前日期。在一天的某个时间，UTC 可能与您的时区相差一天。如果结束日期是过去商机结束的日期，则日期不能更改。
   type:
     label: 商机类型
     type: select
@@ -40,6 +42,7 @@ fields:
         value: Existing_Business
       - label: 新业务
         value: New_Business
+    inlineHelpText: 商机的类型，例如“现有业务”或“新业务”。
   stage:
     label: 商机阶段
     type: select
@@ -57,14 +60,17 @@ fields:
       - label: 输单
         value: Closed_Lost
     required: true
+    inlineHelpText: 管理员将此选项列表中的值与决定商机如何对您的预测进行贡献的“预测类别”值关联。如果原始日期在未来，则当您将未处理商机的阶段设为已结束/赢得客户，则关闭日期设为协调世界时 (UTC) 的当前日期。在一天的某个时间，UTC 可能与您的时区相差一天。如果结束日期是过去商机结束的日期，则日期不能更改。
   primary_campaign_source:
     label: 主要市场活动源
     type: text
     index: true
+    inlineHelpText: 负责产生商机的市场活动的名称。对于在潜在客户转换期间创建的商机，此字段自动以潜在客户中的市场活动名称填充。如果潜在客户具有多个相关联市场活动，则将具有最新更新的成员状态的市场活动插入商机。对于具有多个影响的市场活动的商机，单击商机详细信息页面上“市场活动影响”相关列表中的主要市场活动旁边的编辑并选择主要市场活动源复选框。该市场活动显示在商机上主要市场活动源字段上。
   probability	:
     label: 商机赢率（%）
     type: number
     sortable: true
+    inlineHelpText: 商机将关闭的可能性，以百分比表示。可能性值总是由阶段值的更改而更新，即使在您的页面布局中可能性字段标记为只读。对此字段具有编辑权限的用户可以覆盖该值。
   rating:
     type: select
     label: 分级
@@ -84,6 +90,7 @@ fields:
   amount:
     label: 金额
     type: currency
+    inlineHelpText: 估计总销售额。如果启用了多种币种，默认情况下，金额以您的个人币种显示。更改商机币种选项列表以跟踪另一币种的金额。对于具有产品的商机，金额是相关产品的总和。您无法直接编辑金额，除非该商机没有产品。要更改包含产品的商机的金额，编辑相关产品的销售价格或数量。如果您更改商机对应的价格手册，那么所有的产品都从该商机的“相关产品”中删除，但是本字段中的值不变。
   discovery_completed:
     label: 勘察结束
     type: boolean
@@ -110,6 +117,7 @@ fields:
     label: 下一步
     type: text
     group: 其他信息
+    inlineHelpText: 说明关闭商机后下一步的任务。
   lead_source:
     type: select
     label: 潜在客户来源
@@ -145,9 +153,64 @@ fields:
     rows: 4
     group: 其他信息
   private:
-    label: 私有
+    label: 专用
     type: boolean
-    hidden: true
+    #hidden: true
+    inlineHelpText: 商机是专用的。只有记录的所有人、层次结构中位于该角色之上的用户和管理员可以查看、编辑或报告专有记录。
+  opportunity_score:
+    label: 商机得分
+    type: number
+    #hidden: true
+  price_book:
+    label: 价格手册
+    type: text
+    #hidden: true
+  contract:
+    label: 合同
+    type: select
+    reference_to: contracts
+    #hidden: true
+  synced_quoted:
+    label: 同步的报价
+    type: boolean
+    #hidden: true
+    inlineHelpText: 同步到商机的报价。只有一个报价可以同步到商机。
+  quantity:
+    label: 数量
+    type: number
+    #hidden: true
+    inlineHelpText: 如果商机具有产品则为“产品”相关列表中所有产品的所有数量字段值的总计。如果商机没有产品则为通用字段。
+  expected_revenue:
+    label: 预测收入
+    type: currency
+    inlineHelpText: 基于金额和商机赢率计算的收入。
+  forecast_category:
+    label: 预测类别
+    type: select
+    options:
+      - label: 忽略
+        value: Omit
+      - label: 销售漏斗
+        value: Sales_Funnel
+      - label: 最高金额
+        value: Maximum_Amount
+      - label: 提交
+        value: Submit
+      - label: 关闭
+        value: Close
+    #hidden: true
+    inlineHelpText: 在报表、商机详细信息和编辑页面、商机搜索和商机列表视图中显示的预测类别名称。商机的设置绑定到其阶段。
+  opportunity_currency:
+    label: 商机币种
+    type: text
+    #hidden: true
+    inlineHelpText: 商机中所有币种金额字段的默认币种。金额以商机币种显示，并会转换为用户的个人币种。仅在启用多种币种时可用。对于具有产品的商机，该币种绑定到相关联价格手册的币种。您无法直接编辑此字段，除非您首先删除产品。
+  partner_account:
+    label: 合作伙伴客户
+    type: boolean
+    readonly: true
+    #hidden: true
+    inlineHelpText: 表示该商机属于某合作伙伴（只读）
 list_views:
   all:
     label: 全部商机
