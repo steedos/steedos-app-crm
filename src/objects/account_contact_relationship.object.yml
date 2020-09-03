@@ -31,7 +31,7 @@ fields:
   account:
     label: 客户
     type: master_detail
-    reference_to: accounts
+    reference_to: account
     searchable: true
     required: true
     inlineHelpText: 与联系人相关的公司的名称。
@@ -50,7 +50,7 @@ fields:
   contact:
     type: select
     label: 联系人
-    reference_to: contacts
+    reference_to: contact
     searchable: true
     inlineHelpText: 与客户相关的人员的姓名。
   role:

@@ -1,4 +1,4 @@
-name: accounts
+name: account
 label: 客户
 icon: account
 enable_files: true
@@ -7,7 +7,7 @@ enable_api: true
 enable_share: true
 enable_audit: true
 fields:
-  name:
+  account_name:
     label: 客户名
     type: text
     defaultValue: ''
@@ -50,7 +50,7 @@ fields:
   parent_account:
     type: lookup
     label: 母公司
-    reference_to: accounts
+    reference_to: account
     inlineHelpText: 作为大公司或组织的子公司的母公司。父级客户必须是华炎魔方中的现有客户。您可输入客户名，或使用查找图标选择（或创建）客户。
   website:
     type: url
@@ -205,6 +205,154 @@ fields:
     label: 客户地点
     #hidden: true
     inlineHelpText: 可用客户地点字段来指定同一公司的不同位置。例如，假设百度在北京和上海均设有办公室。创建两个名为百度的客户，但是客户地点的值分别为北京和上海。
+  annual_revenue:
+    label: 年收入
+    type: currency
+    #hidden: true
+  ownership:
+    label: 所有权
+    type: select
+    sortable: true
+    options:
+      - label: 国营
+        value: National
+      - label: 私营
+        value: Private
+      - label: 子公司
+        value: Subcompany
+      - label: 其他
+        value: Others
+    inlineHelpText: 公司的所有权，例如，公有或私有。
+    #hidden: true
+  account_currency:
+    label: 客户币种
+    type: text
+    #hidden: true
+  account_division:
+    label: 客户分部
+    type: text
+    #hidden: true
+  partner_account:
+    label: 合作伙伴客户
+    type: boolean
+    #hidden: true
+  assistant:
+    label: 助理
+    type: text
+    #hidden: true
+  asst_phone:
+    label: 助理电话
+    type: text
+    #hidden: true
+  birthdate:
+    label: 生日
+    type: date
+    #hidden: true
+  department:
+    label: 部门
+    type: text
+  email:
+    label: 电子邮件
+    type: email
+  do_not_call:
+    label: 请勿致电
+    type: boolean
+    inlineHelpText: 是否想要通过电话联系联系人。
+    #hidden: true
+  email_opt_out:
+    label: 退出邮件列表
+    type: boolean
+    inlineHelpText: 是否将联系人包含在群发邮件列表中。
+    #hidden: true
+  fax_opt_out:
+    label: 退出传真列表
+    type: boolean
+    inlineHelpText: 是否将联系人包含在传真中。
+    #hidden: true
+  home_phone:
+    label: 家庭电话
+    type: text
+    #hidden: true
+  name:
+    type: text
+    label: 姓名
+    searchable: true
+    sortable: true
+    #hidden: true
+  lead_source:
+    type: select
+    label: 潜在客户来源
+    searchable: true
+    sortable: true
+    options:
+      - label: 广告
+        value: Advertisement
+      - label: 客户活动
+        value: Customer_Event
+      - label: 员工推荐
+        value: Employee_Referral
+      - label: 百度搜索
+        value: Baidu_AdWords
+      - label: 其他
+        value: Other
+      - label: 合作伙伴
+        value: Partner
+      - label: 采购清单
+        value: Purchased_List
+      - label: 贸易展览
+        value: Trade_Show
+      - label: 线上研讨
+        value: Webinar
+      - label: 网站
+        value: Website
+    filterable: true
+    inlineHelpText: 潜在客户来源，例如，广告、合作伙伴或 Web。
+    #hidden: true
+  mailing_city:
+    type: text
+    label: 邮寄地址-城市
+    group: 地址信息
+    #hidden: true
+  mailing_street:
+    type: text
+    label: 邮寄地址-街道
+    group: 地址信息
+    #hidden: true
+  mailing_zip:
+    type: text
+    label: 邮寄地址-邮政编码
+    group: 地址信息
+    #hidden: true
+  other_city:
+    type: text
+    label: 其他地址-城市
+    group: 其他地址信息
+    #hidden: true
+  other_street:
+    type: text
+    label: 其他地址-街道
+    group: 其他地址信息
+    #hidden: true
+  other_zip:
+    type: text
+    label: 其他地址-邮政编码
+    group: 其他地址信息
+    #hidden: true
+  mobile:
+    label: 手机
+    type: text
+  salutation:
+    type: select
+    label: 性别
+    options:
+      - label: 男
+        value: Male
+      - label: 女
+        value: Female
+  other_phone:
+    label: 其他电话
+    type: text
+    #hidden: true
 list_views:
   all:
     label: 所有客户

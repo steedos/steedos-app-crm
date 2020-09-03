@@ -1,4 +1,4 @@
-name: leads
+name: lead
 label: 潜在客户
 icon: lead
 enable_files: true
@@ -252,12 +252,12 @@ fields:
   converted_account:
     label: 已转换的客户
     type: select
-    reference_to: accounts
+    reference_to: account
     #hidden: true
   converted_contact:
     label: 已转换的联系人
     type: select
-    reference_to: contacts
+    reference_to: contact
     #hidden: true
   converted_opportunity:
     label: 已转换的商机
