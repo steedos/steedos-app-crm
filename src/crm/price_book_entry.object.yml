@@ -1,0 +1,70 @@
+name: price_book_entry
+label: 价格手册条目
+icon: pricebook
+enable_files: true
+enable_search: true
+enable_audit: true
+fields:
+  product:
+    type: lookup
+    label: 产品
+    reference_to: product
+    required: true
+    index: true
+  active:
+    label: 已启用
+    type: toggle
+    defaultValue: true
+    inlineHelpText: 价格手册条目（产品和列表价格）是否是有效的并可添加到商机或报价。
+  price_book:
+    type: lookup
+    label: 价格手册
+    required: true
+    index: true
+    inlineHelpText: 价格手册包含此项的价格。
+  product_code:
+    type: text
+    label: 产品代码
+    readonly: true
+  list_price:
+    type: currency
+    label: 价目表价格
+    inlineHelpText: 价格手册内的产品的价格，包括货币。
+  use_standard_price:
+    type: boolean
+    label: 使用标准价格
+    inlineHelpText: 价格手册条目的价格是否继承至标准价格手册。
+  currency:
+    type: text
+    label: 货币
+    #hidden: true
+    inlineHelpText: 此字段仅在启用多个货币时可用。它表示用于价目表条目（产品和标价）的货币。
+list_views:
+  all:
+    label: 所有价格手册条目
+    columns:
+      - product
+      - price_book
+      - active
+      - product_code
+      - list_price
+      - use_standard_price
+    filter_scope: space
+  recent:
+    label: 最近查看
+    filter_scope: space
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true

@@ -71,8 +71,9 @@ fields:
       - label: 120天
         value: 120天
   price_book:
-    type: text
+    type: lookup
     label: 价格手册
+    reference_to: price_book
   billing_city:
     type: text
     label: 开单地址-城市

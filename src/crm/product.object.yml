@@ -1,0 +1,39 @@
+name: product
+label: 产品
+icon: product
+enable_files: true
+enable_search: true
+enable_audit: true
+fields:
+  product_name:
+    type: text
+    label: 产品名称
+    required: true
+    index: true
+    searchable: true
+    sortable: true
+    is_name: true
+list_views:
+  all:
+    label: 所有产品
+    columns:
+      - product_name
+    filter_scope: space
+  recent:
+    label: 最近查看
+    filter_scope: space
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true

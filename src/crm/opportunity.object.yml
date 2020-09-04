@@ -162,8 +162,9 @@ fields:
     type: number
     #hidden: true
   price_book:
+    type: lookup
     label: 价格手册
-    type: text
+    reference_to: price_book
     #hidden: true
   contract:
     label: 合同
