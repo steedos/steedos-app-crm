@@ -29,10 +29,10 @@ fields:
     filterable: true
     defaultValue: 'New'
   lead_owner:
-    type: lookup
+    type: text
     label: 我方客户经理
-    reference_to: space_users
-    create: false
+    defaultValue: "{user.name}"
+    readonly: true
   name:
     type: text
     label: 姓名
@@ -141,7 +141,7 @@ fields:
     label: 职员数
     type: number
     sortable: true
-  mobilephone:
+  mobile:
     label: 手机
     type: text
   lead_source:

@@ -10,17 +10,16 @@ fields:
   account_name:
     label: 客户名
     type: text
-    defaultValue: ''
-    description: ''
-    inlineHelpText: ''
     searchable: true
     required: true
     sortable: true
+    index: true
+    is_name: true
   account_owner:
-    type: lookup
+    type: text
     label: 我方客户经理
-    reference_to: space_users
-    create: false
+    defaultValue: "{user.name}"
+    readonly: true
   type:
     label: 类型
     type: select
@@ -357,8 +356,9 @@ list_views:
   all:
     label: 所有客户
     columns:
-      - name
+      - account_name
       - phone
+      - mobile
       - type
       - rating
       - owner
@@ -366,8 +366,9 @@ list_views:
   recent:
     label: 最近查看
     columns:
-      - name
+      - account_name
       - phone
+      - mobile
       - type
       - rating
       - owner
@@ -375,8 +376,9 @@ list_views:
   mine:
     label: 我的客户
     columns:
-      - name
+      - account_name
       - phone
+      - mobile
       - type
       - rating
       - owner
