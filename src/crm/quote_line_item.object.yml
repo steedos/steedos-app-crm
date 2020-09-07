@@ -1,0 +1,95 @@
+name: quote_line_item
+label: 报价行条目
+icon: quotes
+enable_files: true
+enable_search: true
+enable_audit: true
+fields:
+  product:
+    type: lookup
+    label: 产品
+    reference_to: product
+    inlineHelpText: 价格手册中所列的行项目产品的名称。
+  list_price:
+    type: currency
+    label: 定价
+  subtotal:
+    type: currency
+    label: 小计
+    inlineHelpText: 行项目的销售价格与数量相乘。
+  total_price:
+    type: currency
+    label: 总价
+    inlineHelpText: 行项目的销售价格和数量相乘再减去折扣。
+  discount:
+    type: number
+    label: 折扣（%）
+    inlineHelpText: 您应用到行项目的折扣。您可以使用百分比符号输入数字，也可以不使用百分比符号输入数字。您可以使用最多两个小数位。
+  quote_name:
+    label: 报价名称
+    type: master_detail
+    reference_to: quote
+    searchable: true
+  quantity:
+    type: number
+    label: 数量
+    inlineHelpText: 报价中包含的该行项目产品的套数。值必须大于或等于 1。如果报价与商机同步，该字段会从报价行项目更新到商机产品。
+  date:
+    type: date
+    label: 日期
+    inlineHelpText: 产品日期、有效日期或产品的其他日期。
+  line_item_description:
+    label: 行项目描述
+    type: textarea
+    is_wide: true
+    rows: 3
+  line_number:
+    label: 行项目编号
+    type: autonumber
+    formula: "{0000000}"
+    readonly: true
+    searchable: true
+    index: true
+  schedule:
+    label: 计划
+    type: boolean
+    inlineHelpText: 行项目是否在商机中使用计划。当商机产品被复制到报价中时，默认计划不会从商机中移转。
+  sales_price:
+    type: number
+    label: 销售价格
+    readonly: true
+    inlineHelpText: 您想使用的产品价格。最初，商机或报价产品的销售价格为价格手册中该产品的价目表价格，但您可在此进行更改。如果报价与商机同步，该字段会从报价行项目更新到商机产品。
+  price_book_entry:
+    type: lookup
+    label: 价格手册条目
+    reference_to: price_book_entry
+    #hidden: true
+list_views:
+  all:
+    label: 所有产品
+    columns:
+      - quote_name
+      - opportunity_name
+      - expiration_date
+      - syncing
+      - status
+      - grand_total
+    filter_scope: space
+  recent:
+    label: 最近查看
+    filter_scope: space
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true
