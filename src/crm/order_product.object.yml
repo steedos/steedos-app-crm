@@ -1,0 +1,129 @@
+name: order_product
+label: 订单产品
+icon: orders
+enable_files: true
+enable_search: true
+enable_audit: true
+fields:
+  product:
+    type: lookup
+    label: 产品
+    reference_to: product
+    inlineHelpText: 本订单产品记录使用的产品名称。（只读）
+  quantity:
+    label: 数量
+    type: number
+    inlineHelpText: 产品的单位数量。
+  unit_price:
+    label: 单价
+    type: currency
+    inlineHelpText: 订单产品的单价。
+  list_price:
+    label: 价目表价格
+    type: currency
+    readonly: true
+    inlineHelpText: 父级订单上的价格手册设定的默认价格。（只读）
+  line_description:
+    label: 行备注
+    type: textarea
+    is_wide: true
+    rows: 3
+  start_date:
+    type: date
+    label: 开始日期
+    inlineHelpText: 订单产品的开始日期。
+    #hidden: true
+  total_price:
+    label: 总价
+    type: currency
+    inlineHelpText: 订单产品数量乘以单价。
+    #hidden: true
+  quote_line_item:
+    type: lookup
+    label: 报价行项目
+    reference_to: quote_line_item
+    inlineHelpText: 与订单产品关联的报价行项目。报价行项目的报价必须与和订单产品的父级订单相关联的报价相匹配。
+    #hidden: true
+  end_date:
+    type: date
+    label: 结束日期
+  order:
+    label: 订单
+    type: master_detail
+    reference_to: order
+    searchable: true
+    inlineHelpText: 本订单产品的父级订单。
+    #hidden: true
+  order_product_number:
+    label: 订单产品编号
+    type: autonumber
+    formula: "{YYYY}{MM}{00000}"
+    readonly: true
+    searchable: true
+    index: true
+    inlineHelpText: 识别订单产品记录的自动生成的编号。（只读）
+    #hidden: true
+  available_quantity:
+    label: 可用数量
+    type: number
+    readonly: true
+    inlineHelpText: 可用于减少的单位数量。当启用减单时，订单产品的可用数量将更新，以反映出相关减单产品的数量。值必须始终大于或等于 0。（只读）
+    #hidden: true
+  original_order_product:
+    type: text
+    label: 原始订单产品
+    readonly: true
+    inlineHelpText: 要减少订单产品的编号。如果订单产品正减少另一个订单产品时必填。（只读）
+    #hidden: true
+  product_code:
+    type: text
+    label: 产品代码
+    readonly: true
+    inlineHelpText: 用于识别产品的内部代码或产品号。（只读）
+    #hidden: true
+  subtotal:
+    label: 小计
+    type: currency
+    #hidden: true
+  discount:
+    label: 折扣（%）
+    type: number
+    #hidden: true
+  has_schedule:
+    label: 计划
+    type: boolean
+    #hidden: true
+  price_book_entry:
+    type: lookup
+    label: 价格手册条目
+    reference_to: price_book_entry
+    #hidden: true
+list_views:
+  all:
+    label: 所有订单产品
+    columns:
+      - product
+      - order
+      - unit_price
+      - quantity
+      - start_date
+      - end_date
+    filter_scope: space
+  recent:
+    label: 最近查看
+    filter_scope: space
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true

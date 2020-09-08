@@ -1,0 +1,191 @@
+name: order
+label: 订单
+icon: orders
+enable_files: true
+enable_search: true
+enable_audit: true
+fields:
+  order_number:
+    label: 订单编号
+    type: autonumber
+    formula: "{YYYY}{MM}{0000}"
+    readonly: true
+    searchable: true
+    index: true
+  contract_number:
+    type: lookup
+    label: 合同编号
+    reference_to: contract
+    required: false
+  account_name:
+    type: lookup
+    label: 客户
+    reference_to: account
+    required: true
+  order_type:
+    type: text
+    label: 订单类型
+    readonly: true
+  order_start_date:
+    type: date
+    label: 订单开始日期
+    required: true
+    index: true
+  status:
+    type: select
+    label: 状态
+    required: true
+    searchable: true
+    sortable: true
+    options:
+      - label: 草稿
+        value: Draft
+      - label: 已启用
+        value: Activated
+    filterable: true
+    defaultValue: 'Draft'
+  customer_authorized_by:
+    label: 客户授权人
+    type: lookup
+    reference_to: contact
+  company_authorized_by:
+    label: 公司授权人
+    type: lookup
+    reference_to: space_users
+  shipping_city:
+    type: text
+    label: 邮寄地址-城市
+  shipping_zip:
+    type: text
+    label: 邮寄地址-邮政编码
+  shipping_street:
+    type: text
+    label: 邮寄地址-街道
+    is_wide: true
+  billing_city:
+    type: text
+    label: 账单地址-城市
+  billing_zip:
+    type: text
+    label: 账单地址-邮政编码
+  billing_street:
+    type: text
+    label: 账单地址-街道
+    is_wide: true
+  description:
+    label: 说明
+    type: textarea
+    is_wide: true
+    rows: 3
+  opportunity:
+    type: lookup
+    label: 商机
+    reference_to: opportunity
+    #hidden: true
+  price_book:
+    type: lookup
+    label: 价格手册
+    reference_to: price_book
+    #hidden: true
+  company_authorized_date:
+    type: date
+    label: 公司授权日期
+    #hidden: true
+  contract_name:
+    type: text
+    label: 合同名
+    #hidden: true
+  contract_end_date:
+    type: date
+    label: 合同结束日期
+    #hidden: true
+  activated_by:
+    label: 启用人
+    type: lookup
+    reference_to: space_users
+    #hidden: true
+  activated_date:
+    label: 启用日期
+    type: datetime
+    #hidden: true
+  customer_authorized_date:
+    type: date
+    label: 客户授权日期
+    #hidden: true
+  account_number:
+    type: text
+    label: 客户编号
+    #hidden: true
+  bill_to_contact:
+    type: lookup
+    label: 开单对象联系人
+    reference_to: contact
+    #hidden: true
+  quote:
+    type: lookup
+    label: 报价
+    reference_to: quote
+    #hidden: true
+  ship_to_contact:
+    type: lookup
+    label: 收货方联系人
+    reference_to: contact
+    #hidden: true
+  order_reference_number:
+    type: text
+    label: 订单参考编号
+    #hidden: true
+  order_name:
+    type: text
+    label: 订单名
+    #hidden: true
+  order_owner:
+    label: 订单所有人
+    type: lookup
+    reference_to: space_users
+    #hidden: true
+  po_date:
+    label: 订单日期
+    type: date
+    #hidden: true
+  order_end_date:
+    label: 订单结束日期
+    type: date
+    #hidden: true
+  po_number:
+    type: text
+    label: 订单编号
+    #hidden: true
+  order_amount:
+    type: currency
+    label: 订单金额
+    #hidden: true
+list_views:
+  all:
+    label: 所有订单
+    columns:
+      - order_number
+      - account_name
+      - order_amount
+      - order_start_date
+      - status
+      - contract_number
+    filter_scope: space
+  recent:
+    label: 最近查看
+    filter_scope: space
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true

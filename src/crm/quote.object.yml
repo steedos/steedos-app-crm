@@ -200,7 +200,7 @@ fields:
     #hidden: true
 list_views:
   all:
-    label: 所有产品
+    label: 所有报价
     columns:
       - quote_name
       - opportunity_name

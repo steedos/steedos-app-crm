@@ -111,7 +111,7 @@ fields:
     searchable: true 
 list_views:
   all:
-    label: 所有
+    label: 所有资产
     columns:
       - name
       - code

@@ -89,6 +89,9 @@ list_views:
     label: 所有产品
     columns:
       - product_name
+      - product_code
+      - product_family
+      - product_description
     filter_scope: space
   recent:
     label: 最近查看

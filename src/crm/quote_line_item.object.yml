@@ -66,14 +66,13 @@ fields:
     #hidden: true
 list_views:
   all:
-    label: 所有产品
+    label: 所有报价行条目
     columns:
       - quote_name
-      - opportunity_name
-      - expiration_date
-      - syncing
-      - status
-      - grand_total
+      - product
+      - list_price
+      - total_price
+      - date
     filter_scope: space
   recent:
     label: 最近查看

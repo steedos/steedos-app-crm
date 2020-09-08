@@ -8,8 +8,10 @@ objects:
   - contact
   - lead
   - opportunity
+  - campaign
   - price_book
   - product
+  - order
   - tasks
   - events  
   - reports

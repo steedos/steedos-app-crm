@@ -61,7 +61,7 @@ fields:
     #hidden: true
 list_views:
   all:
-    label: 全部商机联系人
+    label: 全部商机产品
     columns:
       - number
       - opportunity
