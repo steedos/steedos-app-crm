@@ -23,6 +23,7 @@ fields:
     label: 合同编号
     filterable: true
     readonly: true
+    is_name: true
   contract_end_date:
     label: 合同结束日期
     type: date

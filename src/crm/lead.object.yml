@@ -251,17 +251,17 @@ fields:
     #hidden: true
   converted_account:
     label: 已转换的客户
-    type: select
+    type: lookup
     reference_to: account
     #hidden: true
   converted_contact:
     label: 已转换的联系人
-    type: select
+    type: lookup
     reference_to: contact
     #hidden: true
   converted_opportunity:
     label: 已转换的商机
-    type: select
+    type: lookup
     reference_to: opportunity
     #hidden: true
 list_views:
@@ -314,6 +314,10 @@ list_views:
       - level
       - owner
     filter_scope: mine
+actions:
+  convert:
+    label: 转换
+    on: record
 permission_set:
   user:
     allowCreate: true

@@ -12,11 +12,12 @@ fields:
     readonly: true
     searchable: true
     index: true
+    is_name: true
   contract_number:
     type: lookup
     label: 合同编号
     reference_to: contract
-    required: false
+    required: true
   account_name:
     type: lookup
     label: 客户

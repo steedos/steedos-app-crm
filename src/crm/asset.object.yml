@@ -1,6 +1,6 @@
 name: asset
 label: 资产
-icon: product_item
+icon: entity
 enable_api: true
 enable_files: true
 enable_search: true
@@ -8,118 +8,90 @@ enable_tasks: true
 enable_notes: true
 enable_events: true
 enable_workflow: true
-enable_chatter: true
 fields:
   name:
     type: text
-    label: 名称
+    label: 资产名称
     searchable: true
     filterable: true
     index: true
     required: true
-  code:
-    label: 资产编码
-    type: text
+  status:
+    type: select
+    label: 状态
+    required: true
+    searchable: true
     sortable: true
+    options:
+      - label: 已购买
+        value: Purchased
+      - label: 已出货
+        value: Shipped
+      - label: 已安装
+        value: Installed
+      - label: 已注册
+        value: Registered
+      - label: 已废弃
+        value: Obsolete
     filterable: true
-    searchable: true
-  investment_plan:
-    label: 投资计划
-    type: text
-    sortable: true
-    filterable: true
-    searchable: true
-  model:
-    label: 型号
-    type: text
-    sortable: true
-    filterable: true
-    searchable: true
-  technical_parameters:
-    label: 技术参数
-    type: text
-    filterable: true
-    searchable: true
-  manufacturer:
-    label: 生产厂家
-    type: text
-    filterable: true
-    searchable: true
-  factory_number:
-    label: 出厂编号
-    type: text
-    filterable: true
-    searchable: true
-  production_date: 
-    type: date
-    label: 生产日期
-    searchable: true
-  used_date: 
-    type: date
-    label: 使用日期
-    filterable: true
-    searchable: true
-  user_department:
-    label: 使用部门
+  product:
+    label: 产品
     type: lookup
-    reference_to: organizations
-    filterable: true
+    reference_to: product
+  price:
+    label: 价格
+    type: currency
+  account:
+    label: 客户
+    type: lookup
+    reference_to: account
+  quantity:
+    type: number
+    label: 数量
+  contact:
+    label: 联系人
+    type: lookup
+    reference_to: contact
+  purchased_date: 
+    type: date
+    label: 购买日期
+    searchable: true
+  competitor_asset:
+    type: boolean
+    label: 竞争对手资产
+  installed_date: 
+    type: date
+    label: 安装日期
     searchable: true
   asset_number:
-    label: 资产编号
+    label: 序列号
     type: text
     filterable: true
     searchable: true
-  original_value:
-    label: 原值
-    type: currency
-    omit: true 
+  obsoleted_date: 
+    type: date
+    label: 使用结束日期
     searchable: true
-  amount_total:
-    label: 合计金额
-    type: currency
-    filterable: true
-    searchable: true
-  tax_rate:
-    type: number
-    label: 税率
-  depreciation:
-    label: 折旧信息
+  asset_currency:
+    label: 资产币种
     type: text
-    filterable: true
-    searchable: true
-  important_equipment:
-    type: boolean
-    label: 重要资产
-    defaultValue: false  
-    searchable: true
-  usage:
-    label: 使用情况
-    type: select
-    sortable: true
-    filterable: true
-    options:
-      - label: 在用
-        value: in use
-      - label: 闲置
-        value: idle
-      - label: 封存
-        value: sealed
-      - label: 出租
-        value: for rent
-    defaultValue: in use  
-    searchable: true 
+  description:
+    label: 描述
+    type: textarea
+    is_wide: true
+    rows: 3
 list_views:
   all:
     label: 所有资产
     columns:
       - name
-      - code
       - asset_number
-      - user_department
-      - used_date
-      - important_equipment
-      - usage
+      - product
+      - price
+      - status
+      - purchased_date
+      - account
+      - contact
 permission_set:
   user:
     allowCreate: true

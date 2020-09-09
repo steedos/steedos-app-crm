@@ -12,6 +12,8 @@ objects:
   - price_book
   - product
   - order
+  - case
+  - asset
   - tasks
   - events  
   - reports
