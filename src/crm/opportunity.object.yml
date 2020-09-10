@@ -168,8 +168,8 @@ fields:
     #hidden: true
   contract:
     label: 合同
-    type: select
-    reference_to: contracts
+    type: lookup
+    reference_to: contract
     #hidden: true
   synced_quoted:
     label: 同步的报价

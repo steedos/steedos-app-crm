@@ -110,12 +110,12 @@ fields:
     rows: 3
     group: 备注信息
   customer_sighed_by:
-    type: select
+    type: lookup
     label: 客户签字人
     reference_to: contact
     group: 签名信息
   company_sighed_by:
-    type: select
+    type: lookup
     label: 公司签字人
     reference_to: space_users
     group: 签名信息
@@ -132,7 +132,7 @@ fields:
     label: 客户签字日期
     group: 签名信息
   activated_by:
-    type: select
+    type: lookup
     label: 启用人
     reference_to: space_users
     #hidden: true

@@ -11,7 +11,9 @@ objects:
   - campaign
   - price_book
   - product
+  - contract
   - order
+  - quote
   - case
   - asset
   - tasks

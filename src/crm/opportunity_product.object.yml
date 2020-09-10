@@ -10,6 +10,7 @@ fields:
     omit: true
     readonly: true
     searchable: true
+    is_name: true
   contact:
     label: 产品
     type: text
@@ -59,12 +60,6 @@ fields:
     type: master_detail
     reference_to: opportunity
     #hidden: true
-actions:
-  selectPriceBook:
-    label: 选择价格手册
-    on: list
-  standard_new:
-    visible: false //禁用新增
 list_views:
   all:
     label: 全部商机产品
@@ -75,6 +70,12 @@ list_views:
       - primary
       - role
     filter_scope: space
+actions:
+  selectPriceBook:
+    label: 选择价格手册
+    on: list
+  standard_new:
+    visible: false //禁用新增
 permission_set:
   user:
     allowCreate: false

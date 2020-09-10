@@ -14,7 +14,7 @@ fields:
     index: true
     is_name: true
   contract_number:
-    type: lookup
+    type: master_detail
     label: 合同编号
     reference_to: contract
     required: true

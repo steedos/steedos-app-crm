@@ -27,7 +27,7 @@ fields:
     type: email
     readonly: true
   contact_name:
-    type: lookup
+    type: master_detail
     label: 联系人姓名
     reference_to: contact
   account_name:
