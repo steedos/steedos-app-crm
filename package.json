@@ -2,7 +2,7 @@
     "name": "@steedos/app-crm",
     "version": "0.0.1",
     "description": "",
-    "main": "server.js",
+    "main": "index.js",
     "scripts": {
         "debug": "nodemon server.js",
         "start": "node server.js",
