@@ -1,7 +1,7 @@
 _id: contracts
 name: 合同
 description: 管理合同、订单、付款
-icon_slds: opportunity
+icon_slds: contract
 sort: 40
 is_creator: true
 objects:

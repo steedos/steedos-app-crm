@@ -238,7 +238,7 @@ list_views:
       - owner
     filter_scope: space
   mine:
-    label: 我的客户
+    label: 我的业务机会
     columns:
       - name
       - account
