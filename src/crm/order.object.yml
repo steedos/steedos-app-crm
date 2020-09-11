@@ -82,85 +82,85 @@ fields:
     type: lookup
     label: 业务机会
     reference_to: opportunity
-    #hidden: true
+    hidden: true
   price_book:
     type: lookup
     label: 价格手册
     reference_to: price_book
-    #hidden: true
+    hidden: true
   company_authorized_date:
     type: date
     label: 公司授权日期
-    #hidden: true
+    hidden: true
   contract_name:
     type: text
     label: 合同名
-    #hidden: true
+    hidden: true
   contract_end_date:
     type: date
     label: 合同结束日期
-    #hidden: true
+    hidden: true
   activated_by:
     label: 启用人
     type: lookup
     reference_to: space_users
-    #hidden: true
+    hidden: true
   activated_date:
     label: 启用日期
     type: datetime
-    #hidden: true
+    hidden: true
   customer_authorized_date:
     type: date
     label: 客户授权日期
-    #hidden: true
+    hidden: true
   account_number:
     type: text
     label: 客户编号
-    #hidden: true
+    hidden: true
   bill_to_contact:
     type: lookup
     label: 开单对象联系人
     reference_to: contact
-    #hidden: true
+    hidden: true
   quote:
     type: lookup
     label: 报价
     reference_to: quote
-    #hidden: true
+    hidden: true
   ship_to_contact:
     type: lookup
     label: 收货方联系人
     reference_to: contact
-    #hidden: true
+    hidden: true
   order_reference_number:
     type: text
     label: 订单参考编号
-    #hidden: true
+    hidden: true
   order_name:
     type: text
     label: 订单名
-    #hidden: true
+    hidden: true
   order_owner:
     label: 订单所有人
     type: lookup
     reference_to: space_users
-    #hidden: true
+    hidden: true
   po_date:
     label: 订单日期
     type: date
-    #hidden: true
+    hidden: true
   order_end_date:
     label: 订单结束日期
     type: date
-    #hidden: true
+    hidden: true
   po_number:
     type: text
     label: 订单编号
-    #hidden: true
+    hidden: true
   order_amount:
     type: currency
     label: 订单金额
-    #hidden: true
+    hidden: true
 list_views:
   all:
     label: 所有订单

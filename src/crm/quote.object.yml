@@ -88,13 +88,13 @@ fields:
     label: 收货和处理
     group: 总计
     inlineHelpText: 报价的总的运费和手续费。
-    #hidden: true
+    hidden: true
   grand_total:
     type: currency
     label: 总计
     group: 总计
     inlineHelpText: 报价的总价格加上运费和税。
-    #hidden: true
+    hidden: true
   contact_name:
     type: lookup
     label: 联系人姓名
@@ -153,51 +153,51 @@ fields:
   product_sku:
     type: text
     label: 产品最小存货单位
-    #hidden: true
+    hidden: true
   product_currency:
     type: text
     label: 产品货币
   external_id:
     type: text
     label: 外部ID
-    #hidden: true
+    hidden: true
   external_data_source:
     type: lookup
     label: 外部数据源
     reference_to: datasources
-    #hidden: true
+    hidden: true
   quantity_scheduling_enabled:
     label: 已启用数量计划
     type: boolean
-    #hidden: true
+    hidden: true
   revenue_installment_period:
     type: text
     label: 收入分期付款周期
-    #hidden: true
+    hidden: true
   revenue_schedule_type:
     type: text
     label: 收入计划类型
-    #hidden: true
+    hidden: true
   quantity_installment_period:
     type: text
     label: 数量分期付款周期
-    #hidden: true
+    hidden: true
   number_of_quantity_installments:
     type: number
     label: 数量分期付款期数
-    #hidden: true
+    hidden: true
   quantity_schedule_type:
     type: text
     label: 数量计划类型
-    #hidden: true
+    hidden: true
   quantity_unit_of_measure:
     type: text
     label: 数量计量单位
-    #hidden: true
+    hidden: true
   display_url:
     type: url
     label: 显示URL
-    #hidden: true
+    hidden: true
 list_views:
   all:
     label: 所有报价

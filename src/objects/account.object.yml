@@ -182,7 +182,7 @@ fields:
   account_number:
     type: text
     label: 客户编号
-    #hidden: true
+    hidden: true
   rating:
     label: 分级
     type: select
@@ -194,20 +194,20 @@ fields:
         value: Cold
     filterable: true
     inlineHelpText: 您如何划分此客户等级的分类，例如，普通、重要。
-    #hidden: true
+    hidden: true
   account_source:
     type: text
     label: 客户来源
-    #hidden: true
+    hidden: true
   account_site:
     type: text
     label: 客户地点
-    #hidden: true
+    hidden: true
     inlineHelpText: 可用客户地点字段来指定同一公司的不同位置。例如，假设百度在北京和上海均设有办公室。创建两个名为百度的客户，但是客户地点的值分别为北京和上海。
   annual_revenue:
     label: 年收入
     type: currency
-    #hidden: true
+    hidden: true
   ownership:
     label: 所有权
     type: select
@@ -222,31 +222,31 @@ fields:
       - label: 其他
         value: Others
     inlineHelpText: 公司的所有权，例如，公有或私有。
-    #hidden: true
+    hidden: true
   account_currency:
     label: 客户币种
     type: text
-    #hidden: true
+    hidden: true
   account_division:
     label: 客户分部
     type: text
-    #hidden: true
+    hidden: true
   partner_account:
     label: 合作伙伴客户
     type: boolean
-    #hidden: true
+    hidden: true
   assistant:
     label: 助理
     type: text
-    #hidden: true
+    hidden: true
   asst_phone:
     label: 助理电话
     type: text
-    #hidden: true
+    hidden: true
   birthdate:
     label: 生日
     type: date
-    #hidden: true
+    hidden: true
   department:
     label: 部门
     type: text
@@ -257,27 +257,27 @@ fields:
     label: 请勿致电
     type: boolean
     inlineHelpText: 是否想要通过电话联系联系人。
-    #hidden: true
+    hidden: true
   email_opt_out:
     label: 退出邮件列表
     type: boolean
     inlineHelpText: 是否将联系人包含在群发邮件列表中。
-    #hidden: true
+    hidden: true
   fax_opt_out:
     label: 退出传真列表
     type: boolean
     inlineHelpText: 是否将联系人包含在传真中。
-    #hidden: true
+    hidden: true
   home_phone:
     label: 家庭电话
     type: text
-    #hidden: true
+    hidden: true
   name:
     type: text
     label: 姓名
     searchable: true
     sortable: true
-    #hidden: true
+    hidden: true
   lead_source:
     type: select
     label: 潜在客户来源
@@ -306,37 +306,37 @@ fields:
         value: Website
     filterable: true
     inlineHelpText: 潜在客户来源，例如，广告、合作伙伴或 Web。
-    #hidden: true
+    hidden: true
   mailing_city:
     type: text
     label: 邮寄地址-城市
     group: 地址信息
-    #hidden: true
+    hidden: true
   mailing_street:
     type: text
     label: 邮寄地址-街道
     group: 地址信息
-    #hidden: true
+    hidden: true
   mailing_zip:
     type: text
     label: 邮寄地址-邮政编码
     group: 地址信息
-    #hidden: true
+    hidden: true
   other_city:
     type: text
     label: 其他地址-城市
     group: 其他地址信息
-    #hidden: true
+    hidden: true
   other_street:
     type: text
     label: 其他地址-街道
     group: 其他地址信息
-    #hidden: true
+    hidden: true
   other_zip:
     type: text
     label: 其他地址-邮政编码
     group: 其他地址信息
-    #hidden: true
+    hidden: true
   mobile:
     label: 手机
     type: text
@@ -351,7 +351,7 @@ fields:
   other_phone:
     label: 其他电话
     type: text
-    #hidden: true
+    hidden: true
 list_views:
   all:
     label: 所有客户

@@ -28,7 +28,7 @@ fields:
     label: 合同结束日期
     type: date
     readonly: true
-    #hidden: true
+    hidden: true
   account_name:
     type: master_detail
     label: 客户名
@@ -135,19 +135,19 @@ fields:
     type: lookup
     label: 启用人
     reference_to: space_users
-    #hidden: true
+    hidden: true
   activated_date:
     type: date
     label: 启用日期
-    #hidden: true
+    hidden: true
   contract_name:
     type: text
     label: 合同名
-    #hidden: true
+    hidden: true
   currency:
     type: text
     label: 合同币种
-    #hidden: true
+    hidden: true
 list_views:
   all:
     label: 所有合同

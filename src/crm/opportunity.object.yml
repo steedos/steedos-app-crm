@@ -155,31 +155,31 @@ fields:
   private:
     label: 专用
     type: boolean
-    #hidden: true
+    hidden: true
     inlineHelpText: 业务机会是专用的。只有记录的所有人、层次结构中位于该角色之上的用户和管理员可以查看、编辑或报告专有记录。
   opportunity_score:
     label: 业务机会得分
     type: number
-    #hidden: true
+    hidden: true
   price_book:
     type: lookup
     label: 价格手册
     reference_to: price_book
-    #hidden: true
+    hidden: true
   contract:
     label: 合同
     type: lookup
     reference_to: contract
-    #hidden: true
+    hidden: true
   synced_quoted:
     label: 同步的报价
     type: boolean
-    #hidden: true
+    hidden: true
     inlineHelpText: 同步到业务机会的报价。只有一个报价可以同步到业务机会。
   quantity:
     label: 数量
     type: number
-    #hidden: true
+    hidden: true
     inlineHelpText: 如果业务机会具有产品则为“产品”相关列表中所有产品的所有数量字段值的总计。如果业务机会没有产品则为通用字段。
   expected_revenue:
     label: 预测收入
@@ -199,18 +199,18 @@ fields:
         value: Submit
       - label: 关闭
         value: Close
-    #hidden: true
+    hidden: true
     inlineHelpText: 在报表、业务机会详细信息和编辑页面、业务机会搜索和业务机会列表视图中显示的预测类别名称。业务机会的设置绑定到其阶段。
   opportunity_currency:
     label: 业务机会币种
     type: text
-    #hidden: true
+    hidden: true
     inlineHelpText: 业务机会中所有币种金额字段的默认币种。金额以业务机会币种显示，并会转换为用户的个人币种。仅在启用多种币种时可用。对于具有产品的业务机会，该币种绑定到相关联价格手册的币种。您无法直接编辑此字段，除非您首先删除产品。
   partner_account:
     label: 合作伙伴客户
     type: boolean
     readonly: true
-    #hidden: true
+    hidden: true
     inlineHelpText: 表示该业务机会属于某合作伙伴（只读）
 list_views:
   all:
