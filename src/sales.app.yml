@@ -2,7 +2,7 @@ _id: sales
 name: 销售
 description: 通过客户、潜在客户、业务机会等管理销售流程
 icon_slds: case
-sort: 10
+sort: 20
 is_creator: true
 objects:
   - opportunity
@@ -16,3 +16,12 @@ objects:
   - events 
   - case
   - reports
+mobile_objects:
+  - opportunity
+  - lead
+  - account
+  - contact
+  - campaign
+  - quote
+  - order
+  - case

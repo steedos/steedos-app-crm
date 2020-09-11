@@ -1,6 +1,6 @@
 _id: marketing
 name: 市场营销
-sort: 30
+sort: 40
 description: 自动化市场营销
 icon_slds: campaign
 is_creator: true
