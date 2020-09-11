@@ -1,5 +1,5 @@
 {
-    "name": "@steedos/crm",
+    "name": "@steedos/app-crm",
     "version": "0.0.1",
     "description": "",
     "main": "server.js",
