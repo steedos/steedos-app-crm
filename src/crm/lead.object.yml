@@ -260,7 +260,7 @@ fields:
     reference_to: contact
     #hidden: true
   converted_opportunity:
-    label: 已转换的商机
+    label: 已转换的业务机会
     type: lookup
     reference_to: opportunity
     #hidden: true

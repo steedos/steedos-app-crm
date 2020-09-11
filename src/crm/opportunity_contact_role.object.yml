@@ -1,5 +1,5 @@
 name: opportunity_contact_role
-label: 商机联系人角色
+label: 业务机会联系人角色
 icon: opportunity
 enable_search: true
 enable_api: true
@@ -13,12 +13,12 @@ fields:
     readonly: true
     searchable: true
   opportunity:
-    label: 商机名
+    label: 业务机会名
     type: master_detail
     reference_to: opportunity
     searchable: true
     required: true
-    inlineHelpText: 与联系人相关的商机的名称。
+    inlineHelpText: 与联系人相关的业务机会的名称。
   contact:
     label: 联系人
     type: lookup
@@ -28,7 +28,7 @@ fields:
   primary:
     label: 主要
     type: boolean
-    inlineHelpText: 打✔，则该联系人为商机的主要联系人。
+    inlineHelpText: 打✔，则该联系人为业务机会的主要联系人。
   role:
     label: 角色
     type: select
@@ -50,10 +50,10 @@ fields:
       - label: 意见影响人
         value: Opinions_People
     multiple: true
-    inlineHelpText: 联系人在商机中的参与角色；例如：购买者、决策者或评估者。您可以为一个联系人选择多个角色。
+    inlineHelpText: 联系人在业务机会中的参与角色；例如：购买者、决策者或评估者。您可以为一个联系人选择多个角色。
 list_views:
   all:
-    label: 全部商机联系人
+    label: 全部业务机会联系人
     columns:
       - number
       - opportunity

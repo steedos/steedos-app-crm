@@ -27,15 +27,15 @@ fields:
     label: 正在同步
     type: boolean
     readonly: true
-    inlineHelpText: 报价是否与关联的商机同步。(只读)
+    inlineHelpText: 报价是否与关联的业务机会同步。(只读)
   opportunity_name:
-    label: 商机名
+    label: 业务机会名
     type: master_detail
     reference_to: opportunity
     searchable: true
     required: true
     readonly: true
-    inlineHelpText: 与报价关联的商机名。
+    inlineHelpText: 与报价关联的业务机会名。
   status:
     type: select
     label: 状态
@@ -66,7 +66,7 @@ fields:
     type: lookup
     label: 客户
     reference_to: account
-    inlineHelpText: 报价的商机所链接的客户名。
+    inlineHelpText: 报价的业务机会所链接的客户名。
   description:
     label: 描述
     type: textarea

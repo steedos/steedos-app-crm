@@ -80,7 +80,7 @@ fields:
     rows: 3
   opportunity:
     type: lookup
-    label: 商机
+    label: 业务机会
     reference_to: opportunity
     #hidden: true
   price_book:

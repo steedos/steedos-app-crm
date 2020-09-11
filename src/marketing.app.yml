@@ -1,0 +1,12 @@
+_id: marketing
+name: 市场营销
+sort: 30
+description: 自动化市场营销
+icon_slds: opportunity
+is_creator: true
+objects:
+  - campaign
+  - lead
+  - contact
+  - opportunity
+  - reports
