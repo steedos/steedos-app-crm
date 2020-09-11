@@ -1,6 +1,6 @@
-_id: contract
+_id: order
 name: 订单
-description: 管理合同、订单、付款
+description: 管理合同、订单、产品、价格
 icon_slds: contract
 sort: 50
 is_creator: true
