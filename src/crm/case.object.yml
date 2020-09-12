@@ -140,49 +140,49 @@ fields:
     type: lookup
     label: 资产
     reference_to: asset
-    #hidden: true
+    hidden: true
   order_reference_number:
     type: text
     label: 订单参考编号
-    #hidden: true
+    hidden: true
   case_currency:
     type: text
     label: 个案币种
-    #hidden: true
+    hidden: true
   closed_when_created:
     label: 创建时关闭
     type: boolean
-    #hidden: true
+    hidden: true
   business_hours:
     label: 工作时间
     type: lookup
     reference_to: business_hours
-    #hidden: true
+    hidden: true
   escalated:
     label: 已升级
     type: boolean
-    #hidden: true
+    hidden: true
   datetime_opened:
     label: 开始日期
     type: datetime
-    #hidden: true
+    hidden: true
   parent_case:
     type: lookup
     label: 父级个案
     reference_to: case
-    #hidden: true
+    hidden: true
   datetime_closeed:
     label: 结束日期
     type: datetime
-    #hidden: true
+    hidden: true
   contact_fax:
     type: text
     label: 联系人传真
-    #hidden: true
+    hidden: true
   contact_mobile:
     type: text
     label: 联系人移动电话
-    #hidden: true
+    hidden: true
 list_views:
   all:
     label: 所有订单

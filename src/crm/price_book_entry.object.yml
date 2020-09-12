@@ -37,7 +37,7 @@ fields:
   currency:
     type: text
     label: 货币
-    #hidden: true
+    hidden: true
     inlineHelpText: 此字段仅在启用多个货币时可用。它表示用于价目表条目（产品和标价）的货币。
 list_views:
   all:

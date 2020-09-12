@@ -116,25 +116,25 @@ fields:
   email_opt_out:
     label: 退出邮件列表
     type: boolean
-    #hidden: true
+    hidden: true
   fax_opt_out:
     label: 退出传真列表
     type: boolean
-    #hidden: true
+    hidden: true
   do_not_call:
     label: 请勿致电
     type: boolean
     inlineHelpText: 是否想要通过电话联系联系人。
-    #hidden: true
+    hidden: true
   campaign_member_currency:
     label: 市场活动成员币种
     type: text
     inlineHelpText: 市场活动成员中货币字段的默认币种。仅适用于使用多币种的组织。
-    #hidden: true
+    hidden: true
   last_responded:
     type: date
     label: 上次响应日期
-    #hidden: true
+    hidden: true
 list_views:
   all:
     label: 所有市场活动成员

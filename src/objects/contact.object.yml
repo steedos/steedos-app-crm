@@ -84,65 +84,65 @@ fields:
   last_save_date:
     label: 上次保持联系保存日期
     type: date
-    #hidden: true
+    hidden: true
   last_request_date:
     label: 上次保持联系请求日期
     type: date
-    #hidden: true
+    hidden: true
   individual:
     label: 个人
     type: text
-    #hidden: true
+    hidden: true
   other_city:
     type: text
     label: 其他地址-城市
     group: 其他地址信息
-    #hidden: true
+    hidden: true
   other_street:
     type: text
     label: 其他地址-街道
     group: 其他地址信息
-    #hidden: true
+    hidden: true
   other_zip:
     type: text
     label: 其他地址-邮政编码
     group: 其他地址信息
-    #hidden: true
+    hidden: true
   other_phone:
     label: 其他电话
     type: text
-    #hidden: true
+    hidden: true
   birthdate:
     label: 生日
     type: date
-    #hidden: true
+    hidden: true
   assistant:
     label: 助理
     type: text
-    #hidden: true
+    hidden: true
   asst_phone:
     label: 助理电话
     type: text
-    #hidden: true
+    hidden: true
   do_not_call:
     label: 请勿致电
     type: boolean
     inlineHelpText: 是否想要通过电话联系联系人。
-    #hidden: true
+    hidden: true
   email_opt_out:
     label: 退出邮件列表
     type: boolean
     inlineHelpText: 是否将联系人包含在群发邮件列表中。
-    #hidden: true
+    hidden: true
   fax_opt_out:
     label: 退出传真列表
     type: boolean
     inlineHelpText: 是否将联系人包含在传真中。
-    #hidden: true
+    hidden: true
   home_phone:
     label: 家庭电话
     type: text
-    #hidden: true
+    hidden: true
   lead_source:
     type: select
     label: 潜在客户来源
@@ -171,17 +171,17 @@ fields:
         value: Website
     filterable: true
     inlineHelpText: 潜在客户来源，例如，广告、合作伙伴或 Web。
-    #hidden: true
+    hidden: true
   contact_currency:
     label: 联系人币种
     type: text
-    #hidden: true
+    hidden: true
     inlineHelpText: 联系人中所有币种金额字段的默认币种。仅在使用多种货币的组织中可用。
   asset:
     type: lookup
     label: 资产
     reference_to: asset
-    #hidden: true
+    hidden: true
 list_views:
   all:
     label: 所有联系人

@@ -204,66 +204,66 @@ fields:
   individual:
     label: 个人
     type: text
-    #hidden: true
+    hidden: true
   fax:
     label: 传真
     type: text
-    #hidden: true
+    hidden: true
   annual_revenue:
     label: 年收入
     type: currency
-    #hidden: true
+    hidden: true
   description:
     label: 描述
     type: textarea
-    #hidden: true
+    hidden: true
   do_not_call:
     label: 请勿致电
     type: boolean
-    #hidden: true
+    hidden: true
   email_opt_out:
     label: 退出邮件列表
     type: boolean
-    #hidden: true
+    hidden: true
   fax_opt_out:
     label: 退出传真列表
     type: boolean
-    #hidden: true
+    hidden: true
   last_transfer_date:
     label: 上次更改客户经理日期
     type: date
-    #hidden: true
+    hidden: true
   partner_account:
     label: 合作伙伴客户
     type: text
-    #hidden: true
+    hidden: true
   read:
     label: 读取
     type: boolean
-    #hidden: true
+    hidden: true
   unread:
     label: 未读
     type: boolean
-    #hidden: true
+    hidden: true
   converted:
     label: 已转换
     type: boolean
-    #hidden: true
+    hidden: true
   converted_account:
     label: 已转换的客户
     type: lookup
     reference_to: account
-    #hidden: true
+    hidden: true
   converted_contact:
     label: 已转换的联系人
     type: lookup
     reference_to: contact
-    #hidden: true
+    hidden: true
   converted_opportunity:
     label: 已转换的业务机会
     type: lookup
     reference_to: opportunity
-    #hidden: true
+    hidden: true
 list_views:
   today:
     label: 今天的潜在客户

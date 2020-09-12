@@ -35,12 +35,12 @@ fields:
     label: 折扣（%）
     type: currency
     inlineHelpText: 产品的百分比折扣。
-    #hidden: true
+    hidden: true
   subtotal:
     label: 小计
     type: number
     inlineHelpText: 标准和折扣价格之间的差值。业务机会币种与用户币种不同时转换后的币种金额。
-    #hidden: true
+    hidden: true
   total_price:
     label: 总价
     type: currency
@@ -59,7 +59,7 @@ fields:
     label: 业务机会名
     type: master_detail
     reference_to: opportunity
-    #hidden: true
+    hidden: true
 list_views:
   all:
     label: 全部业务机会产品
