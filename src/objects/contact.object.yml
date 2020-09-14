@@ -205,6 +205,25 @@ list_views:
       - email
       - phone
     filter_scope: mine
+actions:
+  createSupplierSpaceUser:
+    label: 创建供应商用户
+    on: record_only_more
+  viewSupplierSpaceUser:
+    label: 查看供应商用户
+    on: record_only_more
+  disableSupplierSpaceUser:
+    label: 禁用供应商用户
+    on: record_only_more
+  createCustomerSpaceUser:
+    label: 创建客户用户
+    on: record_only_more
+  viewCustomerSpaceUser:
+    label: 查看客户用户
+    on: record_only_more
+  disableCustomerSpaceUser:
+    label: 禁用客户用户
+    on: record_only_more
 permission_set:
   user:
     allowCreate: true

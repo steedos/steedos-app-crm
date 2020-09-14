@@ -383,6 +383,19 @@ list_views:
       - rating
       - owner
     filter_scope: mine
+actions:
+  enableSupplier:
+    label: 作为供应商启用
+    on: record_only_more
+  disableSupplier:
+    label: 禁用供应商账户
+    on: record_only_more
+  enableCustomer:
+    label: 作为客户启用
+    on: record_only_more
+  disableCustomer:
+    label: 禁用客户账户
+    on: record_only_more
 permission_set:
   user:
     allowCreate: false
