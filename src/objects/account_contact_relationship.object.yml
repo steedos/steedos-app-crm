@@ -11,6 +11,7 @@ fields:
     omit: true
     readonly: true
     searchable: true
+    is_name: true
   relationship_strength:
     label: 亲密程度
     type: select
@@ -79,20 +80,22 @@ list_views:
   all:
     label: 所有客户联系人关系
     columns:
-      - name
-      - phone
-      - type
-      - rating
-      - owner
+      - number
+      - account
+      - direct
+      - contact
+      - start_date
+      - end_date
     filter_scope: space
   recent:
     label: 最近查看
     columns:
-      - name
-      - phone
-      - type
-      - rating
-      - owner
+      - number
+      - account
+      - direct
+      - contact
+      - start_date
+      - end_date
     filter_scope: space
 actions:
   addContact:

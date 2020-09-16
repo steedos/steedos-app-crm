@@ -11,9 +11,10 @@ fields:
     readonly: true
     searchable: true
     is_name: true
-  contact:
+  product:
     label: 产品
-    type: text
+    type: lookup
+    reference_to: product
     required: true
   quantity:
     label: 数量
@@ -43,18 +44,20 @@ fields:
     hidden: true
   total_price:
     label: 总价
-    type: currency
+    type: formula
+    formula_type: number
+    scale: 2
+    formula: "{sales_price}*{quantity}"
     inlineHelpText: 业务机会产品所有产品金额的总计。
-    readonly: true
   list_price:
     label: 价目表价格
     type: currency
     inlineHelpText: 价格手册中的产品价格（包含币种）。只读。
-    readonly: true
+    readonly: false
   product_code:
     label: 产品代码
     type: text
-    readonly: true
+    readonly: false
   opportunity:
     label: 业务机会名
     type: master_detail
@@ -65,10 +68,9 @@ list_views:
     label: 全部业务机会产品
     columns:
       - number
-      - opportunity
-      - contact
-      - primary
-      - role
+      - product
+      - total_price
+      - date
     filter_scope: space
 actions:
   selectPriceBook:

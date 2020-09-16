@@ -14,12 +14,18 @@ fields:
     type: currency
     label: 定价
   subtotal:
-    type: currency
+    type: formula
     label: 小计
+    formula_type: number
+    scale: 2
+    formula: "{sales_price}*{quantity}"
     inlineHelpText: 行项目的销售价格与数量相乘。
   total_price:
-    type: currency
+    type: formula
     label: 总价
+    formula_type: number
+    scale: 2
+    formula: "{subtotal}*{discount}*0.01"
     inlineHelpText: 行项目的销售价格和数量相乘再减去折扣。
   discount:
     type: number
@@ -50,14 +56,15 @@ fields:
     readonly: true
     searchable: true
     index: true
+    is_name: true
   schedule:
     label: 计划
     type: boolean
     inlineHelpText: 行项目是否在业务机会中使用计划。当业务机会产品被复制到报价中时，默认计划不会从业务机会中移转。
   sales_price:
-    type: number
+    type: currency
     label: 销售价格
-    readonly: true
+    readonly: false
     inlineHelpText: 您想使用的产品价格。最初，业务机会或报价产品的销售价格为价格手册中该产品的价目表价格，但您可在此进行更改。如果报价与业务机会同步，该字段会从报价行项目更新到业务机会产品。
   price_book_entry:
     type: lookup
@@ -68,6 +75,7 @@ list_views:
   all:
     label: 所有报价行条目
     columns:
+      - line_number
       - quote_name
       - product
       - list_price
