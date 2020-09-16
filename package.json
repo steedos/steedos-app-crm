@@ -7,10 +7,6 @@
         "debug": "nodemon server.js",
         "start": "node server.js",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "yarn buildPackages",
-        "buildPackages": "cd ../../ && yarn compile && cd apps/steedos-app-crm/",
-        "prepare": "yarn build",
-        "clear": "rd /s /q node_modules\\@steedos\\auth\\node_modules\\@steedos node_modules\\@steedos\\core\\node_modules\\@steedos node_modules\\@steedos\\objectql\\node_modules\\@steedos node_modules\\@steedos\\plugin-jsreport\\node_modules\\@steedos node_modules\\@steedos\\accounts\\node_modules\\@steedos",
         "ups": "yarn upgrade -S @steedos --latest && yarn upgrade steedos-server --latest"
     },
     "repository": {
