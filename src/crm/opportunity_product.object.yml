@@ -62,7 +62,7 @@ fields:
     label: 业务机会名
     type: master_detail
     reference_to: opportunity
-    hidden: true
+    #hidden: true(主表不能隐藏)
 list_views:
   all:
     label: 全部业务机会产品

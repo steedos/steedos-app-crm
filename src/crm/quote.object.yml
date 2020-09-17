@@ -90,11 +90,15 @@ fields:
     inlineHelpText: 报价的总的运费和手续费。
     hidden: true
   grand_total:
-    type: currency
     label: 总计
+    type: summary
+    summary_object: quote_line_item
+    summary_type: sum
+    summary_field: "total_price"
+    scale: 2
     group: 总计
     inlineHelpText: 报价的总价格加上运费和税。
-    hidden: true
+    #hidden: true
   contact_name:
     type: lookup
     label: 联系人姓名

@@ -32,12 +32,15 @@ fields:
     type: date
     label: 开始日期
     inlineHelpText: 订单产品的开始日期。
-    hidden: true
+    #hidden: true
   total_price:
     label: 总价
-    type: currency
+    type: formula
+    formula_type: number
+    scale: 2
+    formula: "{unit_price}*{quantity}"
     inlineHelpText: 订单产品数量乘以单价。
-    hidden: true
+    #hidden: true
   quote_line_item:
     type: lookup
     label: 报价行项目
@@ -53,7 +56,7 @@ fields:
     reference_to: order
     searchable: true
     inlineHelpText: 本订单产品的父级订单。
-    hidden: true
+    #hidden: true(主表不能隐藏)
   order_product_number:
     label: 订单产品编号
     type: autonumber
@@ -61,8 +64,9 @@ fields:
     readonly: true
     searchable: true
     index: true
+    is_name: true
     inlineHelpText: 识别订单产品记录的自动生成的编号。（只读）
-    hidden: true
+    #hidden: true
   available_quantity:
     label: 可用数量
     type: number
@@ -102,8 +106,10 @@ list_views:
   all:
     label: 所有订单产品
     columns:
+      - order_product_number
       - product
       - order
+      - total_price
       - unit_price
       - quantity
       - start_date

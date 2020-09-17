@@ -14,8 +14,8 @@ fields:
     type: currency
     label: 定价
   subtotal:
-    type: formula
     label: 小计
+    type: formula
     formula_type: number
     scale: 2
     formula: "{sales_price}*{quantity}"
@@ -25,7 +25,7 @@ fields:
     label: 总价
     formula_type: number
     scale: 2
-    formula: "{subtotal}*{discount}*0.01"
+    formula: "{subtotal}*(1-{discount}*0.01)"
     inlineHelpText: 行项目的销售价格和数量相乘再减去折扣。
   discount:
     type: number
