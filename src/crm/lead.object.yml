@@ -28,11 +28,11 @@ fields:
         value: Unqualified
     filterable: true
     defaultValue: 'New'
-  lead_owner:
-    type: text
+  owner:
     label: 我方客户经理
-    defaultValue: "{user.name}"
-    readonly: true
+    sortable: true
+    omit: false
+    hidden: false
   name:
     type: text
     label: 姓名
@@ -196,9 +196,10 @@ fields:
     label: 邮政编码
     type: text
     group: 地址信息
-  campaign:
+  campaign_id:
     label: 市场活动
-    type: text
+    type: lookup
+    reference_to: campaign
     readonly: true
     omit: true
   individual:
@@ -221,7 +222,7 @@ fields:
     label: 请勿致电
     type: boolean
     hidden: true
-  email_opt_out:
+  has_opted_out_of_email:
     label: 退出邮件列表
     type: boolean
     hidden: true

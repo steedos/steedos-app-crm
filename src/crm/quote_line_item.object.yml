@@ -5,7 +5,7 @@ enable_files: true
 enable_search: true
 enable_audit: true
 fields:
-  product:
+  product_id:
     type: lookup
     label: 产品
     reference_to: product
@@ -18,7 +18,7 @@ fields:
     type: formula
     formula_type: number
     scale: 2
-    formula: "{sales_price}*{quantity}"
+    formula: "{unit_price}*{quantity}"
     inlineHelpText: 行项目的销售价格与数量相乘。
   total_price:
     type: formula
@@ -31,7 +31,7 @@ fields:
     type: number
     label: 折扣（%）
     inlineHelpText: 您应用到行项目的折扣。您可以使用百分比符号输入数字，也可以不使用百分比符号输入数字。您可以使用最多两个小数位。
-  quote_name:
+  quote_id:
     label: 报价名称
     type: master_detail
     reference_to: quote
@@ -44,7 +44,7 @@ fields:
     type: date
     label: 日期
     inlineHelpText: 产品日期、有效日期或产品的其他日期。
-  line_item_description:
+  description:
     label: 行项目描述
     type: textarea
     is_wide: true
@@ -57,16 +57,16 @@ fields:
     searchable: true
     index: true
     is_name: true
-  schedule:
+  has_schedule:
     label: 计划
     type: boolean
     inlineHelpText: 行项目是否在业务机会中使用计划。当业务机会产品被复制到报价中时，默认计划不会从业务机会中移转。
-  sales_price:
+  unit_price:
     type: currency
     label: 销售价格
     readonly: false
     inlineHelpText: 您想使用的产品价格。最初，业务机会或报价产品的销售价格为价格手册中该产品的价目表价格，但您可在此进行更改。如果报价与业务机会同步，该字段会从报价行项目更新到业务机会产品。
-  price_book_entry:
+  price_book_entry_id:
     type: lookup
     label: 价格手册条目
     reference_to: price_book_entry
@@ -76,8 +76,8 @@ list_views:
     label: 所有报价行条目
     columns:
       - line_number
-      - quote_name
-      - product
+      - quote_id
+      - product_id
       - list_price
       - total_price
       - date

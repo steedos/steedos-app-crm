@@ -11,7 +11,7 @@ fields:
     readonly: true
     searchable: true
     is_name: true
-  product:
+  product_id:
     label: 产品
     type: lookup
     reference_to: product
@@ -20,26 +20,26 @@ fields:
     label: 数量
     type: number
     required: true
-  sales_price:
+  unit_price:
     label: 销售价格
     type: currency
     required: true
     inlineHelpText: 业务机会产品中产品的价格。对于没有相关计划的业务机会产品，销售价格可以编辑。当计划与业务机会产品相关时，销售价格变为只读。
-  date:
+  service_date:
     label: 日期
     type: date
     inlineHelpText: 某个业务机会产品的关闭日期。
-  line_description:
+  description:
     label: 行描述
     type: text
   discount:
     label: 折扣（%）
-    type: currency
+    type: number
     inlineHelpText: 产品的百分比折扣。
     hidden: true
   subtotal:
     label: 小计
-    type: number
+    type: currency
     inlineHelpText: 标准和折扣价格之间的差值。业务机会币种与用户币种不同时转换后的币种金额。
     hidden: true
   total_price:
@@ -58,7 +58,7 @@ fields:
     label: 产品代码
     type: text
     readonly: false
-  opportunity:
+  opportunity_id:
     label: 业务机会名
     type: master_detail
     reference_to: opportunity
@@ -68,9 +68,9 @@ list_views:
     label: 全部业务机会产品
     columns:
       - number
-      - product
+      - product_id
       - total_price
-      - date
+      - service_date
     filter_scope: space
 actions:
   selectPriceBook:

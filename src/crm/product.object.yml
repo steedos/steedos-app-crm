@@ -5,36 +5,41 @@ enable_files: true
 enable_search: true
 enable_audit: true
 fields:
-  product_name:
+  name:
     type: text
     label: 产品名称
     required: true
     index: true
     searchable: true
     sortable: true
-    is_name: true
-  product_family:
-    type: text
+  family:
+    type: select
     label: 产品系列
+    searchable: true
+    sortable: true
+    options:
+      - label: 无
+        value: none
   product_code:
     type: text
     label: 产品代码
-  active:
+  is_active:
     label: 已启用
     type: toggle
     inlineHelpText: 指示产品已准备好在价目表、业务机会或报价中使用，以及您是否可以在视图中查看产品。
-  product_description:
+  description:
     label: 产品描述
     type: textarea
     is_wide: true
     rows: 3
-  product_sku:
+  stock_keeping_unit:
     type: text
     label: 产品最小存货单位
     hidden: true
   product_currency:
-    type: text
+    type: lookup
     label: 产品货币
+    reference_to: currency
   external_id:
     type: text
     label: 外部ID
@@ -88,10 +93,10 @@ list_views:
   all:
     label: 所有产品
     columns:
-      - product_name
+      - name
       - product_code
-      - product_family
-      - product_description
+      - family
+      - description
     filter_scope: space
   recent:
     label: 最近查看

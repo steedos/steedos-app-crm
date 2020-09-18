@@ -7,19 +7,18 @@ enable_api: true
 enable_share: true
 enable_audit: true
 fields:
-  account_name:
+  name:
     label: 客户名
     type: text
     searchable: true
     required: true
     sortable: true
     index: true
-    is_name: true
-  account_owner:
-    type: text
+  owner:
     label: 我方客户经理
-    defaultValue: "{user.name}"
-    readonly: true
+    sortable: true
+    omit: false
+    hidden: false
   type:
     label: 类型
     type: select
@@ -46,7 +45,7 @@ fields:
       - label: 其他
         value: Other
     filterable: true
-  parent_account:
+  parent_id:
     type: lookup
     label: 母公司
     reference_to: account
@@ -137,10 +136,10 @@ fields:
       - label: 公用事业
         value: Utilities
     filterable: true
-  employees:
+  number_of_employees:
     type: number
     label: 员工人数
-  country:
+  state:
     label: 区域
     type: select
     sortable: true
@@ -153,6 +152,36 @@ fields:
         value: CQ
       - label: 天津
         value: TJ
+      - label: 江苏
+        value: JS
+      - label: 浙江
+        value: ZJ
+      - label: 广东
+        value: GD
+      - label: 山东
+        value: SD
+      - label: 河北
+        value: HB
+      - label: 河南
+        value: HN
+      - label: 安徽
+        value: AH
+      - label: 江西
+        value: JX
+      - label: 湖北
+        value: HUB
+      - label: 湖南
+        value: HUN
+      - label: 四川
+        value: SC
+      - label: 云南
+        value: YN
+      - label: 辽宁
+        value: LN
+      - label: 吉林
+        value: GL
+      - label: 黑龙江
+        value: HLJ
     filterable: true
     inlineHelpText: 客户被分配至的区域。
   billing_city:
@@ -199,7 +228,7 @@ fields:
     type: text
     label: 客户来源
     hidden: true
-  account_site:
+  site:
     type: text
     label: 客户地点
     hidden: true
@@ -258,7 +287,7 @@ fields:
     type: boolean
     inlineHelpText: 是否想要通过电话联系联系人。
     hidden: true
-  email_opt_out:
+  has_opted_out_of_email:
     label: 退出邮件列表
     type: boolean
     inlineHelpText: 是否将联系人包含在群发邮件列表中。
@@ -271,12 +300,6 @@ fields:
   home_phone:
     label: 家庭电话
     type: text
-    hidden: true
-  name:
-    type: text
-    label: 姓名
-    searchable: true
-    sortable: true
     hidden: true
   lead_source:
     type: select
@@ -356,7 +379,7 @@ list_views:
   all:
     label: 所有客户
     columns:
-      - account_name
+      - name
       - phone
       - mobile
       - type
@@ -366,7 +389,7 @@ list_views:
   recent:
     label: 最近查看
     columns:
-      - account_name
+      - name
       - phone
       - mobile
       - type
@@ -376,7 +399,7 @@ list_views:
   mine:
     label: 我的客户
     columns:
-      - account_name
+      - name
       - phone
       - mobile
       - type

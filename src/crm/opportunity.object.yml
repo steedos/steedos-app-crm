@@ -16,12 +16,12 @@ fields:
     required: true
     sortable: true
     index: true
-  lead_owner:
-    type: text
+  owner:
     label: 我方客户经理
-    defaultValue: "{user.name}"
-    readonly: true
-  account:
+    sortable: true
+    omit: false
+    hidden: false
+  account_id:
     label: 客户
     type: master_detail
     reference_to: account
@@ -43,7 +43,7 @@ fields:
       - label: 新业务
         value: New_Business
     inlineHelpText: 业务机会的类型，例如“现有业务”或“新业务”。
-  stage:
+  stage_name:
     label: 业务机会阶段
     type: select
     options:
@@ -61,9 +61,10 @@ fields:
         value: Closed_Lost
     required: true
     inlineHelpText: 管理员将此选项列表中的值与决定业务机会如何对您的预测进行贡献的“预测类别”值关联。如果原始日期在未来，则当您将未处理业务机会的阶段设为已结束/赢得客户，则关闭日期设为协调世界时 (UTC) 的当前日期。在一天的某个时间，UTC 可能与您的时区相差一天。如果结束日期是过去业务机会结束的日期，则日期不能更改。
-  primary_campaign_source:
+  campaign_id:
     label: 主要市场活动源
-    type: text
+    type: lookup
+    reference_to: campaign
     index: true
     inlineHelpText: 负责产生业务机会的市场活动的名称。对于在潜在客户转换期间创建的业务机会，此字段自动以潜在客户中的市场活动名称填充。如果潜在客户具有多个相关联市场活动，则将具有最新更新的成员状态的市场活动插入业务机会。对于具有多个影响的市场活动的业务机会，单击业务机会详细信息页面上“市场活动影响”相关列表中的主要市场活动旁边的编辑并选择主要市场活动源复选框。该市场活动显示在业务机会上主要市场活动源字段上。
   probability	:
@@ -97,7 +98,7 @@ fields:
   discovery_completed:
     label: 勘察结束
     type: boolean
-  ROI_analysis_completed:
+  roi_analysis_completed:
     label: 完成ROI分析
     type: boolean
   loss_reason:
@@ -155,31 +156,31 @@ fields:
     is_wide: true
     rows: 3
     group: 其他信息
-  private:
+  is_private:
     label: 专用
     type: boolean
     hidden: true
     inlineHelpText: 业务机会是专用的。只有记录的所有人、层次结构中位于该角色之上的用户和管理员可以查看、编辑或报告专有记录。
-  opportunity_score:
+  iq_score:
     label: 业务机会得分
     type: number
     hidden: true
-  price_book:
+  price_book_id:
     type: lookup
     label: 价格手册
     reference_to: price_book
     hidden: true
-  contract:
+  contract_id:
     label: 合同
     type: lookup
-    reference_to: contract
+    reference_to: contracts
     hidden: true
   synced_quoted:
     label: 同步的报价
     type: boolean
     hidden: true
     inlineHelpText: 同步到业务机会的报价。只有一个报价可以同步到业务机会。
-  quantity:
+  total_opportunity_quantity:
     label: 数量
     type: number
     hidden: true
@@ -206,7 +207,8 @@ fields:
     inlineHelpText: 在报表、业务机会详细信息和编辑页面、业务机会搜索和业务机会列表视图中显示的预测类别名称。业务机会的设置绑定到其阶段。
   opportunity_currency:
     label: 业务机会币种
-    type: text
+    type: lookup
+    reference_to: currency
     hidden: true
     inlineHelpText: 业务机会中所有币种金额字段的默认币种。金额以业务机会币种显示，并会转换为用户的个人币种。仅在启用多种币种时可用。对于具有产品的业务机会，该币种绑定到相关联价格手册的币种。您无法直接编辑此字段，除非您首先删除产品。
   partner_account:
@@ -220,10 +222,10 @@ list_views:
     label: 全部业务机会
     columns:
       - name
-      - account
+      - account_id
       - amount
       - due_date
-      - stage
+      - stage_name
       - probability
       - lead_source
       - owner
@@ -232,10 +234,10 @@ list_views:
     label: 最近查看
     columns:
       - name
-      - account
+      - account_id
       - amount
       - due_date
-      - stage
+      - stage_name
       - probability
       - lead_source
       - owner
@@ -244,10 +246,10 @@ list_views:
     label: 我的业务机会
     columns:
       - name
-      - account
+      - account_id
       - amount
       - due_date
-      - stage
+      - stage_name
       - probability
       - lead_source
       - owner

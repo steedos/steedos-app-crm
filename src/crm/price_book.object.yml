@@ -5,13 +5,12 @@ enable_files: true
 enable_search: true
 enable_audit: true
 fields:
-  price_book_name:
+  name:
     type: text
     label: 价格手册名
     required: true
     index: true
-    is_name: true
-  active:
+  is_active:
     label: 已启用
     type: toggle
     defaultValue: true
@@ -26,8 +25,8 @@ list_views:
   all:
     label: 所有价格手册
     columns:
-      - price_book_name
-      - active
+      - name
+      - is_active
       - is_standard
       - description
     filter_scope: space

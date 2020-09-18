@@ -1,24 +1,18 @@
-name: contract_contact_role
-label: 合同联系人角色
-icon: contract
+name: currency
+label: 货币
+icon: currency
 enable_files: true
 enable_search: true
 enable_audit: true
 fields:
-  contract:
-    type: master_detail
-    label: 合同
-    reference_to: contract
-  contact:
-    type: lookup
-    label: 启用人
-    reference_to: contact
+  name:
+    type: text
+    label: 货币名称
 list_views:
   all:
-    label: 所有合同联系人角色
+    label: 所有货币
     columns:
-      - contract
-      - contact
+      - name
   recent:
     label: 最近查看
     filter_scope: space

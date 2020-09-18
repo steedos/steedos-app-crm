@@ -5,11 +5,11 @@ enable_files: true
 enable_search: true
 enable_audit: true
 fields:
-  case_owner:
-    type: text
+  owner:
     label: 个案所有人
-    defaultValue: "{user.name}"
-    readonly: true
+    sortable: true
+    omit: false
+    hidden: false
   contact_phone:
     label: 联系人电话
     type: text
@@ -26,11 +26,11 @@ fields:
     label: 联系人电子邮件
     type: email
     readonly: true
-  contact_name:
+  contact_id:
     type: master_detail
     label: 联系人姓名
     reference_to: contact
-  account_name:
+  account_id:
     type: lookup
     label: 客户
     reference_to: account
@@ -136,7 +136,7 @@ fields:
     label: Web电话
     type: text
     group: Web信息
-  asset:
+  asset_id:
     type: lookup
     label: 资产
     reference_to: asset
@@ -153,7 +153,7 @@ fields:
     label: 创建时关闭
     type: boolean
     hidden: true
-  business_hours:
+  business_hours_id:
     label: 工作时间
     type: lookup
     reference_to: business_hours
@@ -185,14 +185,14 @@ fields:
     hidden: true
 list_views:
   all:
-    label: 所有订单
+    label: 所有个案
     columns:
       - case_number
-      - account_name
-      - order_amount
-      - order_start_date
+      - account_id
+      - case_reason
+      - priority
       - status
-      - contract_number
+      - type
     filter_scope: space
   recent:
     label: 最近查看

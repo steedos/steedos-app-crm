@@ -16,19 +16,18 @@ fields:
     type: date
     label: 到期日期
     inlineHelpText: 该报价的失效日期。
-  quote_name:
+  name:
     type: text
     label: 报价名称
     required: true
     index: true
     searchable: true
-    is_name: true
-  syncing:
+  is_syncing:
     label: 正在同步
     type: boolean
     readonly: true
     inlineHelpText: 报价是否与关联的业务机会同步。(只读)
-  opportunity_name:
+  opportunity_id:
     label: 业务机会名
     type: master_detail
     reference_to: opportunity
@@ -62,7 +61,7 @@ fields:
     filterable: true
     defaultValue: 'Draft'
     inlineHelpText: 报价的状态。
-  account_name:
+  account_id:
     type: lookup
     label: 客户
     reference_to: account
@@ -83,7 +82,7 @@ fields:
     label: 税收
     group: 总计
     inlineHelpText: 报价的总税额。
-  shipping_and_handling:
+  shipping_handling:
     type: currency
     label: 收货和处理
     group: 总计
@@ -99,7 +98,7 @@ fields:
     group: 总计
     inlineHelpText: 报价的总价格加上运费和税。
     #hidden: true
-  contact_name:
+  contact_id:
     type: lookup
     label: 联系人姓名
     reference_to: contact
@@ -120,37 +119,37 @@ fields:
     label: 传真
     group: 准备用于
     inlineHelpText: 与报价关联的联系人传真号码。如果可用，则在您添加联系人时自动填写。
-  bill_to_name:
+  billing_name:
     type: text
     label: 收票人姓名
     group: 地址信息
-  ship_to_name:
+  shipping_name:
     type: text
     label: 收货人姓名
     group: 地址信息
     inlineHelpText: 报价行项目的收货的实体（如个人或公司）名称。
-  bill_to_city:
+  billing_city:
     type: text
     label: 收票人城市
     group: 地址信息
-  ship_to_city:
+  shipping_city:
     type: text
     label: 收货人城市
     group: 地址信息
-  bill_to_street:
+  billing_street:
     type: text
     label: 收票人街道
     group: 地址信息
-  ship_to_street:
+  shipping_street:
     type: text
     label: 收货人街道
     group: 地址信息
     inlineHelpText: 与报价关联的客户的发货地址。
-  bill_to_zip:
+  billing_zip:
     type: text
     label: 开收票人邮政编码
     group: 地址信息
-  ship_to_zip:
+  shipping_zip:
     type: text
     label: 收货人邮政编码
     group: 地址信息
@@ -206,10 +205,10 @@ list_views:
   all:
     label: 所有报价
     columns:
-      - quote_name
-      - opportunity_name
+      - name
+      - opportunity_id
       - expiration_date
-      - syncing
+      - is_syncing
       - status
       - grand_total
     filter_scope: space

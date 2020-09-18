@@ -5,7 +5,7 @@ enable_files: true
 enable_search: true
 enable_audit: true
 fields:
-  product:
+  product_id:
     type: lookup
     label: 产品
     reference_to: product
@@ -23,12 +23,12 @@ fields:
     type: currency
     readonly: true
     inlineHelpText: 父级订单上的价格手册设定的默认价格。（只读）
-  line_description:
+  description:
     label: 行备注
     type: textarea
     is_wide: true
     rows: 3
-  start_date:
+  service_date:
     type: date
     label: 开始日期
     inlineHelpText: 订单产品的开始日期。
@@ -41,7 +41,7 @@ fields:
     formula: "{unit_price}*{quantity}"
     inlineHelpText: 订单产品数量乘以单价。
     #hidden: true
-  quote_line_item:
+  quote_line_item_id:
     type: lookup
     label: 报价行项目
     reference_to: quote_line_item
@@ -50,14 +50,14 @@ fields:
   end_date:
     type: date
     label: 结束日期
-  order:
+  order_id:
     label: 订单
     type: master_detail
     reference_to: order
     searchable: true
     inlineHelpText: 本订单产品的父级订单。
     #hidden: true(主表不能隐藏)
-  order_product_number:
+  order_item_number:
     label: 订单产品编号
     type: autonumber
     formula: "{YYYY}{MM}{00000}"
@@ -73,7 +73,7 @@ fields:
     readonly: true
     inlineHelpText: 可用于减少的单位数量。当启用减单时，订单产品的可用数量将更新，以反映出相关减单产品的数量。值必须始终大于或等于 0。（只读）
     hidden: true
-  original_order_product:
+  original_order_product_id:
     type: text
     label: 原始订单产品
     readonly: true
@@ -97,7 +97,7 @@ fields:
     label: 计划
     type: boolean
     hidden: true
-  price_book_entry:
+  price_book_entry_id:
     type: lookup
     label: 价格手册条目
     reference_to: price_book_entry
@@ -106,13 +106,13 @@ list_views:
   all:
     label: 所有订单产品
     columns:
-      - order_product_number
-      - product
-      - order
+      - order_item_number
+      - product_id
+      - order_id
       - total_price
       - unit_price
       - quantity
-      - start_date
+      - service_date
       - end_date
     filter_scope: space
   recent:

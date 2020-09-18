@@ -13,21 +13,21 @@ fields:
     searchable: true
     index: true
     is_name: true
-  contract_number:
+  contract_id:
     type: master_detail
     label: 合同编号
-    reference_to: contract
+    reference_to: contracts
     required: true
-  account_name:
+  account_id:
     type: lookup
     label: 客户
     reference_to: account
     required: true
-  order_type:
+  type:
     type: text
     label: 订单类型
     readonly: true
-  order_start_date:
+  effective_date:
     type: date
     label: 订单开始日期
     required: true
@@ -45,14 +45,14 @@ fields:
         value: Activated
     filterable: true
     defaultValue: 'Draft'
-  customer_authorized_by:
+  customer_authorized_by_id:
     label: 客户授权人
     type: lookup
     reference_to: contact
-  company_authorized_by:
+  company_authorized_by_id:
     label: 公司授权人
     type: lookup
-    reference_to: space_users
+    reference_to: users
   shipping_city:
     type: text
     label: 邮寄地址-城市
@@ -78,12 +78,12 @@ fields:
     type: textarea
     is_wide: true
     rows: 3
-  opportunity:
+  opportunity_id:
     type: lookup
     label: 业务机会
     reference_to: opportunity
     hidden: true
-  price_book:
+  price_book_id:
     type: lookup
     label: 价格手册
     reference_to: price_book
@@ -100,10 +100,10 @@ fields:
     type: date
     label: 合同结束日期
     hidden: true
-  activated_by:
+  activated_by_id:
     label: 启用人
     type: lookup
-    reference_to: space_users
+    reference_to: users
     hidden: true
   activated_date:
     label: 启用日期
@@ -122,12 +122,12 @@ fields:
     label: 开单对象联系人
     reference_to: contact
     hidden: true
-  quote:
+  quote_id:
     type: lookup
     label: 报价
     reference_to: quote
     hidden: true
-  ship_to_contact:
+  ship_to_contact_id:
     type: lookup
     label: 收货方联系人
     reference_to: contact
@@ -136,20 +136,20 @@ fields:
     type: text
     label: 订单参考编号
     hidden: true
-  order_name:
+  name:
     type: text
     label: 订单名
     hidden: true
-  order_owner:
+  owner:
     label: 订单所有人
-    type: lookup
-    reference_to: space_users
+    sortable: true
+    omit: false
     hidden: true
   po_date:
     label: 订单日期
     type: date
     hidden: true
-  order_end_date:
+  end_date:
     label: 订单结束日期
     type: date
     hidden: true
@@ -157,7 +157,7 @@ fields:
     type: text
     label: 订单编号
     hidden: true
-  order_amount:
+  total_amount:
     type: currency
     label: 订单金额
     hidden: true
@@ -166,11 +166,11 @@ list_views:
     label: 所有订单
     columns:
       - order_number
-      - account_name
-      - order_amount
-      - order_start_date
+      - account_id
+      - total_amount
+      - effective_date
       - status
-      - contract_number
+      - contract_id
     filter_scope: space
   recent:
     label: 最近查看

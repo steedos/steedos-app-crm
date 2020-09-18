@@ -3,14 +3,14 @@ label: 市场活动成员
 icon: campaign
 enable_audit: true
 fields:
-  campaign:
+  campaign_id:
     label: 市场活动
     type: master_detail
     reference_to: campaign
     required: true
     searchable: true
     inlineHelpText: 潜在客户或联系人所属的市场活动。
-  campany_account:
+  campany_or_account:
     type: text
     label: 公司(客户)
     inlineHelpText: 公司（如果市场活动成员基于潜在客户），或客户（如果市场活动成员基于联系人）。
@@ -113,7 +113,7 @@ fields:
   zip:
     label: 邮政编码
     type: text
-  email_opt_out:
+  has_opted_out_of_email:
     label: 退出邮件列表
     type: boolean
     hidden: true
@@ -139,12 +139,12 @@ list_views:
   all:
     label: 所有市场活动成员
     columns:
-      - campaign_name
-      - parent_campaign
-      - type
+      - campaign_id
+      - campany_or_account
+      - name
       - status
-      - start_date
-      - end_date
+      - lead_source
+      - lead
     filter_scope: space
   recent:
     label: 最近查看

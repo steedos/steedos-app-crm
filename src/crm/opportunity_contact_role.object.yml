@@ -12,24 +12,24 @@ fields:
     omit: true
     readonly: true
     searchable: true
-  opportunity:
+  opportunity_id:
     label: 业务机会名
     type: master_detail
     reference_to: opportunity
     searchable: true
     required: true
     inlineHelpText: 与联系人相关的业务机会的名称。
-  contact:
+  contact_id:
     label: 联系人
     type: lookup
     reference_to: contact
     required: true
     inlineHelpText: 联系人或个人客户的姓名。
-  primary:
+  is_primary:
     label: 主要
     type: boolean
     inlineHelpText: 打✔，则该联系人为业务机会的主要联系人。
-  role:
+  roles:
     label: 角色
     type: select
     options:
@@ -56,10 +56,10 @@ list_views:
     label: 全部业务机会联系人
     columns:
       - number
-      - opportunity
-      - contact
-      - primary
-      - role
+      - opportunity_id
+      - contact_id
+      - is_primary
+      - roles
     filter_scope: space
 permission_set:
   user:

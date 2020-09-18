@@ -1,4 +1,4 @@
-name: contract
+name: contracts
 label: 合同
 icon: contract
 enable_files: true
@@ -8,12 +8,12 @@ enable_api: true
 enable_instances: true
 enable_trash: true
 fields:
-  contract_owner:
-    type: text
+  owner:
     label: 合同所有人
-    defaultValue: "{user.name}"
-    readonly: true
-  contract_start_date:
+    sortable: true
+    omit: false
+    hidden: false
+  start_date:
     label: 合同开始日期
     type: date
     required: true
@@ -24,12 +24,12 @@ fields:
     filterable: true
     readonly: true
     is_name: true
-  contract_end_date:
+  end_date:
     label: 合同结束日期
     type: date
     readonly: true
     hidden: true
-  account_name:
+  account_id:
     type: master_detail
     label: 客户名
     reference_to: account
@@ -57,7 +57,7 @@ fields:
     defaultValue: 'Draft'
   owner_expiration_notice:
     type: select
-    label: 所有人到期通知
+    label: 通知所有人到期日
     options:
       - label: 15天
         value: 15天
@@ -71,7 +71,7 @@ fields:
         value: 90天
       - label: 120天
         value: 120天
-  price_book:
+  price_book_id:
     type: lookup
     label: 价格手册
     reference_to: price_book
@@ -109,44 +109,45 @@ fields:
     label: 备注
     rows: 3
     group: 备注信息
-  customer_sighed_by:
+  customer_signed_id:
     type: lookup
     label: 客户签字人
     reference_to: contact
     group: 签名信息
-  company_sighed_by:
+  company_signed_id:
     type: lookup
     label: 公司签字人
-    reference_to: space_users
+    reference_to: users
     group: 签名信息
-  customer_sighed_title:
+  customer_signed_title:
     type: text
     label: 客户签字人职务
     group: 签名信息
-  company_sighed_date:
+  company_signed_date:
     type: date
     label: 公司签字日期
     group: 签名信息
-  customer_sighed_date:
+  customer_signed_date:
     type: date
     label: 客户签字日期
     group: 签名信息
-  activated_by:
+  activated_by_id:
     type: lookup
     label: 启用人
-    reference_to: space_users
+    reference_to: users
     hidden: true
   activated_date:
     type: date
     label: 启用日期
     hidden: true
-  contract_name:
+  name:
     type: text
     label: 合同名
-    hidden: true
+    #hidden: true
   currency:
-    type: text
+    type: lookup
     label: 合同币种
+    reference_to: currency
     hidden: true
 list_views:
   all:
@@ -162,9 +163,9 @@ list_views:
         wrap: true
       - field: status
         width: 200
-      - field: contract_start_date
+      - field: start_date
         width: 120
-      - field: contract_end_date
+      - field: end_date
         width: 120
       - field: contract_term
         width: 120

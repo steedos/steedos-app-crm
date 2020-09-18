@@ -5,21 +5,19 @@ enable_files: true
 enable_search: true
 enable_audit: true
 fields:
-  campaign_name:
+  name:
     type: text
     label: 市场活动名称
     required: true
     index: true
     searchable: true
     sortable: true
-    is_name: true
-  contract_number:
-    type: text
+  owner:
     label: 市场活动所有人
-    defaultValue: "{user.name}"
-    readonly: true
-    index: true
-  active:
+    sortable: true
+    omit: false
+    hidden: false
+  is_active:
     label: 启用
     type: toggle
     inlineHelpText: 标记市场活动是否启用。
@@ -40,7 +38,7 @@ fields:
         value: Planned
     filterable: true
     defaultValue: 'Planned'
-  parent_campaign:
+  parent_id:
     type: lookup
     label: 父级市场活动
     reference_to: campaign
@@ -82,12 +80,12 @@ fields:
     type: textarea
     is_wide: true
     rows: 3
-  num_sent_in_campaign:
+  number_sent:
     type: number
     label: 市场活动中的发送次数
     group: 计划
     inlineHelpText: 市场活动面向的目标个人数目。例如，发送的电子邮件数目。
-  budgeted_cost_in_campaign:
+  budgeted_cost:
     type: currency
     label: 市场活动中的预算成本
     group: 计划
@@ -97,35 +95,35 @@ fields:
     label: 预期响应百分比(%)
     group: 计划
     inlineHelpText: 预期市场活动接收到的响应百分比。
-  actual_cost_in_campaign:
+  actual_cost:
     type: currency
     label: 市场活动中的实际成本
     group: 计划
     inlineHelpText: 运行市场活动所花费的实际金额。
-  expected_revenue_in_campaign:
+  expected_revenue:
     type: currency
     label: 市场活动中的预期收入
     group: 计划
     inlineHelpText: 预期市场活动产生的收入金额。
-  opportunities_in_hierarchy:
+  hierarchy_number_of_opportunities:
     type: number
     label: 层次结构中的业务机会
     readonly: true
     inlineHelpText: 市场活动层次结构相关业务机会总数的计算字段。（只读）
     hidden: true
-  value_opportunities_in_hierarchy:
+  hierarchy_amount_all_opportunities:
     type: currency
     label: 层次结构中的业务机会金额
     readonly: true
     inlineHelpText: 市场活动层次结构相关所有业务机会（包括赢得客户业务机会）的价值总额计算字段。（只读）层次结构中的所有市场活动必须使用相同的币种。对于采用多币种的组织，业务机会价值金额应转换为市场活动币种。如果您的币种与市场活动币种不符，金额将转换成您的币种并显示在括号中。
     hidden: true
-  value_won_opportunities_inhierarchy:
+  inhierarchy_amount_won_opportunities:
     type: currency
     label: 层次结构中的赢得客户业务机会金额
     readonly: true
     inlineHelpText: 市场活动层次结构相关赢得客户业务机会的价值金额计算字段。（只读）层次结构中的所有市场活动必须使用相同的币种。对于采用多币种的组织，业务机会价值金额应转换为市场活动币种。如果您的币种与市场活动币种不符，金额将转换成您的币种并显示在括号中。
     hidden: true
-  num_sent_in_hierarchy:
+  hierarchy_number_sent:
     type: number
     label: 层次结构中的发送次数
     readonly: true
@@ -135,8 +133,8 @@ list_views:
   all:
     label: 所有市场活动
     columns:
-      - campaign_name
-      - parent_campaign
+      - name
+      - parent_id
       - type
       - status
       - start_date
