@@ -13,10 +13,10 @@ fields:
     searchable: true
     index: true
     is_name: true
-  contract_id:
+  agreement_id:
     type: master_detail
-    label: 合同编号
-    reference_to: contracts
+    label: 主协议编号
+    reference_to: agreement
     required: true
   account_id:
     type: lookup
@@ -92,13 +92,13 @@ fields:
     type: date
     label: 公司授权日期
     hidden: true
-  contract_name:
+  agreement_name:
     type: text
-    label: 合同名
+    label: 主协议名
     hidden: true
-  contract_end_date:
+  agreement_end_date:
     type: date
-    label: 合同结束日期
+    label: 主协议结束日期
     hidden: true
   activated_by_id:
     label: 启用人

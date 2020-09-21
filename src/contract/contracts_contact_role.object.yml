@@ -1,5 +1,5 @@
-name: contracts_contact_role
-label: 合同联系人角色
+name: agreement_contact_role
+label: 主协议联系人角色
 icon: contract
 enable_files: true
 enable_search: true
@@ -7,15 +7,15 @@ enable_audit: true
 fields:
   contract:
     type: master_detail
-    label: 合同
-    reference_to: contracts
+    label: 主协议
+    reference_to: agreement
   contact:
     type: lookup
     label: 启用人
     reference_to: contact
 list_views:
   all:
-    label: 所有合同联系人角色
+    label: 所有主协议联系人角色
     columns:
       - contract
       - contact

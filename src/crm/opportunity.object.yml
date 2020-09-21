@@ -170,10 +170,10 @@ fields:
     label: 价格手册
     reference_to: price_book
     hidden: true
-  contract_id:
-    label: 合同
+  agreement_id:
+    label: 主协议
     type: lookup
-    reference_to: contracts
+    reference_to: agreement
     hidden: true
   synced_quoted:
     label: 同步的报价
