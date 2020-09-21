@@ -47,7 +47,7 @@ fields:
     type: formula
     formula_type: number
     scale: 2
-    formula: "{sales_price}*{quantity}"
+    formula: "{unit_price}*{quantity}"
     inlineHelpText: 业务机会产品所有产品金额的总计。
   list_price:
     label: 价目表价格
