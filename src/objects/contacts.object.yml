@@ -1,8 +1,10 @@
-name: contact
+name: contacts
 label: 联系人
 icon: contact
 enable_files: true
 enable_search: true
+enable_events: true
+enable_tasks: true
 enable_api: true
 enable_audit: true
 fields:
@@ -18,18 +20,17 @@ fields:
     sortable: true
     omit: false
     hidden: false
-  account_id:
+  account:
     label: 所属客户
     type: master_detail
-    reference_to: account
+    reference_to: accounts
     sortable: true
-    name: account
     filterable: true
     inlineHelpText: 联系人所链接的客户。输入客户名称、从列表中选择客户或创建客户。
   reports_to_id:
     type: lookup
     label: 直属上司
-    reference_to: contact
+    reference_to: contacts
     create: false
     inlineHelpText: 联系人管理员的姓名。输入联系人名称，或从列表中选择联系人。
   salutation:
@@ -58,7 +59,7 @@ fields:
   phone:
     label: 工作电话
     type: text
-  mobilephone:
+  mobile:
     label: 手机
     type: text
   mailing_city:
@@ -73,6 +74,10 @@ fields:
     type: text
     label: 邮寄地址-邮政编码
     group: 地址信息
+  user:
+    type: lookup
+    reference_to: users
+    label: 外部用户
   hoddy:
     label: 爱好
     type: text
@@ -174,7 +179,8 @@ fields:
     hidden: true
   contact_currency:
     label: 联系人币种
-    type: text
+    type: lookup
+    reference_to: currency
     hidden: true
     inlineHelpText: 联系人中所有币种金额字段的默认币种。仅在使用多种货币的组织中可用。
   asset_id:
@@ -187,24 +193,36 @@ list_views:
     label: 所有联系人
     columns:
       - name
-      - account
+      - account_id
       - email
       - phone
+    filter_fields:
+      - name
+      - account_id
+      - email
   recent:
     label: 最近查看
     columns:
       - name
-      - account
+      - account_id
       - email
       - phone
+    filter_fields:
+      - name
+      - account_id
+      - email
   mine:
     label: 我的联系人
     columns:
       - name
-      - account
+      - account_id
       - email
       - phone
     filter_scope: mine
+    filter_fields:
+      - name
+      - account_id
+      - email
 actions:
   createSupplierSpaceUser:
     label: 创建供应商用户
@@ -231,6 +249,13 @@ permission_set:
     allowEdit: true
     allowRead: true
     modifyAllRecords: false
+    viewAllRecords: true 
+  contract_manager:
+    allowCreate: true
+    allowEdit: true
+    allowDelete: true
+    allowRead: true
+    modifyAllRecords: true
     viewAllRecords: true
   admin:
     allowCreate: true
@@ -239,3 +264,10 @@ permission_set:
     allowRead: true
     modifyAllRecords: true
     viewAllRecords: true
+  customer:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: false
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false

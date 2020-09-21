@@ -10,7 +10,7 @@ module.exports = {
             cancelButtonText: t('NO')
         }, function (confirm) {
             if(confirm){
-                Creator.odata.update('account', record_id, { is_supplier: true })
+                Creator.odata.update('accounts', record_id, { is_supplier: true })
             }
             sweetAlert.close();
         })
@@ -35,7 +35,7 @@ module.exports = {
             cancelButtonText: t('NO')
         }, function (confirm) {
             if(confirm){
-                Creator.odata.update('account', record_id, { is_supplier: false })
+                Creator.odata.update('accounts', record_id, { is_supplier: false })
             }
             sweetAlert.close();
         })
@@ -60,7 +60,7 @@ module.exports = {
             cancelButtonText: t('NO')
         }, function (confirm) {
             if(confirm){
-                Creator.odata.update('account', record_id, { is_customer: true })
+                Creator.odata.update('accounts', record_id, { is_customer: true })
             }
             sweetAlert.close();
         })
@@ -85,7 +85,7 @@ module.exports = {
             cancelButtonText: t('NO')
         }, function (confirm) {
             if(confirm){
-                Creator.odata.update('account', record_id, { is_customer: false })
+                Creator.odata.update('accounts', record_id, { is_customer: false })
             }
             sweetAlert.close();
         })

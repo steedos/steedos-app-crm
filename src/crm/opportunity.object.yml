@@ -24,7 +24,7 @@ fields:
   account_id:
     label: 客户
     type: master_detail
-    reference_to: account
+    reference_to: accounts
     inlineHelpText: 业务机会所链接的客户名。您可输入客户名或使用查找图标选择客户。如果您更改的客户有合作伙伴，则将从“合作伙伴”相关列表删除所有合作伙伴。
     sortable: true
     filterable: true

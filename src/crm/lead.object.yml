@@ -200,8 +200,7 @@ fields:
     label: 市场活动
     type: lookup
     reference_to: campaign
-    readonly: true
-    omit: true
+    #omit: true
   individual:
     label: 个人
     type: text
@@ -253,12 +252,12 @@ fields:
   converted_account:
     label: 已转换的客户
     type: lookup
-    reference_to: account
+    reference_to: accounts
     hidden: true
   converted_contact:
     label: 已转换的联系人
     type: lookup
-    reference_to: contact
+    reference_to: contacts
     hidden: true
   converted_opportunity:
     label: 已转换的业务机会

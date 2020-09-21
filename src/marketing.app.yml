@@ -7,6 +7,6 @@ is_creator: true
 objects:
   - campaign
   - lead
-  - contact
+  - contacts
   - opportunity
   - reports

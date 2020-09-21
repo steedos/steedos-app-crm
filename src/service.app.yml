@@ -5,7 +5,7 @@ description: 通过客户、联系人、个案等管理客户服务
 icon_slds: service_resource
 is_creator: true
 objects:
-  - account
-  - contact
+  - accounts
+  - contacts
   - case
   - reports

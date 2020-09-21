@@ -17,7 +17,7 @@ module.exports = {
             return false
         }
 
-        var record = Creator.odata.get("contact", record_id, "account,user", "account($select=is_customer)");
+        var record = Creator.odata.get("contacts", record_id, "account,user", "account($select=is_customer)");
         if(record && record.account && record.account.is_customer && !record.user){
             return true;
         }
@@ -30,7 +30,7 @@ module.exports = {
         if(!Creator.isSpaceAdmin()){
             return false
         }
-        var record = Creator.odata.get("contact", record_id, "account,user", "account($select=is_customer)");
+        var record = Creator.odata.get("contacts", record_id, "account,user", "account($select=is_customer)");
         if(record && record.user){
             var spaceUser = Creator.odata.query("space_users", {$filter: `(user eq '${record.user}')`, $select: "is_customer"}, true);
             if(spaceUser[0].is_customer){
@@ -53,7 +53,7 @@ module.exports = {
                 var userSession = Creator.USER_CONTEXT;
                 var spaceId = userSession.spaceId;
                 var authToken = userSession.authToken ? userSession.authToken : userSession.user.authToken;
-                var url = "/api/v4/contact/" + record_id + "/disable_customer_spaceuser";
+                var url = "/api/v4/contacts/" + record_id + "/disable_customer_spaceuser";
                 url = Steedos.absoluteUrl(url);
                 try {
                     var authorization = "Bearer " + spaceId + "," + authToken;
@@ -104,7 +104,7 @@ module.exports = {
         if(!Creator.isSpaceAdmin()){
             return false
         }
-        var record = Creator.odata.get("contact", record_id, "account,user", "account($select=is_customer)");
+        var record = Creator.odata.get("contacts", record_id, "account,user", "account($select=is_customer)");
         if(record && record.user){
             var spaceUser = Creator.odata.query("space_users", {$filter: `(user eq '${record.user}')`, $select: "is_customer"}, true);
             if(spaceUser[0].is_customer){
@@ -130,7 +130,7 @@ module.exports = {
         if(!Creator.isSpaceAdmin()){
             return false
         }
-        var record = Creator.odata.get("contact", record_id, "account,user", "account($select=is_supplier)");
+        var record = Creator.odata.get("contacts", record_id, "account,user", "account($select=is_supplier)");
         if(record && record.account && record.account.is_supplier && !record.user){
             return true;
         }
@@ -143,7 +143,7 @@ module.exports = {
         if(!Creator.isSpaceAdmin()){
             return false
         }
-        var record = Creator.odata.get("contact", record_id, "account,user", "account($select=is_supplier)");
+        var record = Creator.odata.get("contacts", record_id, "account,user", "account($select=is_supplier)");
         if(record && record.user){
             var spaceUser = Creator.odata.query("space_users", {$filter: `(user eq '${record.user}')`, $select: "is_supplier"}, true);
             if(spaceUser[0].is_supplier){
@@ -166,7 +166,7 @@ module.exports = {
                 var userSession = Creator.USER_CONTEXT;
                 var spaceId = userSession.spaceId;
                 var authToken = userSession.authToken ? userSession.authToken : userSession.user.authToken;
-                var url = "/api/v4/contact/" + record_id + "/disable_supplier_spaceuser";
+                var url = "/api/v4/contacts/" + record_id + "/disable_supplier_spaceuser";
                 url = Steedos.absoluteUrl(url);
                 try {
                     var authorization = "Bearer " + spaceId + "," + authToken;
@@ -217,7 +217,7 @@ module.exports = {
         if(!Creator.isSpaceAdmin()){
             return false
         }
-        var record = Creator.odata.get("contact", record_id, "account,user", "account($select=is_supplier)");
+        var record = Creator.odata.get("contacts", record_id, "account,user", "account($select=is_supplier)");
         if(record && record.user){
             var spaceUser = Creator.odata.query("space_users", {$filter: `(user eq '${record.user}')`, $select: "is_supplier"}, true);
             if(spaceUser[0].is_supplier){

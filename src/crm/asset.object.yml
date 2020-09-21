@@ -44,14 +44,14 @@ fields:
   account:
     label: 客户
     type: lookup
-    reference_to: account
+    reference_to: accounts
   quantity:
     type: number
     label: 数量
   contact:
     label: 联系人
     type: lookup
-    reference_to: contact
+    reference_to: contacts
   purchased_date: 
     type: date
     label: 购买日期

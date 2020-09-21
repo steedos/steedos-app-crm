@@ -17,7 +17,7 @@ fields:
   contact:
     type: lookup
     label: 联系人
-    reference_to: contact
+    reference_to: contacts
     required: true
   description:
     label: 描述

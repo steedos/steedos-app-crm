@@ -29,11 +29,11 @@ fields:
   contact_id:
     type: master_detail
     label: 联系人姓名
-    reference_to: contact
+    reference_to: contacts
   account_id:
     type: lookup
     label: 客户
-    reference_to: account
+    reference_to: accounts
   status:
     type: select
     label: 状态
@@ -188,6 +188,7 @@ list_views:
     label: 所有个案
     columns:
       - case_number
+      - subject
       - account_id
       - case_reason
       - priority

@@ -25,7 +25,7 @@ fields:
   is_syncing:
     label: 正在同步
     type: boolean
-    readonly: true
+    #readonly: true
     inlineHelpText: 报价是否与关联的业务机会同步。(只读)
   opportunity_id:
     label: 业务机会名
@@ -33,7 +33,6 @@ fields:
     reference_to: opportunity
     searchable: true
     required: true
-    readonly: true
     inlineHelpText: 与报价关联的业务机会名。
   status:
     type: select
@@ -64,7 +63,7 @@ fields:
   account_id:
     type: lookup
     label: 客户
-    reference_to: account
+    reference_to: accounts
     inlineHelpText: 报价的业务机会所链接的客户名。
   description:
     label: 描述
@@ -74,7 +73,6 @@ fields:
   discount:
     type: number
     label: 折扣（%）
-    readonly: true
     group: 总计
     inlineHelpText: 报价上所有行项目折扣的加权平均值。可以为任意不超过 100 的正数。
   tax:
@@ -101,7 +99,7 @@ fields:
   contact_id:
     type: lookup
     label: 联系人姓名
-    reference_to: contact
+    reference_to: contacts
     group: 准备用于
     inlineHelpText: 与报价关联的联系人姓名。
   phone:
@@ -158,8 +156,9 @@ fields:
     label: 产品最小存货单位
     hidden: true
   product_currency:
-    type: text
+    type: lookup
     label: 产品货币
+    reference_to: currency
   external_id:
     type: text
     label: 外部ID
@@ -205,6 +204,7 @@ list_views:
   all:
     label: 所有报价
     columns:
+      - quote_number
       - name
       - opportunity_id
       - expiration_date

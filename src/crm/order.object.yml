@@ -21,12 +21,14 @@ fields:
   account_id:
     type: lookup
     label: 客户
-    reference_to: account
+    reference_to: accounts
     required: true
   type:
-    type: text
+    type: select
     label: 订单类型
-    readonly: true
+    options:
+      - label: 无
+        value: none
   effective_date:
     type: date
     label: 订单开始日期
@@ -48,7 +50,7 @@ fields:
   customer_authorized_by_id:
     label: 客户授权人
     type: lookup
-    reference_to: contact
+    reference_to: contacts
   company_authorized_by_id:
     label: 公司授权人
     type: lookup
@@ -120,7 +122,7 @@ fields:
   bill_to_contact:
     type: lookup
     label: 开单对象联系人
-    reference_to: contact
+    reference_to: contacts
     hidden: true
   quote_id:
     type: lookup
@@ -130,7 +132,7 @@ fields:
   ship_to_contact_id:
     type: lookup
     label: 收货方联系人
-    reference_to: contact
+    reference_to: contacts
     hidden: true
   order_reference_number:
     type: text
@@ -167,10 +169,10 @@ list_views:
     columns:
       - order_number
       - account_id
-      - total_amount
+      - agreement_id
       - effective_date
+      - type
       - status
-      - contract_id
     filter_scope: space
   recent:
     label: 最近查看
