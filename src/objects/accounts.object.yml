@@ -232,30 +232,34 @@ fields:
         value: TW
     filterable: true
     inlineHelpText: 客户被分配至的区域。
-  billing_city:
-    type: text
-    label: 开单地址-城市
+  # billing_city:
+  #   type: text
+  #   label: 开单地址-城市
+  #   group: 地址信息
+  # shipping_city:
+  #   type: text
+  #   label: 发货地址-城市
+  #   group: 地址信息
+  billing_address:
+    type: textarea
+    label: 开单地址
+    is_wide: true
+    rows: 3
     group: 地址信息
-  shipping_city:
-    type: text
-    label: 发货地址-城市
+  shipping_address:
+    type: textarea
+    label: 发货地址
+    is_wide: true
+    rows: 3
     group: 地址信息
-  billing_street:
-    type: text
-    label: 开单地址-街道
-    group: 地址信息
-  shipping_street:
-    type: text
-    label: 发货地址-街道
-    group: 地址信息
-  billing_zip:
-    type: text
-    label: 开单地址-邮政编码
-    group: 地址信息
-  shipping_zip:
-    type: text
-    label: 发货地址-邮政编码
-    group: 地址信息
+  # billing_zip:
+  #   type: text
+  #   label: 开单地址-邮政编码
+  #   group: 地址信息
+  # shipping_zip:
+  #   type: text
+  #   label: 发货地址-邮政编码
+  #   group: 地址信息
   account_number:
     type: text
     label: 客户编号
@@ -274,6 +278,26 @@ fields:
     filterable: true
     inlineHelpText: 您如何划分此客户等级的分类，例如，普通、重要。
     #hidden: true
+  invoice_address:
+    label: 开票地址
+    group: 开票信息
+    type: text
+    name: invoice_address
+  invoice_phone:
+    label: 开票电话
+    group: 开票信息
+    type: text
+    name: invoice_phone
+  invoice_bank:
+    label: 开户行
+    group: 开票信息
+    type: text
+    name: invoice_bank
+  invoice_combinenum:
+    label: 账号
+    group: 开票信息
+    type: text
+    name: invoice_combinenum
   account_source:
     type: text
     label: 客户来源

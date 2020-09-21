@@ -62,18 +62,28 @@ fields:
   mobile:
     label: 手机
     type: text
-  mailing_city:
+  home_phone:
+    label: 家庭电话
     type: text
-    label: 邮寄地址-城市
+    #hidden: true
+  birthdate:
+    label: 生日
+    type: date
+    #hidden: true
+  # mailing_city:
+  #   type: text
+  #   label: 邮寄地址-城市
+  #   group: 地址信息
+  mailing_address:
+    type: textarea
+    label: 邮寄地址
+    is_wide: true
+    rows: 3
     group: 地址信息
-  mailing_street:
-    type: text
-    label: 邮寄地址-街道
-    group: 地址信息
-  mailing_zip:
-    type: text
-    label: 邮寄地址-邮政编码
-    group: 地址信息
+  # mailing_zip:
+  #   type: text
+  #   label: 邮寄地址-邮政编码
+  #   group: 地址信息
   user:
     type: lookup
     reference_to: users
@@ -117,10 +127,6 @@ fields:
     label: 其他电话
     type: text
     hidden: true
-  birthdate:
-    label: 生日
-    type: date
-    hidden: true
   assistant:
     label: 助理
     type: text
@@ -143,10 +149,6 @@ fields:
     label: 退出传真列表
     type: boolean
     inlineHelpText: 是否将联系人包含在传真中。
-    hidden: true
-  home_phone:
-    label: 家庭电话
-    type: text
     hidden: true
   lead_source:
     type: select
