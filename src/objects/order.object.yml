@@ -17,7 +17,7 @@ fields:
     type: master_detail
     label: 主协议编号
     reference_to: agreement
-    required: true
+    #required: true
   account_id:
     type: lookup
     label: 客户

@@ -88,14 +88,14 @@ fields:
     hidden: true
   grand_total:
     label: 总计
-    type: summary
-    summary_object: quote_line_item
-    summary_type: sum
-    summary_field: "total_price"
+    type: formula
+    formula_type: number
     scale: 2
+    formula: "{total_price}+{tax}+{shipping_handling}"
     group: 总计
+    formula_blank_value: zeroes
     inlineHelpText: 报价的总价格加上运费和税。
-    #hidden: true
+    hidden: true
   contact_id:
     type: lookup
     label: 联系人姓名
@@ -153,54 +153,59 @@ fields:
   #   type: text
   #   label: 收货人邮政编码
   #   group: 地址信息
-  product_sku:
-    type: text
-    label: 产品最小存货单位
+  owner:
+    label: 所有人姓名
+    sortable: true
+    omit: false
     hidden: true
-  product_currency:
+  agreement:
     type: lookup
-    label: 产品货币
+    label: 主协议
+    reference_to: agreement
+    hidden: true
+  subtotal:
+    type: summary
+    label: 小计
+    summary_object: quote_line_item
+    summary_type: sum
+    summary_field: "total_price"
+    scale: 2
+    inlineHelpText: 在应用折扣、税和运费之前的报价行项目的总和。(只读)
+    hidden: true
+  total_price:
+    type: formula
+    label: 总价
+    formula_type: number
+    scale: 2
+    formula: "{subtotal}*(1-{discount}*0.01)"
+    inlineHelpText: 折扣后，不含税和运费的报价行项目的总和。(只读)
+    hidden: true
+  quote_to_name:
+    type: text
+    label: 收报价人姓名
+    hidden: true
+  quote_to_address:
+    type: textarea
+    label: 收报价人地址
+    is_wide: true
+    rows: 3
+    hidden: true
+  line_items:
+    type: summary
+    label: 行项目
+    summary_object: quote_line_item
+    summary_type: count
+    inlineHelpText: 报价上行项目的数量。
+    hidden: true
+  quote_currency:
+    type: lookup
+    label: 报价币种
     reference_to: currency
-  external_id:
-    type: text
-    label: 外部ID
     hidden: true
-  external_data_source:
+  price_book_entry_id:
     type: lookup
-    label: 外部数据源
-    reference_to: datasources
-    hidden: true
-  quantity_scheduling_enabled:
-    label: 已启用数量计划
-    type: boolean
-    hidden: true
-  revenue_installment_period:
-    type: text
-    label: 收入分期付款周期
-    hidden: true
-  revenue_schedule_type:
-    type: text
-    label: 收入计划类型
-    hidden: true
-  quantity_installment_period:
-    type: text
-    label: 数量分期付款周期
-    hidden: true
-  number_of_quantity_installments:
-    type: number
-    label: 数量分期付款期数
-    hidden: true
-  quantity_schedule_type:
-    type: text
-    label: 数量计划类型
-    hidden: true
-  quantity_unit_of_measure:
-    type: text
-    label: 数量计量单位
-    hidden: true
-  display_url:
-    type: url
-    label: 显示URL
+    label: 价格手册条目
+    reference_to: price_book_entry
     hidden: true
 list_views:
   all:
