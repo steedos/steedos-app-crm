@@ -243,13 +243,11 @@ fields:
   billing_address:
     type: textarea
     label: 开单地址
-    is_wide: true
     rows: 3
     group: 地址信息
   shipping_address:
     type: textarea
     label: 发货地址
-    is_wide: true
     rows: 3
     group: 地址信息
   # billing_zip:
@@ -454,13 +452,15 @@ list_views:
     label: 所有客户
     columns:
       - field: name
-        width: 400
+        width: 300
         wrap: true
       - field: type
         width: 120
       - field: rating
-        width: 60
-      - field: address
+        width: 120
+      - field: billing_address
+        width: 400
+      - field: shipping_address
         width: 400
       - field: owner
         width: 120
@@ -470,18 +470,19 @@ list_views:
       - industry
       - rating
       - name
-      - address
   recent:
     label: 最近查看
     columns:
       - field: name
-        width: 400
+        width: 300
         wrap: true
       - field: type
         width: 120
       - field: rating
-        width: 60
-      - field: address
+        width: 120
+      - field: billing_address
+        width: 400
+      - field: shipping_address
         width: 400
       - field: owner
         width: 120
@@ -491,7 +492,6 @@ list_views:
       - industry
       - rating
       - name
-      - address
   allCustomers:
     label: 所有顾客
     filters: !<tag:yaml.org,2002:js/function> |-
@@ -502,13 +502,15 @@ list_views:
       }
     columns:
       - field: name
-        width: 400
+        width: 300
         wrap: true
       - field: type
         width: 120
       - field: rating
-        width: 60
-      - field: address
+        width: 120
+      - field: billing_address
+        width: 400
+      - field: shipping_address
         width: 400
       - field: owner
         width: 120
@@ -517,7 +519,6 @@ list_views:
       - type
       - industry
       - name
-      - address
   hotRating:
     label: 高分级的伙伴
     filters: !<tag:yaml.org,2002:js/function> |-
@@ -528,13 +529,15 @@ list_views:
       }
     columns:
       - field: name
-        width: 400
+        width: 300
         wrap: true
       - field: type
         width: 120
       - field: rating
-        width: 60
-      - field: address
+        width: 120
+      - field: billing_address
+        width: 400
+      - field: shipping_address
         width: 400
       - field: owner
         width: 120
@@ -543,18 +546,19 @@ list_views:
       - type
       - industry
       - name
-      - address
   mine:
     label: 我的客户
     columns:
       - field: name
-        width: 400
+        width: 300
         wrap: true
       - field: type
         width: 120
       - field: rating
-        width: 60
-      - field: address
+        width: 120
+      - field: billing_address
+        width: 400
+      - field: shipping_address
         width: 400
       - field: owner
         width: 120
@@ -564,7 +568,6 @@ list_views:
       - industry
       - rating
       - name
-      - address
 actions:
   enableSupplier:
     label: 作为供应商启用

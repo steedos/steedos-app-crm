@@ -184,18 +184,20 @@ fields:
       - label: 普通
         value: Cold
     filterable: true
-  city:
-    label: 城市
-    type: text
+  address:
+    label: 地址
+    type: textarea
+    is_wide: true
+    rows: 3
     group: 地址信息
-  streety:
-    label: 街道
-    type: text
-    group: 地址信息
-  zip:
-    label: 邮政编码
-    type: text
-    group: 地址信息
+  # city:
+  #   label: 城市
+  #   type: text
+  #   group: 地址信息
+  # zip:
+  #   label: 邮政编码
+  #   type: text
+  #   group: 地址信息
   campaign_id:
     label: 市场活动
     type: lookup

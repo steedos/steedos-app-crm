@@ -5,7 +5,7 @@ enable_files: true
 enable_search: true
 enable_audit: true
 fields:
-  contract:
+  agreement:
     type: master_detail
     label: 主协议
     reference_to: agreement
@@ -17,7 +17,7 @@ list_views:
   all:
     label: 所有主协议联系人角色
     columns:
-      - contract
+      - agreement
       - contact
   recent:
     label: 最近查看

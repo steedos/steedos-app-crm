@@ -126,31 +126,33 @@ fields:
     label: 收货人姓名
     group: 地址信息
     inlineHelpText: 报价行项目的收货的实体（如个人或公司）名称。
-  billing_city:
-    type: text
-    label: 收票人城市
+  # billing_city:
+  #   type: text
+  #   label: 收票人城市
+  #   group: 地址信息
+  # shipping_city:
+  #   type: text
+  #   label: 收货人城市
+  #   group: 地址信息
+  billing_address:
+    type: textarea
+    label: 收票人地址
+    rows: 3
     group: 地址信息
-  shipping_city:
-    type: text
-    label: 收货人城市
-    group: 地址信息
-  billing_street:
-    type: text
-    label: 收票人街道
-    group: 地址信息
-  shipping_street:
-    type: text
-    label: 收货人街道
+  shipping_address:
+    type: textarea
+    label: 收货人地址
+    rows: 3
     group: 地址信息
     inlineHelpText: 与报价关联的客户的发货地址。
-  billing_zip:
-    type: text
-    label: 开收票人邮政编码
-    group: 地址信息
-  shipping_zip:
-    type: text
-    label: 收货人邮政编码
-    group: 地址信息
+  # billing_zip:
+  #   type: text
+  #   label: 开收票人邮政编码
+  #   group: 地址信息
+  # shipping_zip:
+  #   type: text
+  #   label: 收货人邮政编码
+  #   group: 地址信息
   product_sku:
     type: text
     label: 产品最小存货单位

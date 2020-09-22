@@ -17,7 +17,7 @@ fields:
     label: 主协议开始日期
     type: date
     required: true
-  contract_number:
+  agreement_number:
     type: autonumber
     formula: "{YYYY}{MM}{0000}"
     label: 主协议编号
@@ -75,30 +75,32 @@ fields:
     type: lookup
     label: 价格手册
     reference_to: price_book
-  billing_city:
-    type: text
-    label: 开单地址-城市
+  # billing_city:
+  #   type: text
+  #   label: 开单地址-城市
+  #   group: 地址信息
+  # shipping_city:
+  #   type: text
+  #   label: 发货地址-城市
+  #   group: 地址信息
+  billing_address:
+    type: textarea
+    label: 开单地址
+    rows: 3
     group: 地址信息
-  shipping_city:
-    type: text
-    label: 发货地址-城市
+  shipping_address:
+    type: textarea
+    label: 发货地址
+    rows: 3
     group: 地址信息
-  billing_street:
-    type: text
-    label: 开单地址-街道
-    group: 地址信息
-  shipping_street:
-    type: text
-    label: 发货地址-街道
-    group: 地址信息
-  billing_zip:
-    type: text
-    label: 开单地址-邮政编码
-    group: 地址信息
-  shipping_zip:
-    type: text
-    label: 发货地址-邮政编码
-    group: 地址信息
+  # billing_zip:
+  #   type: text
+  #   label: 开单地址-邮政编码
+  #   group: 地址信息
+  # shipping_zip:
+  #   type: text
+  #   label: 发货地址-邮政编码
+  #   group: 地址信息
   special_term:
     type: textarea
     label: 特别条款
@@ -153,7 +155,7 @@ list_views:
   all:
     label: 所有主协议
     columns:
-      - field: contract_number
+      - field: agreement_number
         width: 150
       - field: account_id
         width: 280
@@ -183,7 +185,6 @@ list_views:
     sort:
       - - create_date
         - desc
-
 permission_set:
   user:
     allowCreate: false

@@ -55,26 +55,28 @@ fields:
     label: 公司授权人
     type: lookup
     reference_to: users
-  shipping_city:
-    type: text
-    label: 邮寄地址-城市
-  shipping_zip:
-    type: text
-    label: 邮寄地址-邮政编码
-  shipping_street:
-    type: text
-    label: 邮寄地址-街道
+  # shipping_city:
+  #   type: text
+  #   label: 邮寄地址-城市
+  # shipping_zip:
+  #   type: text
+  #   label: 邮寄地址-邮政编码
+  # billing_city:
+  #   type: text
+  #   label: 账单地址-城市
+  # billing_zip:
+  #   type: text
+  #   label: 账单地址-邮政编码
+  shipping_address:
+    type: textarea
+    label: 邮寄地址
     is_wide: true
-  billing_city:
-    type: text
-    label: 账单地址-城市
-  billing_zip:
-    type: text
-    label: 账单地址-邮政编码
-  billing_street:
-    type: text
-    label: 账单地址-街道
+    rows: 3
+  billing_address:
+    type: textarea
+    label: 账单地址
     is_wide: true
+    rows: 3
   description:
     label: 说明
     type: textarea
