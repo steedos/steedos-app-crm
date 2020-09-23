@@ -17,7 +17,5 @@ objects:
 mobile_objects:
   - agreement
   - order
-  - accounts
-  - contacts
   - price_book
   - product

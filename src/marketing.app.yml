@@ -14,6 +14,3 @@ objects:
 mobile_objects:
   - campaign
   - leads
-  - accounts
-  - contacts
-  - opportunity

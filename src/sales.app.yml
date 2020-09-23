@@ -17,7 +17,4 @@ objects:
 mobile_objects:
   - opportunity
   - leads
-  - accounts
-  - contacts
   - quote
-  - order
