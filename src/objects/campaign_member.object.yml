@@ -44,7 +44,7 @@ fields:
   lead:
     type: lookup
     label: 潜在客户
-    reference_to: lead
+    reference_to: leads
     inlineHelpText: 潜在客户姓名（如果市场活动成员基于潜在客户）。
   lead_source:
     type: select
@@ -144,7 +144,7 @@ list_views:
       - name
       - status
       - lead_source
-      - lead
+      - leads
     filter_scope: space
   recent:
     label: 最近查看

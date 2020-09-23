@@ -8,6 +8,8 @@ enable_events: true
 enable_notes: false
 enable_api: true
 enable_audit: true
+enable_share: true
+enable_chatter: true
 fields:
   name:
     label: 业务机会名
@@ -21,7 +23,7 @@ fields:
     sortable: true
     omit: false
     hidden: false
-  account_id:
+  account:
     label: 客户
     type: master_detail
     reference_to: accounts
@@ -43,7 +45,7 @@ fields:
       - label: 新业务
         value: New_Business
     inlineHelpText: 业务机会的类型，例如“现有业务”或“新业务”。
-  stage_name:
+  stage:
     label: 业务机会阶段
     type: select
     options:
@@ -156,10 +158,10 @@ fields:
     is_wide: true
     rows: 3
     group: 其他信息
-  is_private:
+  private:
     label: 专用
     type: boolean
-    hidden: true
+    #hidden: true
     inlineHelpText: 业务机会是专用的。只有记录的所有人、层次结构中位于该角色之上的用户和管理员可以查看、编辑或报告专有记录。
   iq_score:
     label: 业务机会得分
@@ -218,42 +220,150 @@ fields:
     hidden: true
     inlineHelpText: 表示该业务机会属于某合作伙伴（只读）
 list_views:
+  operating:
+    label: 进行中的业务机会
+    columns:
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: due_date
+        width: 120
+      - field: stage
+        width: 160
+      - field: probability
+        width: 120
+      - field: lead_source
+        width: 120
+      - field: owner
+        width: 120
+    filter_scope: space
+    filters: [["stage", "!=", Closed_Won],["stage", "!=", Closed_Lost]]
+    filter_fields:
+      - stage
+      - lead_source
+      - account
+      - name
+  lost:
+    label: 已失败的业务机会
+    columns:
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: lead_source
+        width: 120
+      - field: loss_reason
+        width: 220
+      - field: owner
+        width: 120
+    filter_scope: space
+    filters: [["stage", "=", Closed_Lost]]
+    filter_fields:
+      - loss_reason
+      - lead_source
+      - account
+      - name
+  won:
+    label: 已成功的业务机会
+    columns:
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: amount
+        width: 180
+      - field: lead_source
+        width: 120
+      - field: owner
+        width: 120
+    filter_scope: space
+    filters: [["stage", "=", Closed_Won]]
+    filter_fields:
+      - lead_source
+      - account
+      - name
   all:
     label: 全部业务机会
     columns:
-      - name
-      - account_id
-      - amount
-      - due_date
-      - stage_name
-      - probability
-      - lead_source
-      - owner
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: due_date
+        width: 120
+      - field: stage
+        width: 160
+      - field: probability
+        width: 120
+      - field: lead_source
+        width: 120
+      - field: owner
+        width: 120
     filter_scope: space
+    filter_fields:
+      - stage
+      - lead_source
+      - account
+      - name
   recent:
     label: 最近查看
     columns:
-      - name
-      - account_id
-      - amount
-      - due_date
-      - stage_name
-      - probability
-      - lead_source
-      - owner
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: due_date
+        width: 120
+      - field: stage
+        width: 160
+      - field: probability
+        width: 120
+      - field: lead_source
+        width: 120
+      - field: owner
+        width: 120
     filter_scope: space
+    filter_fields:
+      - stage
+      - lead_source
+      - account
+      - name
   mine:
     label: 我的业务机会
     columns:
-      - name
-      - account_id
-      - amount
-      - due_date
-      - stage_name
-      - probability
-      - lead_source
-      - owner
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: due_date
+        width: 120
+      - field: stage
+        width: 160
+      - field: probability
+        width: 120
+      - field: lead_source
+        width: 120
+      - field: owner
+        width: 120
     filter_scope: mine
+    filter_fields:
+      - stage
+      - lead_source
+      - account
+      - name
 permission_set:
   user:
     allowCreate: false

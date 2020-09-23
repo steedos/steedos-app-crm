@@ -1,4 +1,4 @@
-name: lead
+name: leads
 label: 潜在客户
 icon: lead
 enable_files: true
@@ -141,7 +141,7 @@ fields:
     label: 职员数
     type: number
     sortable: true
-  mobile:
+  mobilephone:
     label: 手机
     type: text
   lead_source:
@@ -200,8 +200,9 @@ fields:
   #   group: 地址信息
   campaign_id:
     label: 市场活动
-    type: lookup
+    type: master_detail
     reference_to: campaign
+    searchable: true
     #omit: true
   individual:
     label: 个人
@@ -268,53 +269,117 @@ fields:
     hidden: true
 list_views:
   today:
-    label: 今天的潜在客户
+    label: 新的潜在客户
+    filters: !<tag:yaml.org,2002:js/function> |-
+      function () {
+          return [
+            ["status","=","New"]
+          ];
+      }
     columns:
-      - name
-      - title
-      - company
-      - phone
-      - mobile
-      - email
-      - status
-      - level
-      - owner
+      - field: status
+        width: 60
+      - field: name
+        width: 120
+      - field: company
+        width: 200
+      - field: title
+        width: 150
+      - field: phone
+        width: 150
+      - field: mobile
+        width: 150
+      - field: email
+        width: 200
+      - field: owner
+        width: 120
+    filter_fields: ["rating","name", "company"]
+  hot:
+    label: 高分级的潜在客户
+    filters: !<tag:yaml.org,2002:js/function> |-
+      function () {
+          return [
+            ["rating","=","Hot"]
+          ];
+      }
+    columns:
+      - field: status
+        width: 60
+      - field: name
+        width: 120
+      - field: company
+        width: 200
+      - field: title
+        width: 150
+      - field: phone
+        width: 150
+      - field: mobile
+        width: 150
+      - field: email
+        width: 200
+      - field: owner
+        width: 120
+    filter_fields: ["status","name", "company"]
   all:
     label: 所有潜在客户
     columns:
-      - name
-      - title
-      - company
-      - phone
-      - mobile
-      - email
-      - status
-      - level
-      - owner
+      - field: status
+        width: 60
+      - field: name
+        width: 120
+      - field: company
+        width: 200
+      - field: title
+        width: 150
+      - field: phone
+        width: 150
+      - field: mobile
+        width: 150
+      - field: email
+        width: 200
+      - field: owner
+        width: 120
+    filter_fields: ["status", "rating", "name", "company"]
   recent:
     label: 最近查看的潜在客户
     columns:
-      - name
-      - title
-      - company
-      - phone
-      - mobile
-      - email
-      - status
-      - level
-      - owner
+      - field: status
+        width: 60
+      - field: name
+        width: 120
+      - field: company
+        width: 200
+      - field: title
+        width: 150
+      - field: phone
+        width: 150
+      - field: mobile
+        width: 150
+      - field: email
+        width: 200
+      - field: owner
+        width: 120
+    filter_fields: ["status", "rating", "name", "company"]
   mine:
     label: 我的潜在客户
     columns:
-      - name
-      - title
-      - company
-      - phone
-      - mobile
-      - email
-      - status
-      - level
-      - owner
+      - field: status
+        width: 60
+      - field: name
+        width: 120
+      - field: company
+        width: 200
+      - field: title
+        width: 150
+      - field: phone
+        width: 150
+      - field: mobile
+        width: 150
+      - field: email
+        width: 200
+      - field: owner
+        width: 120
+    filter_fields: ["status", "rating", "name", "company"]
     filter_scope: mine
 actions:
   convert:

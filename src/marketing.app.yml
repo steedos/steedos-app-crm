@@ -6,7 +6,7 @@ icon_slds: campaign
 is_creator: true
 objects:
   - campaign
-  - lead
+  - leads
   - contacts
   - opportunity
   - reports

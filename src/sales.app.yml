@@ -6,7 +6,7 @@ sort: 20
 is_creator: true
 objects:
   - opportunity
-  - lead
+  - leads
   - accounts
   - contacts
   - campaign
@@ -18,7 +18,7 @@ objects:
   - reports
 mobile_objects:
   - opportunity
-  - lead
+  - leads
   - accounts
   - contacts
   - campaign
