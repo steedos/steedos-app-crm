@@ -448,8 +448,8 @@ fields:
     type: text
     hidden: true
 list_views:
-  all:
-    label: 所有客户
+  recent:
+    label: 最近查看
     columns:
       - field: name
         width: 300
@@ -470,8 +470,8 @@ list_views:
       - industry
       - rating
       - name
-  recent:
-    label: 最近查看
+  all:
+    label: 所有客户
     columns:
       - field: name
         width: 300
@@ -520,7 +520,7 @@ list_views:
       - industry
       - name
   hotRating:
-    label: 高分级的伙伴
+    label: 非常重要的客户
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
           return [

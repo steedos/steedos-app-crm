@@ -166,6 +166,9 @@ fields:
     label: 订单金额
     hidden: true
 list_views:
+  recent:
+    label: 最近查看
+    filter_scope: space
   all:
     label: 所有订单
     columns:
@@ -175,9 +178,6 @@ list_views:
       - effective_date
       - type
       - status
-    filter_scope: space
-  recent:
-    label: 最近查看
     filter_scope: space
 permission_set:
   user:

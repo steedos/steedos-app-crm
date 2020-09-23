@@ -191,8 +191,8 @@ fields:
     reference_to: asset
     hidden: true
 list_views:
-  all:
-    label: 所有联系人
+  recent:
+    label: 最近查看
     columns:
       - name
       - account_id
@@ -202,8 +202,8 @@ list_views:
       - name
       - account_id
       - email
-  recent:
-    label: 最近查看
+  all:
+    label: 所有联系人
     columns:
       - name
       - account_id

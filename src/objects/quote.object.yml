@@ -208,6 +208,9 @@ fields:
     reference_to: price_book_entry
     hidden: true
 list_views:
+  recent:
+    label: 最近查看
+    filter_scope: space
   all:
     label: 所有报价
     columns:
@@ -218,9 +221,6 @@ list_views:
       - is_syncing
       - status
       - grand_total
-    filter_scope: space
-  recent:
-    label: 最近查看
     filter_scope: space
 permission_set:
   user:

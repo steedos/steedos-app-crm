@@ -152,6 +152,12 @@ fields:
     reference_to: currency
     hidden: true
 list_views:
+  recent:
+    label: 最近查看
+    filter_scope: space
+    sort:
+      - - create_date
+        - desc
   all:
     label: 所有主协议
     columns:
@@ -169,12 +175,6 @@ list_views:
       - field: agreement_term
         width: 150
       - owner
-    filter_scope: space
-    sort:
-      - - create_date
-        - desc
-  recent:
-    label: 最近查看
     filter_scope: space
     sort:
       - - create_date

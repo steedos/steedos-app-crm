@@ -220,6 +220,31 @@ fields:
     hidden: true
     inlineHelpText: 表示该业务机会属于某合作伙伴（只读）
 list_views:
+  recent:
+    label: 最近查看
+    columns:
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: due_date
+        width: 120
+      - field: stage
+        width: 160
+      - field: probability
+        width: 120
+      - field: lead_source
+        width: 120
+      - field: owner
+        width: 120
+    filter_scope: space
+    filter_fields:
+      - stage
+      - lead_source
+      - account
+      - name
   operating:
     label: 进行中的业务机会
     columns:
@@ -291,31 +316,6 @@ list_views:
       - name
   all:
     label: 全部业务机会
-    columns:
-      - field: name
-        width: 220
-      - field: account
-        width: 280
-      - field: amount
-        width: 120
-      - field: due_date
-        width: 120
-      - field: stage
-        width: 160
-      - field: probability
-        width: 120
-      - field: lead_source
-        width: 120
-      - field: owner
-        width: 120
-    filter_scope: space
-    filter_fields:
-      - stage
-      - lead_source
-      - account
-      - name
-  recent:
-    label: 最近查看
     columns:
       - field: name
         width: 220

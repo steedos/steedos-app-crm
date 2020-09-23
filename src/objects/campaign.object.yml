@@ -130,6 +130,9 @@ fields:
     inlineHelpText: 为市场活动层次结构作为目标的个体总数计算的字段，例如已发送电子邮件的总数。（只读）
     hidden: true
 list_views:
+  recent:
+    label: 最近查看
+    filter_scope: space
   all:
     label: 所有市场活动
     columns:
@@ -139,9 +142,6 @@ list_views:
       - status
       - start_date
       - end_date
-    filter_scope: space
-  recent:
-    label: 最近查看
     filter_scope: space
 permission_set:
   user:

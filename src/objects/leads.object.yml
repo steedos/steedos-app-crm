@@ -268,6 +268,26 @@ fields:
     reference_to: opportunity
     hidden: true
 list_views:
+  recent:
+    label: 最近查看
+    columns:
+      - field: status
+        width: 60
+      - field: name
+        width: 120
+      - field: company
+        width: 200
+      - field: title
+        width: 150
+      - field: phone
+        width: 150
+      - field: mobile
+        width: 150
+      - field: email
+        width: 200
+      - field: owner
+        width: 120
+    filter_fields: ["status", "rating", "name", "company"]
   today:
     label: 新的潜在客户
     filters: !<tag:yaml.org,2002:js/function> |-
@@ -295,7 +315,7 @@ list_views:
         width: 120
     filter_fields: ["rating","name", "company"]
   hot:
-    label: 高分级的潜在客户
+    label: 非常重要的潜在客户
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
           return [
@@ -322,26 +342,6 @@ list_views:
     filter_fields: ["status","name", "company"]
   all:
     label: 所有潜在客户
-    columns:
-      - field: status
-        width: 60
-      - field: name
-        width: 120
-      - field: company
-        width: 200
-      - field: title
-        width: 150
-      - field: phone
-        width: 150
-      - field: mobile
-        width: 150
-      - field: email
-        width: 200
-      - field: owner
-        width: 120
-    filter_fields: ["status", "rating", "name", "company"]
-  recent:
-    label: 最近查看的潜在客户
     columns:
       - field: status
         width: 60
