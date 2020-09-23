@@ -16,5 +16,4 @@ objects:
   - reports
 mobile_objects:
   - opportunity
-  - leads
   - quote
