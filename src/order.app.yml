@@ -3,7 +3,7 @@ name: 订单
 description: 管理主协议、订单、产品、价格
 icon_slds: contract
 sort: 30
-is_creator: true
+is_creator: false
 objects:
   - agreement
   - order
