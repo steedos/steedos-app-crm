@@ -9,6 +9,7 @@ fields:
     type: lookup
     label: 产品
     reference_to: product
+    create: false
     inlineHelpText: 价格手册中所列的行项目产品的名称。
   list_price:
     type: currency
@@ -25,11 +26,13 @@ fields:
     label: 总价
     formula_type: number
     scale: 2
-    formula: "{subtotal}*(1-{discount}*0.01)"
+    formula: "{discount}==0?{subtotal}:{subtotal}*{discount}"
     inlineHelpText: 行项目的销售价格和数量相乘再减去折扣。
   discount:
     type: number
-    label: 折扣（%）
+    label: 折扣
+    scale: 2
+    max: 1
     inlineHelpText: 您应用到行项目的折扣。您可以使用百分比符号输入数字，也可以不使用百分比符号输入数字。您可以使用最多两个小数位。
   quote_id:
     label: 报价名称
@@ -39,6 +42,8 @@ fields:
   quantity:
     type: number
     label: 数量
+    min: 1
+    defaultValue: 1
     inlineHelpText: 报价中包含的该行项目产品的套数。值必须大于或等于 1。如果报价与业务机会同步，该字段会从报价行项目更新到业务机会产品。
   date:
     type: date
@@ -76,10 +81,9 @@ list_views:
     label: 所有报价行条目
     columns:
       - line_number
-      - quote_id
       - product_id
-      - list_price
       - total_price
+      - discount
       - date
     filter_scope: space
   recent:

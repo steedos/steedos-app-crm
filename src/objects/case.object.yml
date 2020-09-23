@@ -146,8 +146,9 @@ fields:
     label: 订单参考编号
     hidden: true
   case_currency:
-    type: text
+    type: lookup
     label: 个案币种
+    reference_to: currency
     hidden: true
   closed_when_created:
     label: 创建时关闭

@@ -8,15 +8,23 @@ fields:
   name:
     type: text
     label: 货币名称
+  shorthand:
+    type: text
+    label: 简称
+  exchange_rate:
+    type: number
+    label: 汇率（人民币）
+    scale: 2
 list_views:
   all:
     label: 所有货币
     columns:
       - name
+      - shorthand
+      - exchange_rate
   recent:
     label: 最近查看
     filter_scope: space
-
 permission_set:
   user:
     allowCreate: false

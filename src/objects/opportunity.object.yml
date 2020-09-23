@@ -71,8 +71,22 @@ fields:
     inlineHelpText: 负责产生业务机会的市场活动的名称。对于在潜在客户转换期间创建的业务机会，此字段自动以潜在客户中的市场活动名称填充。如果潜在客户具有多个相关联市场活动，则将具有最新更新的成员状态的市场活动插入业务机会。对于具有多个影响的市场活动的业务机会，单击业务机会详细信息页面上“市场活动影响”相关列表中的主要市场活动旁边的编辑并选择主要市场活动源复选框。该市场活动显示在业务机会上主要市场活动源字段上。
   probability	:
     label: 业务机会赢率（%）
-    type: number
+    type: select
+    searchable: true
     sortable: true
+    options:
+      - label: 10%
+        value: 10%
+      - label: 35%
+        value: 35%
+      - label: 75%
+        value: 75%
+      - label: 90%
+        value: 90%
+      - label: 100%
+        value: 100%
+      - label: 0%
+        value: 0%
     inlineHelpText: 业务机会将关闭的可能性，以百分比表示。可能性值总是由阶段值的更改而更新，即使在您的页面布局中可能性字段标记为只读。对此字段具有编辑权限的用户可以覆盖该值。
   rating:
     type: select
@@ -122,7 +136,6 @@ fields:
   next_step:
     label: 下一步
     type: text
-    group: 其他信息
     inlineHelpText: 说明关闭业务机会后下一步的任务。
   lead_source:
     type: select
@@ -151,13 +164,12 @@ fields:
       - label: 网站
         value: Website
     filterable: true
-    group: 其他信息
   description:
     label: 描述
     type: textarea
     is_wide: true
     rows: 3
-    group: 其他信息
+    group: 备注信息
   private:
     label: 专用
     type: boolean
@@ -189,7 +201,10 @@ fields:
     inlineHelpText: 如果业务机会具有产品则为“产品”相关列表中所有产品的所有数量字段值的总计。如果业务机会没有产品则为通用字段。
   expected_revenue:
     label: 预测收入
-    type: currency
+    type: formula
+    formula_type: number
+    scale: 2
+    formula: "{amount}*{probability}"
     inlineHelpText: 基于金额和业务机会赢率计算的收入。
   forecast_category:
     label: 预测类别

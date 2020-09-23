@@ -11,9 +11,17 @@ objects:
   - contacts
   - quote
   - order
+  - product
+  - campaign
   - tasks
   - events
   - reports
 mobile_objects:
   - opportunity
+  - leads
+  - accounts
+  - contacts
   - quote
+  - order
+  - product
+  - campaign

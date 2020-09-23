@@ -65,6 +65,15 @@ fields:
     label: 客户
     reference_to: accounts
     inlineHelpText: 报价的业务机会所链接的客户名。
+  subtotal:
+    type: summary
+    label: 小计
+    summary_object: quote_line_item
+    summary_type: sum
+    summary_field: "total_price"
+    scale: 2
+    inlineHelpText: 在应用折扣、税和运费之前的报价行项目的总和。(只读)
+    #hidden: true
   description:
     label: 描述
     type: textarea
@@ -72,9 +81,11 @@ fields:
     rows: 3
   discount:
     type: number
-    label: 折扣（%）
+    label: 折扣
+    scale: 2
+    max: 1
     group: 总计
-    inlineHelpText: 报价上所有行项目折扣的加权平均值。可以为任意不超过 100 的正数。
+    inlineHelpText: 报价上所有行项目折扣的加权平均值。您可以使用最多两个小数位。
   tax:
     type: currency
     label: 税收
@@ -82,20 +93,21 @@ fields:
     inlineHelpText: 报价的总税额。
   shipping_handling:
     type: currency
-    label: 收货和处理
+    label: 运费和手续费
+    defaultValue: 0
     group: 总计
     inlineHelpText: 报价的总的运费和手续费。
-    hidden: true
+    #hidden: true
   grand_total:
     label: 总计
     type: formula
     formula_type: number
     scale: 2
-    formula: "{total_price}+{tax}+{shipping_handling}"
+    formula: "{discount}==0?{subtotal}+{tax}+{shipping_handling}:{subtotal}*{discount}+{tax}+{shipping_handling}"
     group: 总计
     formula_blank_value: zeroes
     inlineHelpText: 报价的总价格加上运费和税。
-    hidden: true
+    #hidden: true
   contact_id:
     type: lookup
     label: 联系人姓名
@@ -162,15 +174,6 @@ fields:
     type: lookup
     label: 主协议
     reference_to: agreement
-    hidden: true
-  subtotal:
-    type: summary
-    label: 小计
-    summary_object: quote_line_item
-    summary_type: sum
-    summary_field: "total_price"
-    scale: 2
-    inlineHelpText: 在应用折扣、税和运费之前的报价行项目的总和。(只读)
     hidden: true
   total_price:
     type: formula

@@ -20,9 +20,14 @@ fields:
     options:
       - label: 无
         value: none
+    hidden: true
   product_code:
     type: text
     label: 产品代码
+  product_currency:
+    type: lookup
+    label: 产品货币
+    reference_to: currency
   is_active:
     label: 已启用
     type: toggle
@@ -36,10 +41,6 @@ fields:
     type: text
     label: 产品最小存货单位
     hidden: true
-  product_currency:
-    type: lookup
-    label: 产品货币
-    reference_to: currency
   external_id:
     type: text
     label: 外部ID
@@ -95,7 +96,7 @@ list_views:
     columns:
       - name
       - product_code
-      - family
+      - product_currency
       - description
     filter_scope: space
   recent:

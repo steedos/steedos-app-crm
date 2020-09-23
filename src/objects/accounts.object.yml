@@ -326,7 +326,8 @@ fields:
     hidden: true
   account_currency:
     label: 客户币种
-    type: text
+    type: lookup
+    reference_to: currency
     hidden: true
   account_division:
     label: 客户分部

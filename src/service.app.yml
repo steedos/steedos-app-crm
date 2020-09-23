@@ -10,6 +10,4 @@ objects:
   - case
   - reports
 mobile_objects:
-  - accounts
-  - contacts
   - case
