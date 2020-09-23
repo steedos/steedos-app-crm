@@ -9,19 +9,15 @@ objects:
   - leads
   - accounts
   - contacts
-  - campaign
   - quote
   - order
   - tasks
-  - events 
-  - case
+  - events
   - reports
 mobile_objects:
   - opportunity
   - leads
   - accounts
   - contacts
-  - campaign
   - quote
   - order
-  - case
