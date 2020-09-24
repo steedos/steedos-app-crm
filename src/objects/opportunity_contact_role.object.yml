@@ -12,6 +12,7 @@ fields:
     omit: true
     readonly: true
     searchable: true
+    is_name: true
   opportunity_id:
     label: 业务机会名
     type: master_detail
