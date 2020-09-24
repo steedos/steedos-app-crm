@@ -101,18 +101,20 @@ fields:
       - label: 已响应
         value: Responded
     filterable: true
-  country:
-    label: 地区
-    type: text
-  city:
-    label: 城市
-    type: text
-  streety:
-    label: 街道
-    type: text
-  zip:
-    label: 邮政编码
-    type: text
+  # country:
+  #   label: 地区
+  #   type: text
+  # city:
+  #   label: 城市
+  #   type: text
+  address:
+    label: 地址
+    type: textarea
+    is_wide: true
+    rows: 3
+  # zip:
+  #   label: 邮政编码
+  #   type: text
   has_opted_out_of_email:
     label: 退出邮件列表
     type: boolean

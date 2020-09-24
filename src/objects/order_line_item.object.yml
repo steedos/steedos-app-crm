@@ -1,4 +1,4 @@
-name: order_product
+name: order_line_item
 label: 订单产品
 icon: orders
 enable_files: true
@@ -73,7 +73,7 @@ fields:
     readonly: true
     inlineHelpText: 可用于减少的单位数量。当启用减单时，订单产品的可用数量将更新，以反映出相关减单产品的数量。值必须始终大于或等于 0。（只读）
     hidden: true
-  original_order_product_id:
+  original_order_item_id:
     type: text
     label: 原始订单产品
     readonly: true

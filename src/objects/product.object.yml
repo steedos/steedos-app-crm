@@ -102,6 +102,10 @@ list_views:
   recent:
     label: 最近查看
     filter_scope: space
+actions:
+  addToPriceBook:
+    label: 添加到价格手册
+    on: record_only
 permission_set:
   user:
     allowCreate: false

@@ -1,4 +1,4 @@
-name: opportunity_product
+name: opportunity_line_item
 label: 业务机会产品
 icon: opportunity
 enable_audit: true
@@ -19,6 +19,8 @@ fields:
   quantity:
     label: 数量
     type: number
+    min: 1
+    defaultValue: 1
     required: true
   unit_price:
     label: 销售价格
@@ -75,6 +77,9 @@ list_views:
 actions:
   selectPriceBook:
     label: 选择价格手册
+    on: list
+  addProduct:
+    label: 添加产品
     on: list
   standard_new:
     visible: false //禁用新增

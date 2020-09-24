@@ -26,7 +26,7 @@ fields:
   product_code:
     type: text
     label: 产品代码
-    readonly: true
+    #readonly: true
   unit_price:
     type: currency
     label: 价目表价格
@@ -55,6 +55,12 @@ list_views:
   recent:
     label: 最近查看
     filter_scope: space
+actions:
+  addProduct:
+    label: 添加产品
+    on: list
+  standard_new:
+    visible: false //禁用新增
 permission_set:
   user:
     allowCreate: false
