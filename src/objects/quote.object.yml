@@ -104,9 +104,8 @@ fields:
     type: formula
     data_type: number
     scale: 2
-    formula: "{discount}==0?{subtotal}+{tax}+{shipping_handling}:{subtotal}*{discount}+{tax}+{shipping_handling}"
+    formula: "IF(discount == 0, subtotal + tax + shipping_handling, subtotal * discount + tax + shipping_handling)"
     group: 总计
-    formula_blank_value: zeroes
     inlineHelpText: 报价的总价格加上运费和税。
     #hidden: true
   contact_id:
@@ -181,9 +180,10 @@ fields:
     label: 总价
     data_type: number
     scale: 2
-    formula: "{subtotal}*(1-{discount}*0.01)"
+    #formula: "IF(discount == 0, subtotal, subtotal * discount)"
+    formula: "subtotal"
     inlineHelpText: 折扣后，不含税和运费的报价行项目的总和。(只读)
-    hidden: true
+    #hidden: true
   quote_to_name:
     type: text
     label: 收报价人姓名

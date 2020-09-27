@@ -19,14 +19,14 @@ fields:
     type: formula
     data_type: number
     scale: 2
-    formula: "{unit_price}*{quantity}"
+    formula: "unit_price * quantity"
     inlineHelpText: 行项目的销售价格与数量相乘。
   total_price:
     type: formula
     label: 总价
     data_type: number
     scale: 2
-    formula: "{discount}==0?{subtotal}:{subtotal}*{discount}"
+    formula: "IF(discount == 0, subtotal, subtotal * discount)"
     inlineHelpText: 行项目的销售价格和数量相乘再减去折扣。
   discount:
     type: number

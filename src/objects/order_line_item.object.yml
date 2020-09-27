@@ -38,7 +38,7 @@ fields:
     type: formula
     data_type: number
     scale: 2
-    formula: "{unit_price}*{quantity}"
+    formula: "unit_price * quantity"
     inlineHelpText: 订单产品数量乘以单价。
     #hidden: true
   quote_line_item_id:
