@@ -85,7 +85,8 @@ fields:
     label: 折扣
     scale: 2
     max: 1
-    group: 总计
+    min: 0
+    #group: 总计
     inlineHelpText: 报价上所有行项目折扣的加权平均值。您可以使用最多两个小数位。
   tax:
     type: currency
@@ -104,7 +105,7 @@ fields:
     type: formula
     data_type: number
     scale: 2
-    formula: "IF(discount == 0, subtotal + tax + shipping_handling, subtotal * discount + tax + shipping_handling)"
+    formula: "IF(discount == 0, total_price + tax + shipping_handling, total_price + tax + shipping_handling)"
     group: 总计
     inlineHelpText: 报价的总价格加上运费和税。
     #hidden: true
@@ -180,8 +181,7 @@ fields:
     label: 总价
     data_type: number
     scale: 2
-    #formula: "IF(discount == 0, subtotal, subtotal * discount)"
-    formula: "subtotal"
+    formula: "IF(discount == 0, subtotal, subtotal * (1 - discount))"
     inlineHelpText: 折扣后，不含税和运费的报价行项目的总和。(只读)
     #hidden: true
   quote_to_name:
