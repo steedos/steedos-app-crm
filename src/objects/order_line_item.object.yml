@@ -36,7 +36,7 @@ fields:
   total_price:
     label: 总价
     type: formula
-    formula_type: number
+    formula_data_type: number
     scale: 2
     formula: "{unit_price}*{quantity}"
     inlineHelpText: 订单产品数量乘以单价。

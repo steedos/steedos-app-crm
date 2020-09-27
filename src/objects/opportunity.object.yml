@@ -202,7 +202,7 @@ fields:
   expected_revenue:
     label: 预测收入
     type: formula
-    formula_type: number
+    formula_data_type: number
     scale: 2
     formula: "{amount}*{probability}"
     inlineHelpText: 基于金额和业务机会赢率计算的收入。
