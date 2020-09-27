@@ -71,6 +71,7 @@ fields:
     summary_object: quote_line_item
     summary_type: sum
     summary_field: "total_price"
+    data_type: 'number'
     scale: 2
     inlineHelpText: 在应用折扣、税和运费之前的报价行项目的总和。(只读)
     #hidden: true
@@ -101,7 +102,7 @@ fields:
   grand_total:
     label: 总计
     type: formula
-    formula_data_type: number
+    data_type: number
     scale: 2
     formula: "{discount}==0?{subtotal}+{tax}+{shipping_handling}:{subtotal}*{discount}+{tax}+{shipping_handling}"
     group: 总计
@@ -178,7 +179,7 @@ fields:
   total_price:
     type: formula
     label: 总价
-    formula_data_type: number
+    data_type: number
     scale: 2
     formula: "{subtotal}*(1-{discount}*0.01)"
     inlineHelpText: 折扣后，不含税和运费的报价行项目的总和。(只读)
@@ -198,6 +199,7 @@ fields:
     label: 行项目
     summary_object: quote_line_item
     summary_type: count
+    data_type: number
     inlineHelpText: 报价上行项目的数量。
     hidden: true
   quote_currency:
