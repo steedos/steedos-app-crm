@@ -448,8 +448,8 @@ fields:
     label: 其他电话
     type: text
     hidden: true
-relatedList:
-  - case
+# relatedList:
+#   - case
 list_views:
   recent:
     label: 最近查看

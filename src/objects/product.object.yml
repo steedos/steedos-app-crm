@@ -90,6 +90,8 @@ fields:
     type: url
     label: 显示URL
     hidden: true
+relatedList:
+  - price_book_entry
 list_views:
   all:
     label: 所有产品

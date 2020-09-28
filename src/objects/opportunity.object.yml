@@ -204,8 +204,7 @@ fields:
     label: 预测收入
     type: formula
     data_type: number
-    scale: 2
-    formula: "amount * probability"
+    formula: "ROUND(amount * (VALUE(probability) * 0.01),2)"
     inlineHelpText: 基于金额和业务机会赢率计算的收入。
   forecast_category:
     label: 预测类别

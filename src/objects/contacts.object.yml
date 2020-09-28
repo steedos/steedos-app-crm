@@ -190,8 +190,8 @@ fields:
   #   label: 资产
   #   reference_to: asset
   #   hidden: true
-relatedList:
-  - opportunity
+# relatedList:
+#   - opportunity
 list_views:
   recent:
     label: 最近查看

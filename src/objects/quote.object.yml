@@ -180,8 +180,7 @@ fields:
     type: formula
     label: 总价
     data_type: number
-    scale: 2
-    formula: "IF(discount == 0, subtotal, subtotal * (1 - discount))"
+    formula: "IF(discount == 0, subtotal, ROUND(subtotal * (1 - discount),2))"
     inlineHelpText: 折扣后，不含税和运费的报价行项目的总和。(只读)
     #hidden: true
   quote_to_name:

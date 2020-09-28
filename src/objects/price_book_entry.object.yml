@@ -24,9 +24,13 @@ fields:
     index: true
     inlineHelpText: 价格手册包含此项的价格。
   product_code:
-    type: text
+    type: formula
     label: 产品代码
-    #readonly: true
+    sortable: true
+    filterable: true
+    data_type: text
+    formula: "product_id.product_code"
+    readonly: true
   unit_price:
     type: currency
     label: 价目表价格

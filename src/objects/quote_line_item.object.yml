@@ -18,15 +18,13 @@ fields:
     label: 小计
     type: formula
     data_type: number
-    scale: 2
-    formula: "unit_price * quantity"
+    formula: "ROUND(unit_price * quantity,2)"
     inlineHelpText: 行项目的销售价格与数量相乘。
   total_price:
     type: formula
     label: 总价
     data_type: number
-    scale: 2
-    formula: "IF(discount == 0, subtotal, subtotal * (1 - discount))"
+    formula: "IF(discount == 0, subtotal, ROUND(subtotal * (1 - discount),2))"
     inlineHelpText: 行项目的销售价格和数量相乘再减去折扣。
   discount:
     type: number
@@ -76,6 +74,10 @@ fields:
     type: lookup
     label: 价格手册条目
     reference_to: price_book_entry
+    # sortable: true
+    # filterable: true
+    # data_type: text
+    # formula: "product_id.price_book_entry"
     hidden: true
 list_views:
   all:
