@@ -85,8 +85,8 @@ actions:
     visible: false //禁用新增
 permission_set:
   user:
-    allowCreate: false
-    allowDelete: false
+    allowCreate: true
+    allowDelete: true
     allowEdit: false
     allowRead: true
     modifyAllRecords: false

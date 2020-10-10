@@ -25,8 +25,8 @@ list_views:
 
 permission_set:
   user:
-    allowCreate: false
-    allowDelete: false
+    allowCreate: true
+    allowDelete: true
     allowEdit: true
     allowRead: true
     modifyAllRecords: false
