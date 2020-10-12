@@ -216,7 +216,6 @@ list_views:
   all:
     label: 所有报价
     columns:
-      - quote_number
       - name
       - opportunity_id
       - expiration_date

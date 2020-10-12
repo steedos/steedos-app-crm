@@ -91,7 +91,9 @@ fields:
     label: 显示URL
     hidden: true
 relatedList:
+  - cms_files
   - price_book_entry
+  - audit_records
 list_views:
   all:
     label: 所有产品
