@@ -145,7 +145,10 @@ module.exports = {
         }
         var record = Creator.odata.get("contacts", record_id, "account,user", "account($select=is_supplier)");
         if(record && record.user){
-            var spaceUser = Creator.odata.query("space_users", {$filter: `(user eq '${record.user}')`, $select: "is_supplier"}, true);
+            var spaceUser = Creator.odata.query("space_users", {
+                $filter: "(user eq '".concat(record.user, "')"),
+                $select: "is_supplier"
+              }, true);
             if(spaceUser[0].is_supplier){
                 return true;
             }
@@ -219,7 +222,10 @@ module.exports = {
         }
         var record = Creator.odata.get("contacts", record_id, "account,user", "account($select=is_supplier)");
         if(record && record.user){
-            var spaceUser = Creator.odata.query("space_users", {$filter: `(user eq '${record.user}')`, $select: "is_supplier"}, true);
+            var spaceUser = Creator.odata.query("space_users", {
+                $filter: "(user eq '".concat(record.user, "')"),
+                $select: "is_supplier"
+              }, true);
             if(spaceUser[0].is_supplier){
                 return true;
             }
