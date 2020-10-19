@@ -23,27 +23,35 @@ module.exports = {
       const objContacts = steedosSchema.getObject('contacts');
       const doc = { owner: body.record_owner_id, space: userSession.spaceId };
       const newAccount = await objAccounts.insert(Object.assign({}, doc, { name: new_account_name }), userSession);
-      const newContact = await objContacts.insert(Object.assign({}, doc, { name: new_contact_name }), userSession);
-      if (newAccount && newContact) {
+      if(newAccount){
         docLeadUpdate.converted_account = newAccount._id;
-        docLeadUpdate.converted_contact = newContact._id;
-        if (!body.omit_new_opportunity) {
-          const objOpportunity = steedosSchema.getObject('opportunity');
-          const newOpportunity = await objOpportunity.insert(Object.assign({}, doc, { name: new_opportunity_name }), userSession);
-          if (newOpportunity) {
-            docLeadUpdate.converted_opportunity = newOpportunity._id;
+        const newContact = await objContacts.insert(Object.assign({}, doc, { name: new_contact_name, account: newAccount._id }), userSession);
+        if (newContact) {
+          docLeadUpdate.converted_contact = newContact._id;
+          if (!body.omit_new_opportunity) {
+            const objOpportunity = steedosSchema.getObject('opportunity');
+            const newOpportunity = await objOpportunity.insert(Object.assign({}, doc, { name: new_opportunity_name, account: newAccount._id }), userSession);
+            if (newOpportunity) {
+              docLeadUpdate.converted_opportunity = newOpportunity._id;
+            }
+            else {
+              return res.status(500).send({
+                "error": "Action Failed -- Insert Opportunity Failed.",
+                "success": false
+              });
+            }
           }
-          else {
-            return res.status(500).send({
-              "error": "Action Failed -- Insert Opportunity Failed.",
-              "success": false
-            });
-          }
+        }
+        else {
+          return res.status(500).send({
+            "error": "Action Failed -- Insert Contact Failed.",
+            "success": false
+          });
         }
       }
       else {
         return res.status(500).send({
-          "error": "Action Failed -- Insert Account Or Contact Failed.",
+          "error": "Action Failed -- Insert Account Failed.",
           "success": false
         });
       }

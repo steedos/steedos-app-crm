@@ -65,25 +65,7 @@ Steedos.CRM.convertLead = function (record) {
     })
 }
 
-// Steedos.CRM.showLeadConvertedRecordsForm = function (fields, formId, doc, onConfirm, title) {
-//     var schema = Creator.getObjectSchema({ fields: fields });
-//     Modal.show("quickFormModal", { formId: formId, title: title || "潜在客户已转换", confirmBtnText: `确定`, schema: schema, doc: doc, onConfirm: onConfirm }, {
-//         backdrop: 'static',
-//         keyboard: true
-//     });
-// }
-
 Steedos.CRM.alertLeadConvertedRecords = function (record) {
-    // let doc = {};
-    // doc.account_name = record.converted_account;
-    // doc.account_url = Steedos.absoluteUrl(Creator.getObjectUrl("accounts", record.converted_account),true);
-    // doc.contact_name = record.converted_contact;
-    // doc.contact_url = Steedos.absoluteUrl(Creator.getObjectUrl("contacts", record.converted_contact),true);
-    // if(record.converted_opportunity){
-    //     doc.opportunity_name = record.converted_opportunity;
-    //     doc.opportunity_url = Steedos.absoluteUrl(Creator.getObjectUrl("opportunity", record.converted_opportunity),true);
-    // }
-
     const record_id = record._id;
     const object_name = "leads";
     const fields = "converted_account,converted_contact,converted_opportunity";
@@ -131,54 +113,4 @@ Steedos.CRM.alertLeadConvertedRecords = function (record) {
             sweetAlert.close();
         }
     );
-    // var formId = 'leadConvertForm';
-    // Steedos.CRM.showLeadConvertedRecordsForm({
-    //     account_name: {
-    //         label: "名称",
-    //         type: 'lookup',
-    //         reference_to: "accounts",
-    //         group: "客户",
-    //         is_wide: true,
-    //         readonly: true
-    //     },
-    //     account_url: {
-    //         label: "地址",
-    //         type: 'url',
-    //         group: "客户",
-    //         is_wide: true,
-    //         readonly: true
-    //     },
-    //     contact_name: {
-    //         label: "名称",
-    //         type: 'lookup',
-    //         reference_to: "contacts",
-    //         group: "联系人",
-    //         is_wide: true,
-    //         readonly: true
-    //     },
-    //     contact_url: {
-    //         label: "地址",
-    //         type: 'url',
-    //         group: "联系人",
-    //         is_wide: true,
-    //         readonly: true
-    //     },
-    //     opportunity_name: {
-    //         label: "名称",
-    //         type: 'lookup',
-    //         reference_to: "opportunity",
-    //         group: "业务机会",
-    //         is_wide: true,
-    //         readonly: true
-    //     },
-    //     opportunity_url: {
-    //         label: "地址",
-    //         type: 'url',
-    //         group: "业务机会",
-    //         is_wide: true,
-    //         readonly: true
-    //     }
-    // }, formId, doc, function (formValues, e, t) {
-    //     Modal.hide(t);
-    // });
 }
