@@ -3,13 +3,13 @@ Steedos.CRM = {};
 Steedos.CRM.showLeadConvertForm = function(fields, formId, doc, onConfirm, title){
 
     var schema = Creator.getObjectSchema({fields: fields});
-    // 因为boolean字段类型的autoform用的是steedos-boolean-checkbox，不支持，只能用steedos-boolean-toggle代替，其他的控件都不支持
-    // schema.omit_new_opportunity.autoform.type = "steedos-boolean-toggle";
-    _.forEach(schema, (item)=>{
-        if(item.type === Boolean){
-            item.autoform.type = "steedos-boolean-toggle";
-        }
-    });
+    // // 因为boolean字段类型的autoform用的是steedos-boolean-checkbox，不支持，只能用steedos-boolean-toggle代替，其他的控件都不支持
+    // // schema.omit_new_opportunity.autoform.type = "steedos-boolean-toggle";
+    // _.forEach(schema, (item)=>{
+    //     if(item.type === Boolean){
+    //         item.autoform.type = "steedos-boolean-toggle";
+    //     }
+    // });
 
     Modal.show("quickFormModal", {formId: formId, title: title || "转换潜在客户", confirmBtnText: `转换`, schema: schema, doc: doc, onConfirm: onConfirm}, {
         backdrop: 'static',
@@ -50,7 +50,7 @@ Steedos.CRM.convertLead = function(record){
         },
         omit_new_opportunity: {
             label: "请勿在转换时创建业务机会",
-            type: 'boolean',
+            type: 'toggle',
             // group: "业务机会"
         },
         record_owner_id: {
