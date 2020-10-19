@@ -1,23 +1,14 @@
 Steedos.CRM = {};
 
-Steedos.CRM.showLeadConvertForm = function(fields, formId, doc, onConfirm, title){
-
-    var schema = Creator.getObjectSchema({fields: fields});
-    // // 因为boolean字段类型的autoform用的是steedos-boolean-checkbox，不支持，只能用steedos-boolean-toggle代替，其他的控件都不支持
-    // // schema.omit_new_opportunity.autoform.type = "steedos-boolean-toggle";
-    // _.forEach(schema, (item)=>{
-    //     if(item.type === Boolean){
-    //         item.autoform.type = "steedos-boolean-toggle";
-    //     }
-    // });
-
-    Modal.show("quickFormModal", {formId: formId, title: title || "转换潜在客户", confirmBtnText: `转换`, schema: schema, doc: doc, onConfirm: onConfirm}, {
+Steedos.CRM.showLeadConvertForm = function (fields, formId, doc, onConfirm, title) {
+    var schema = Creator.getObjectSchema({ fields: fields });
+    Modal.show("quickFormModal", { formId: formId, title: title || "转换潜在客户", confirmBtnText: `转换`, schema: schema, doc: doc, onConfirm: onConfirm }, {
         backdrop: 'static',
         keyboard: true
     });
 }
 
-Steedos.CRM.convertLead = function(record){
+Steedos.CRM.convertLead = function (record) {
     const record_id = record._id;
     const object_name = "leads";
     let doc = {};
@@ -59,9 +50,14 @@ Steedos.CRM.convertLead = function(record){
             reference_to: 'users',
             required: true
         }
-    }, formId, doc, function(formValues, e, t){
-        var result = Steedos.authRequest(`/api/v4/${object_name}/${record_id}/convert`, {type: 'post', async: false, data: JSON.stringify(formValues.insertDoc)});
-        if(result && result.state === 'SUCCESS'){
+    }, formId, doc, function (formValues, e, t) {
+        let insertDoc = formValues.insertDoc;
+        // if(!insertDoc.omit_new_opportunity && new_opportunity_name.trim().length === 0){
+        //     toastr.error(t("请输入业务机会名称或勾选“请勿在转换时创建业务机会”项"));
+        //     return;
+        // }
+        var result = Steedos.authRequest(`/api/v4/${object_name}/${record_id}/convert`, { type: 'post', async: false, data: JSON.stringify(insertDoc) });
+        if (result && result.state === 'SUCCESS') {
             FlowRouter.reload();
             Modal.hide(t);
         }
