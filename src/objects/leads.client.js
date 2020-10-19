@@ -9,6 +9,10 @@ Steedos.CRM.showLeadConvertForm = function (fields, formId, doc, onConfirm, titl
 }
 
 Steedos.CRM.convertLead = function (record) {
+    if(record.converted){
+        toastr.error(t("该潜在客户已经转换过了，不能重复转换！"));
+        return;
+    }
     const record_id = record._id;
     const object_name = "leads";
     let doc = {};
@@ -52,14 +56,129 @@ Steedos.CRM.convertLead = function (record) {
         }
     }, formId, doc, function (formValues, e, t) {
         let insertDoc = formValues.insertDoc;
-        // if(!insertDoc.omit_new_opportunity && new_opportunity_name.trim().length === 0){
-        //     toastr.error(t("请输入业务机会名称或勾选“请勿在转换时创建业务机会”项"));
-        //     return;
-        // }
         var result = Steedos.authRequest(`/api/v4/${object_name}/${record_id}/convert`, { type: 'post', async: false, data: JSON.stringify(insertDoc) });
         if (result && result.state === 'SUCCESS') {
             FlowRouter.reload();
             Modal.hide(t);
+            Steedos.CRM.alertLeadConvertedRecords(record);
         }
     })
+}
+
+// Steedos.CRM.showLeadConvertedRecordsForm = function (fields, formId, doc, onConfirm, title) {
+//     var schema = Creator.getObjectSchema({ fields: fields });
+//     Modal.show("quickFormModal", { formId: formId, title: title || "潜在客户已转换", confirmBtnText: `确定`, schema: schema, doc: doc, onConfirm: onConfirm }, {
+//         backdrop: 'static',
+//         keyboard: true
+//     });
+// }
+
+Steedos.CRM.alertLeadConvertedRecords = function (record) {
+    // let doc = {};
+    // doc.account_name = record.converted_account;
+    // doc.account_url = Steedos.absoluteUrl(Creator.getObjectUrl("accounts", record.converted_account),true);
+    // doc.contact_name = record.converted_contact;
+    // doc.contact_url = Steedos.absoluteUrl(Creator.getObjectUrl("contacts", record.converted_contact),true);
+    // if(record.converted_opportunity){
+    //     doc.opportunity_name = record.converted_opportunity;
+    //     doc.opportunity_url = Steedos.absoluteUrl(Creator.getObjectUrl("opportunity", record.converted_opportunity),true);
+    // }
+
+    const record_id = record._id;
+    const object_name = "leads";
+    const fields = "converted_account,converted_contact,converted_opportunity";
+    const converteds = Creator.odata.get(object_name, record_id, fields, fields);
+    let doc = {};
+    if(converteds.converted_account){
+        doc.account_name = converteds.converted_account._NAME_FIELD_VALUE;
+        doc.account_url = Steedos.absoluteUrl(Creator.getObjectUrl("accounts", converteds.converted_account._id),true);
+    }
+    if(converteds.converted_contact){
+        doc.contact_name = converteds.converted_contact._NAME_FIELD_VALUE;
+        doc.contact_url = Steedos.absoluteUrl(Creator.getObjectUrl("contacts", converteds.converted_contact._id),true);
+    }
+    if(converteds.converted_opportunity){
+        doc.opportunity_name = converteds.converted_opportunity._NAME_FIELD_VALUE;
+        doc.opportunity_url = Steedos.absoluteUrl(Creator.getObjectUrl("opportunity", converteds.converted_opportunity._id),true);
+    }
+    let html = `
+        <div class="lg:grid lg:grid-cols-3 lg:gap-2">
+            <div class="flex items-start">
+                <div class="ml-4">
+                    <p class="text-lg1 leading-61 font-medium1 text-gray-900">客户：<a href="${doc.account_url}" target="_blank">${doc.account_name?doc.account_name:""}</a></p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <div class="ml-4">
+                    <p class="text-lg1 leading-61 font-medium1 text-gray-900">联系人：<a href="${doc.contact_url}" target="_blank">${doc.contact_name?doc.contact_name:""}</a></p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <div class="ml-4">
+                    <p class="text-lg1 leading-61 font-medium1 text-gray-900">业务机会：<a href="${doc.opportunity_url}" target="_blank">${doc.opportunity_name?doc.opportunity_name:""}</a></p>
+                </div>
+            </div>
+        </div>
+    `;
+    swal({
+            title: "潜在客户已转换",
+            text: html,
+            html: true,
+            type:"success",
+            confirmButtonText:t('OK')
+        },
+        ()=>{
+            sweetAlert.close();
+        }
+    );
+    // var formId = 'leadConvertForm';
+    // Steedos.CRM.showLeadConvertedRecordsForm({
+    //     account_name: {
+    //         label: "名称",
+    //         type: 'lookup',
+    //         reference_to: "accounts",
+    //         group: "客户",
+    //         is_wide: true,
+    //         readonly: true
+    //     },
+    //     account_url: {
+    //         label: "地址",
+    //         type: 'url',
+    //         group: "客户",
+    //         is_wide: true,
+    //         readonly: true
+    //     },
+    //     contact_name: {
+    //         label: "名称",
+    //         type: 'lookup',
+    //         reference_to: "contacts",
+    //         group: "联系人",
+    //         is_wide: true,
+    //         readonly: true
+    //     },
+    //     contact_url: {
+    //         label: "地址",
+    //         type: 'url',
+    //         group: "联系人",
+    //         is_wide: true,
+    //         readonly: true
+    //     },
+    //     opportunity_name: {
+    //         label: "名称",
+    //         type: 'lookup',
+    //         reference_to: "opportunity",
+    //         group: "业务机会",
+    //         is_wide: true,
+    //         readonly: true
+    //     },
+    //     opportunity_url: {
+    //         label: "地址",
+    //         type: 'url',
+    //         group: "业务机会",
+    //         is_wide: true,
+    //         readonly: true
+    //     }
+    // }, formId, doc, function (formValues, e, t) {
+    //     Modal.hide(t);
+    // });
 }
