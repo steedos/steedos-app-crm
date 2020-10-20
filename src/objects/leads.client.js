@@ -24,35 +24,67 @@ Steedos.CRM.convertLead = function (record) {
     var formId = 'leadConvertForm';
     Steedos.CRM.showLeadConvertForm({
         new_account_name: {
-            label: "新建客户",
+            label: "新建客户名称",
             type: 'text',
             is_wide: true,
-            // group: "客户",
-            required: true
+            group: "客户"
+        },
+        is_lookup_account: {
+            label: "选择现有",
+            type: 'toggle',
+            group: "客户"
+        },
+        lookup_account: {
+            label: "现有客户",
+            type: 'lookup',
+            reference_to: 'accounts',
+            group: "客户"
         },
         new_contact_name: {
-            label: "新建联系人",
+            label: "新建联系人名称",
             type: 'text',
             is_wide: true,
-            // group: "联系人",
-            required: true
+            group: "联系人"
+        },
+        is_lookup_contact: {
+            label: "选择现有",
+            type: 'toggle',
+            group: "联系人"
+        },
+        lookup_contact: {
+            label: "现有联系人",
+            type: 'lookup',
+            reference_to: 'contacts',
+            group: "联系人"
         },
         new_opportunity_name: {
-            label: "新建业务机会",
+            label: "新建业务机会名称",
             type: 'text',
             is_wide: true,
-            // group: "业务机会"
+            group: "业务机会"
+        },
+        is_lookup_opportunity: {
+            label: "选择现有",
+            type: 'toggle',
+            group: "业务机会"
+        },
+        lookup_opportunity: {
+            label: "现有业务机会",
+            type: 'lookup',
+            reference_to: 'opportunity',
+            group: "业务机会"
         },
         omit_new_opportunity: {
             label: "请勿在转换时创建业务机会",
             type: 'toggle',
-            // group: "业务机会"
+            group: "业务机会"
         },
         record_owner_id: {
             label: "记录所有人",
             type: 'lookup',
             reference_to: 'users',
-            required: true
+            required: true,
+            group: "其他"
         }
     }, formId, doc, function (formValues, e, t) {
         let insertDoc = formValues.insertDoc;

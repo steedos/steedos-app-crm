@@ -38,38 +38,74 @@ module.exports = {
       const objAccounts = steedosSchema.getObject('accounts');
       const objContacts = steedosSchema.getObject('contacts');
       const doc = { owner: body.record_owner_id, space: userSession.spaceId };
-      const newAccount = await objAccounts.insert(Object.assign({}, doc, docAccountConverts, { name: new_account_name }), userSession);
-      if(newAccount){
-        docLeadUpdate.converted_account = newAccount._id;
-        const newContact = await objContacts.insert(Object.assign({}, doc, docContactConverts, { name: new_contact_name, account: newAccount._id }), userSession);
-        if (newContact) {
-          docLeadUpdate.converted_contact = newContact._id;
-          if (!body.omit_new_opportunity) {
-            const objOpportunity = steedosSchema.getObject('opportunity');
-            const newOpportunity = await objOpportunity.insert(Object.assign({}, doc, docOpportunityConverts, { name: new_opportunity_name, account: newAccount._id }), userSession);
-            if (newOpportunity) {
-              docLeadUpdate.converted_opportunity = newOpportunity._id;
-            }
-            else {
-              return res.status(500).send({
-                "error": "Action Failed -- Insert Opportunity Failed.",
-                "success": false
-              });
-            }
-          }
-        }
-        else {
+      let newAccount;
+      if(body.is_lookup_account && body.lookup_account){
+        newAccount = await objAccounts.findOne(body.lookup_account);
+        if(!newAccount){
           return res.status(500).send({
-            "error": "Action Failed -- Insert Contact Failed.",
+            "error": "Action Failed -- The account is not found.",
             "success": false
           });
         }
       }
-      else {
-        return res.status(500).send({
-          "error": "Action Failed -- Insert Account Failed.",
-          "success": false
-        });
+      else{
+        newAccount = await objAccounts.insert(Object.assign({}, doc, docAccountConverts, { name: new_account_name }), userSession);
+        if(!newAccount){
+          return res.status(500).send({
+            "error": "Action Failed -- Insert account failed.",
+            "success": false
+          });
+        }
+      }
+      if(newAccount){
+        docLeadUpdate.converted_account = newAccount._id;
+        let newContact;
+        if(body.is_lookup_contact && body.lookup_contact){
+          newContact = await objContacts.findOne(body.lookup_contact);
+          if(!newContact){
+            return res.status(500).send({
+              "error": "Action Failed -- The contact is not found.",
+              "success": false
+            });
+          }
+        }
+        else{
+          newContact = await objContacts.insert(Object.assign({}, doc, docContactConverts, { name: new_contact_name, account: newAccount._id }), userSession);
+          if(!newContact){
+            return res.status(500).send({
+              "error": "Action Failed -- Insert contact failed.",
+              "success": false
+            });
+          }
+        }
+        if (newContact) {
+          docLeadUpdate.converted_contact = newContact._id;
+          if (!body.omit_new_opportunity) {
+            const objOpportunity = steedosSchema.getObject('opportunity');
+            let newOpportunity;
+            if(body.is_lookup_opportunity && body.lookup_opportunity){
+              newOpportunity = await objOpportunity.findOne(body.lookup_opportunity);
+              if(!newOpportunity){
+                return res.status(500).send({
+                  "error": "Action Failed -- The opportunity is not found.",
+                  "success": false
+                });
+              }
+            }
+            else{
+              newOpportunity = await objOpportunity.insert(Object.assign({}, doc, docOpportunityConverts, { name: new_opportunity_name, account: newAccount._id }), userSession);
+              if(!newOpportunity){
+                return res.status(500).send({
+                  "error": "Action Failed -- Insert opportunity failed.",
+                  "success": false
+                });
+              }
+            }
+            if (newOpportunity) {
+              docLeadUpdate.converted_opportunity = newOpportunity._id;
+            }
+          }
+        }
       }
       await objLeads.updateOne(recordId, docLeadUpdate, userSession);
       return res.status(200).send({ state: 'SUCCESS' });
