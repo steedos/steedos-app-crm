@@ -17,7 +17,7 @@ module.exports = {
           "success": false
         });
       }
-      let docLeadUpdate = { converted: true };
+      let docLeadUpdate = { converted: true, status: "Qualified" };
       const steedosSchema = objectql.getSteedosSchema();
       const objAccounts = steedosSchema.getObject('accounts');
       const objContacts = steedosSchema.getObject('contacts');
