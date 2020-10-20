@@ -84,20 +84,20 @@ Steedos.CRM.alertLeadConvertedRecords = function (record) {
         doc.opportunity_url = Steedos.absoluteUrl(Creator.getObjectUrl("opportunity", converteds.converted_opportunity._id),true);
     }
     let html = `
-        <div class="lg:grid lg:grid-cols-3 lg:gap-2">
+        <div class="grid grid-cols-1 lg:gap-2">
             <div class="flex items-start">
                 <div class="ml-4">
-                    <p class="text-lg1 leading-61 font-medium1 text-gray-900">客户：<a href="${doc.account_url}" target="_blank">${doc.account_name?doc.account_name:""}</a></p>
+                    <p class="text-gray-900"><span>客户：<span><a href="${doc.account_url}" target="_blank">${doc.account_name?doc.account_name:""}</a></p>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="ml-4">
-                    <p class="text-lg1 leading-61 font-medium1 text-gray-900">联系人：<a href="${doc.contact_url}" target="_blank">${doc.contact_name?doc.contact_name:""}</a></p>
+                    <p class="text-gray-900"><span>联系人：<span><a href="${doc.contact_url}" target="_blank">${doc.contact_name?doc.contact_name:""}</a></p>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="ml-4">
-                    <p class="text-lg1 leading-61 font-medium1 text-gray-900">业务机会：<a href="${doc.opportunity_url}" target="_blank">${doc.opportunity_name?doc.opportunity_name:""}</a></p>
+                    <p class="text-gray-900"><span>业务机会：<span><a href="${doc.opportunity_url}" target="_blank">${doc.opportunity_name?doc.opportunity_name:""}</a></p>
                 </div>
             </div>
         </div>
