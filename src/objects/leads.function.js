@@ -1,33 +1,7 @@
 const objectql = require("@steedos/objectql");
 const core = require('@steedos/core');
 
-const convertSettings = {
-  accounts:{
-    website: "website",
-    email: "email",
-    industry: "industry",
-    phone: "phone",
-    number_of_employees: "number_of_employees",
-    mobile: "mobilephone",
-    lead_source: "lead_source",
-    rating: "rating",
-    billing_address: "address"
-  },
-  contacts:{
-    salutation: "salutation",
-    title: "title",
-    email: "email",
-    phone: "phone",
-    mobile: "mobilephone",
-    lead_source: "lead_source",
-    mailing_address: "address"
-  },
-  opportunity:{
-    lead_source: "lead_source",
-    rating: "rating",
-    campaign_id: "campaign_id"
-  }
-};
+const convertSettings = require('./leads_convert.json');
 
 const getDocConverts = (object_name, record)=>{
   let result = {};
