@@ -1,6 +1,43 @@
 const objectql = require("@steedos/objectql");
 const core = require('@steedos/core');
 
+const convertSettings = {
+  accounts:{
+    website: "website",
+    email: "email",
+    industry: "industry",
+    phone: "phone",
+    number_of_employees: "number_of_employees",
+    mobile: "mobilephone",
+    lead_source: "lead_source",
+    rating: "rating",
+    billing_address: "address"
+  },
+  contacts:{
+    salutation: "salutation",
+    title: "title",
+    email: "email",
+    phone: "phone",
+    mobile: "mobilephone",
+    lead_source: "lead_source",
+    mailing_address: "address"
+  },
+  opportunity:{
+    lead_source: "lead_source",
+    rating: "rating",
+    campaign_id: "campaign_id"
+  }
+};
+
+const getDocConverts = (object_name, record)=>{
+  let result = {};
+  const converts = Object.assign({}, convertSettings[object_name]);
+  _.each(converts, (item, key)=>{
+    result[key] = record[item];
+  });
+  return result;
+}
+
 module.exports = {
   convert: async function (req, res) {
     try {
@@ -17,20 +54,25 @@ module.exports = {
           "success": false
         });
       }
-      let docLeadUpdate = { converted: true, status: "Qualified" };
       const steedosSchema = objectql.getSteedosSchema();
+      const objLeads = steedosSchema.getObject('leads');
+      const record = await objLeads.findOne(recordId);
+      const docAccountConverts = getDocConverts("accounts", record);
+      const docContactConverts = getDocConverts("contacts", record);
+      const docOpportunityConverts = getDocConverts("opportunity", record);
+      let docLeadUpdate = { converted: true, status: "Qualified" };
       const objAccounts = steedosSchema.getObject('accounts');
       const objContacts = steedosSchema.getObject('contacts');
       const doc = { owner: body.record_owner_id, space: userSession.spaceId };
-      const newAccount = await objAccounts.insert(Object.assign({}, doc, { name: new_account_name }), userSession);
+      const newAccount = await objAccounts.insert(Object.assign({}, doc, docAccountConverts, { name: new_account_name }), userSession);
       if(newAccount){
         docLeadUpdate.converted_account = newAccount._id;
-        const newContact = await objContacts.insert(Object.assign({}, doc, { name: new_contact_name, account: newAccount._id }), userSession);
+        const newContact = await objContacts.insert(Object.assign({}, doc, docContactConverts, { name: new_contact_name, account: newAccount._id }), userSession);
         if (newContact) {
           docLeadUpdate.converted_contact = newContact._id;
           if (!body.omit_new_opportunity) {
             const objOpportunity = steedosSchema.getObject('opportunity');
-            const newOpportunity = await objOpportunity.insert(Object.assign({}, doc, { name: new_opportunity_name, account: newAccount._id }), userSession);
+            const newOpportunity = await objOpportunity.insert(Object.assign({}, doc, docOpportunityConverts, { name: new_opportunity_name, account: newAccount._id }), userSession);
             if (newOpportunity) {
               docLeadUpdate.converted_opportunity = newOpportunity._id;
             }
@@ -55,7 +97,6 @@ module.exports = {
           "success": false
         });
       }
-      const objLeads = steedosSchema.getObject('leads');
       await objLeads.updateOne(recordId, docLeadUpdate, userSession);
       return res.status(200).send({ state: 'SUCCESS' });
     } catch (error) {
