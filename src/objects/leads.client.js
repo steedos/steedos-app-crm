@@ -57,6 +57,11 @@ Steedos.CRM.convertLead = function (record) {
             reference_to: 'contacts',
             group: "联系人"
         },
+        force_update_contact_lead_source: {
+            label: "更新潜在客户来源",
+            type: 'toggle',
+            group: "联系人"
+        },
         new_opportunity_name: {
             label: "新建业务机会名称",
             type: 'text',

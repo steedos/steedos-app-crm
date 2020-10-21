@@ -85,7 +85,11 @@ module.exports = {
             });
           }
           // 包括所属客户在内，所有字段属性都是为空才同步更新
-          const docContactEmptyConverts = getDocEmptyConverts(Object.assign({}, docContactConverts, { account: recordAccount._id }), recordContact);
+          let docContactEmptyConverts = getDocEmptyConverts(Object.assign({}, docContactConverts, { account: recordAccount._id }), recordContact);
+          if(body.force_update_contact_lead_source && !docContactEmptyConverts.lead_source && docContactConverts.lead_source){
+            // 如果界面上勾选了“更新潜在客户来源”，则应该强行更新联系人的潜在客户来源
+            docContactEmptyConverts.lead_source = docContactConverts.lead_source;
+          }
           if(!_.isEmpty(docContactEmptyConverts)){
             await objContacts.updateOne(recordContact._id, docContactEmptyConverts, userSession);
           }
@@ -112,7 +116,7 @@ module.exports = {
                   "success": false
                 });
               }
-            // 包括所属客户在内，所有字段属性都是为空才同步更新
+              // 包括所属客户在内，所有字段属性都是为空才同步更新
               const docOpportunityEmptyConverts = getDocEmptyConverts(Object.assign({}, docOpportunityConverts, { account: recordAccount._id }), recordOpportunity);
               if(!_.isEmpty(docOpportunityEmptyConverts)){
                 await objOpportunity.updateOne(recordOpportunity._id, docOpportunityEmptyConverts, userSession);
