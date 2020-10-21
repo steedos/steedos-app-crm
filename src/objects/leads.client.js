@@ -55,6 +55,30 @@ Steedos.CRM.convertLead = function (record) {
             label: "现有联系人",
             type: 'lookup',
             reference_to: 'contacts',
+            depend_on: ["lookup_account"],
+            optionsFunction: function(values){
+                let account = values.lookup_account;
+                let options = {
+                  $select: 'name'
+                };
+                let queryFilters = [["account", "=", null]];
+                if(account){
+                    queryFilters.push("or");
+                    queryFilters.push(["account", "=", account]);
+                }
+                let steedosFilters = require("@steedos/filters");
+                let odataFilter = steedosFilters.formatFiltersToODataQuery(queryFilters);
+                options.$filter = odataFilter;
+                let records = Creator.odata.query('contacts', options, true);
+                let result = [];
+                records.forEach(function (item) {
+                  result.push({
+                    label: item.name,
+                    value: item._id
+                  });
+                });
+                return result;
+            },
             group: "联系人"
         },
         force_update_contact_lead_source: {
@@ -77,6 +101,30 @@ Steedos.CRM.convertLead = function (record) {
             label: "现有业务机会",
             type: 'lookup',
             reference_to: 'opportunity',
+            depend_on: ["lookup_account"],
+            optionsFunction: function(values){
+                let account = values.lookup_account;
+                let options = {
+                  $select: 'name'
+                };
+                let queryFilters = [["account", "=", null]];
+                if(account){
+                    queryFilters.push("or");
+                    queryFilters.push(["account", "=", account]);
+                }
+                let steedosFilters = require("@steedos/filters");
+                let odataFilter = steedosFilters.formatFiltersToODataQuery(queryFilters);
+                options.$filter = odataFilter;
+                let records = Creator.odata.query('opportunity', options, true);
+                let result = [];
+                records.forEach(function (item) {
+                  result.push({
+                    label: item.name,
+                    value: item._id
+                  });
+                });
+                return result;
+            },
             group: "业务机会"
         },
         omit_new_opportunity: {
