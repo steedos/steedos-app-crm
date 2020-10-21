@@ -76,22 +76,51 @@ const getNewOpportunityContactRoleOptions = async (isLookupOpportunity, isLookup
   }
 }
 
+const validateBody = (body) => {
+  let validateResult = {};
+  if(body.is_lookup_account && !body.lookup_account){
+    validateResult.error = "请输入“新建客户名称”或选择“现有客户”!";
+  }
+  else if(!body.is_lookup_account && !body.new_account_name){
+    validateResult.error = "请输入“新建客户名称”或选择“现有客户”!";
+  }
+  else if(body.is_lookup_contact && !body.lookup_contact){
+    validateResult.error = "请输入“新建联系人名称”或选择“现有联系人”!";
+  }
+  else if(!body.is_lookup_contact && !body.new_contact_name){
+    validateResult.error = "请输入“新建联系人名称”或选择“现有联系人”!";
+  }
+  else if (!body.omit_new_opportunity) {
+    if(body.is_lookup_opportunity && !body.lookup_opportunity){
+      validateResult.error = "请选择“现有业务机会”或勾选“请勿在转换时创建业务机会”项!";
+    }
+    else if(!body.is_lookup_opportunity && !body.new_opportunity_name){
+      validateResult.error = "请输入“新建业务机会名称”或勾选“请勿在转换时创建业务机会”项!";
+    }
+  }
+  return validateResult;
+}
+
 module.exports = {
   convert: async function (req, res) {
     try {
       const params = req.params;
       const recordId = params._id;
       const userSession = req.user;
+      req.body.new_account_name = req.body.new_account_name && req.body.new_account_name.trim();
+      req.body.new_contact_name = req.body.new_contact_name && req.body.new_contact_name.trim();
+      req.body.new_opportunity_name = req.body.new_opportunity_name && req.body.new_opportunity_name.trim();
       const body = req.body;
-      let new_account_name = body.new_account_name.trim();
-      let new_contact_name = body.new_contact_name.trim();
-      let new_opportunity_name = body.new_opportunity_name && body.new_opportunity_name.trim();
-      if (!body.omit_new_opportunity && (!new_opportunity_name || new_opportunity_name.length === 0)) {
+      const validateResult = validateBody(body);
+      if(validateResult && validateResult.error){
         return res.status(500).send({
-          "error": "请输入业务机会名称或勾选“请勿在转换时创建业务机会”项!",
+          "error": validateResult.error,
           "success": false
         });
       }
+      let new_account_name = body.new_account_name;
+      let new_contact_name = body.new_contact_name;
+      let new_opportunity_name = body.new_opportunity_name;
       const steedosSchema = objectql.getSteedosSchema();
       const objLeads = steedosSchema.getObject('leads');
       const record = await objLeads.findOne(recordId);
