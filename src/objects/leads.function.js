@@ -76,26 +76,34 @@ const getNewOpportunityContactRoleOptions = async (isLookupOpportunity, isLookup
   }
 }
 
-const validateBody = (body) => {
+const validateBody = (body, recordAccount, recordContact, recordOpportunity) => {
   let validateResult = {};
-  if(body.is_lookup_account && !body.lookup_account){
+  if (body.is_lookup_account && !body.lookup_account) {
     validateResult.error = "请输入“新建客户名称”或选择“现有客户”!";
   }
-  else if(!body.is_lookup_account && !body.new_account_name){
+  else if (!body.is_lookup_account && !body.new_account_name) {
     validateResult.error = "请输入“新建客户名称”或选择“现有客户”!";
   }
-  else if(body.is_lookup_contact && !body.lookup_contact){
+  else if (body.is_lookup_contact && !body.lookup_contact) {
     validateResult.error = "请输入“新建联系人名称”或选择“现有联系人”!";
   }
-  else if(!body.is_lookup_contact && !body.new_contact_name){
+  else if (!body.is_lookup_contact && !body.new_contact_name) {
     validateResult.error = "请输入“新建联系人名称”或选择“现有联系人”!";
   }
   else if (!body.omit_new_opportunity) {
-    if(body.is_lookup_opportunity && !body.lookup_opportunity){
+    if (body.is_lookup_opportunity && !body.lookup_opportunity) {
       validateResult.error = "请选择“现有业务机会”或勾选“请勿在转换时创建业务机会”项!";
     }
-    else if(!body.is_lookup_opportunity && !body.new_opportunity_name){
+    else if (!body.is_lookup_opportunity && !body.new_opportunity_name) {
       validateResult.error = "请输入“新建业务机会名称”或勾选“请勿在转换时创建业务机会”项!";
+    }
+  }
+  else if(recordAccount){
+    if(recordContact && recordContact.account && recordContact.account !== recordAccount._id){
+      validateResult.error = "现有联系人必须是现有客户下的联系人!";
+    }
+    else if(recordOpportunity && recordOpportunity.account && recordOpportunity.account !== recordAccount._id){
+      validateResult.error = "现有业务机会必须是现有客户下的业务机会!";
     }
   }
   return validateResult;
@@ -111,8 +119,36 @@ module.exports = {
       req.body.new_contact_name = req.body.new_contact_name && req.body.new_contact_name.trim();
       req.body.new_opportunity_name = req.body.new_opportunity_name && req.body.new_opportunity_name.trim();
       const body = req.body;
-      const validateResult = validateBody(body);
-      if(validateResult && validateResult.error){
+      let recordAccount, recordContact, recordOpportunity;
+      if (body.is_lookup_account && body.lookup_account) {
+        recordAccount = await objAccounts.findOne(body.lookup_account);
+        if (!recordAccount) {
+          return res.status(500).send({
+            "error": "Action Failed -- The account is not found.",
+            "success": false
+          });
+        }
+      }
+      if (body.is_lookup_contact && body.lookup_contact) {
+        recordContact = await objContacts.findOne(body.lookup_contact);
+        if (!recordContact) {
+          return res.status(500).send({
+            "error": "Action Failed -- The contact is not found.",
+            "success": false
+          });
+        }
+      }
+      if (!body.omit_new_opportunity && body.is_lookup_opportunity && body.lookup_opportunity) {
+        recordOpportunity = await objOpportunity.findOne(body.lookup_opportunity);
+        if (!recordOpportunity) {
+          return res.status(500).send({
+            "error": "Action Failed -- The opportunity is not found.",
+            "success": false
+          });
+        }
+      }
+      const validateResult = validateBody(body, recordAccount, recordContact, recordOpportunity);
+      if (validateResult && validateResult.error) {
         return res.status(500).send({
           "error": validateResult.error,
           "success": false
@@ -131,15 +167,7 @@ module.exports = {
       const objAccounts = steedosSchema.getObject('accounts');
       const objContacts = steedosSchema.getObject('contacts');
       const baseDoc = { owner: body.record_owner_id, space: userSession.spaceId };
-      let recordAccount;
       if (body.is_lookup_account && body.lookup_account) {
-        recordAccount = await objAccounts.findOne(body.lookup_account);
-        if (!recordAccount) {
-          return res.status(500).send({
-            "error": "Action Failed -- The account is not found.",
-            "success": false
-          });
-        }
         // 所有字段属性都是为空才同步更新
         const docAccountEmptyConverts = getDocEmptyConverts(docAccountConverts, recordAccount);
         if (!_.isEmpty(docAccountEmptyConverts)) {
@@ -157,15 +185,7 @@ module.exports = {
       }
       if (recordAccount) {
         docLeadUpdate.converted_account = recordAccount._id;
-        let recordContact;
         if (body.is_lookup_contact && body.lookup_contact) {
-          recordContact = await objContacts.findOne(body.lookup_contact);
-          if (!recordContact) {
-            return res.status(500).send({
-              "error": "Action Failed -- The contact is not found.",
-              "success": false
-            });
-          }
           // 包括所属客户在内，所有字段属性都是为空才同步更新
           let docContactEmptyConverts = getDocEmptyConverts(Object.assign({}, docContactConverts, { account: recordAccount._id }), recordContact);
           if (body.force_update_contact_lead_source && !docContactEmptyConverts.lead_source && docContactConverts.lead_source) {
@@ -189,15 +209,7 @@ module.exports = {
           docLeadUpdate.converted_contact = recordContact._id;
           if (!body.omit_new_opportunity) {
             const objOpportunity = steedosSchema.getObject('opportunity');
-            let recordOpportunity;
             if (body.is_lookup_opportunity && body.lookup_opportunity) {
-              recordOpportunity = await objOpportunity.findOne(body.lookup_opportunity);
-              if (!recordOpportunity) {
-                return res.status(500).send({
-                  "error": "Action Failed -- The opportunity is not found.",
-                  "success": false
-                });
-              }
               // 包括所属客户在内，所有字段属性都是为空才同步更新
               const docOpportunityEmptyConverts = getDocEmptyConverts(Object.assign({}, docOpportunityConverts, { account: recordAccount._id }), recordOpportunity);
               if (!_.isEmpty(docOpportunityEmptyConverts)) {
