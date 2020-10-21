@@ -98,7 +98,7 @@ const validateBody = (body, recordAccount, recordContact, recordOpportunity) => 
       validateResult.error = "请输入“新建业务机会名称”或勾选“请勿在转换时创建业务机会”项!";
     }
   }
-  else if(recordAccount){
+  if(!validateResult.error && recordAccount){
     if(recordContact && recordContact.account && recordContact.account !== recordAccount._id){
       validateResult.error = "现有联系人必须是现有客户下的联系人!";
     }
@@ -119,6 +119,10 @@ module.exports = {
       req.body.new_contact_name = req.body.new_contact_name && req.body.new_contact_name.trim();
       req.body.new_opportunity_name = req.body.new_opportunity_name && req.body.new_opportunity_name.trim();
       const body = req.body;
+      const steedosSchema = objectql.getSteedosSchema();
+      const objAccounts = steedosSchema.getObject('accounts');
+      const objContacts = steedosSchema.getObject('contacts');
+      const objOpportunity = steedosSchema.getObject('opportunity');
       let recordAccount, recordContact, recordOpportunity;
       if (body.is_lookup_account && body.lookup_account) {
         recordAccount = await objAccounts.findOne(body.lookup_account);
@@ -157,15 +161,12 @@ module.exports = {
       let new_account_name = body.new_account_name;
       let new_contact_name = body.new_contact_name;
       let new_opportunity_name = body.new_opportunity_name;
-      const steedosSchema = objectql.getSteedosSchema();
       const objLeads = steedosSchema.getObject('leads');
       const record = await objLeads.findOne(recordId);
       const docAccountConverts = getDocConverts("accounts", record);
       const docContactConverts = getDocConverts("contacts", record);
       const docOpportunityConverts = getDocConverts("opportunity", record);
       let docLeadUpdate = { converted: true, status: "Qualified" };
-      const objAccounts = steedosSchema.getObject('accounts');
-      const objContacts = steedosSchema.getObject('contacts');
       const baseDoc = { owner: body.record_owner_id, space: userSession.spaceId };
       if (body.is_lookup_account && body.lookup_account) {
         // 所有字段属性都是为空才同步更新
@@ -208,7 +209,6 @@ module.exports = {
         if (recordContact) {
           docLeadUpdate.converted_contact = recordContact._id;
           if (!body.omit_new_opportunity) {
-            const objOpportunity = steedosSchema.getObject('opportunity');
             if (body.is_lookup_opportunity && body.lookup_opportunity) {
               // 包括所属客户在内，所有字段属性都是为空才同步更新
               const docOpportunityEmptyConverts = getDocEmptyConverts(Object.assign({}, docOpportunityConverts, { account: recordAccount._id }), recordOpportunity);
