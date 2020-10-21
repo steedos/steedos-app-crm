@@ -4,7 +4,7 @@ const yaml = require("js-yaml");
 const path = require("path");
 
 //扫描objects目录下的所有文件,并解析
-async function scanFiles(sanFilesPath,creatFilesPath){
+function scanFiles(sanFilesPath,creatFilesPath){
     
     fs.readdir(sanFilesPath, function(err, files){
         var dirs = [];      
