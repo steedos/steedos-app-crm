@@ -1,9 +1,21 @@
 module.exports = {
-    convert: function(){
-      toastr.success("潜在客户可转换成业务机会，即将上线，敬请期待");
-    },
-  
-    convertVisible: function(){
+  convert: function () {
+    Steedos.CRM.convertLead(this.record);
+  },
+
+  convertVisible: function (object_name, record_id, permissions, record) {
+    if(record && !record.converted){
+      return true
+    }
+  },
+
+  alertConvertedRecords: function () {
+    Steedos.CRM.alertLeadConvertedRecords(this.record);
+  },
+
+  alertConvertedRecordsVisible: function (object_name, record_id, permissions, record) {
+    if(record && record.converted){
       return true
     }
   }
+}
