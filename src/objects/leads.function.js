@@ -12,6 +12,17 @@ const getDocConverts = (object_name, record)=>{
   return result;
 }
 
+// 取出docConverts中oldDoc对应key值为空的字段值集合，即docConverts中值不能覆盖更新oldDoc中已经存在的字段值
+const getDocEmptyConverts = (docConverts, oldDoc)=>{
+  let result = {};
+  _.each(docConverts, (item, key)=>{
+    if((oldDoc[key] === undefined || oldDoc[key] === null || oldDoc[key] === 0) && item !== undefined && item !== null && item !== 0){
+      result[key] = item;
+    }
+  });
+  return result;
+}
+
 module.exports = {
   convert: async function (req, res) {
     try {
@@ -38,71 +49,86 @@ module.exports = {
       const objAccounts = steedosSchema.getObject('accounts');
       const objContacts = steedosSchema.getObject('contacts');
       const doc = { owner: body.record_owner_id, space: userSession.spaceId };
-      let newAccount;
+      let recordAccount;
       if(body.is_lookup_account && body.lookup_account){
-        newAccount = await objAccounts.findOne(body.lookup_account);
-        if(!newAccount){
+        recordAccount = await objAccounts.findOne(body.lookup_account);
+        if(!recordAccount){
           return res.status(500).send({
             "error": "Action Failed -- The account is not found.",
             "success": false
           });
         }
+          // 所有字段属性都是为空才同步更新
+        const docAccountEmptyConverts = getDocEmptyConverts(docAccountConverts, recordAccount);
+        if(!_.isEmpty(docAccountEmptyConverts)){
+          await objAccounts.updateOne(recordAccount._id, docAccountEmptyConverts, userSession);
+        }
       }
       else{
-        newAccount = await objAccounts.insert(Object.assign({}, doc, docAccountConverts, { name: new_account_name }), userSession);
-        if(!newAccount){
+        recordAccount = await objAccounts.insert(Object.assign({}, doc, docAccountConverts, { name: new_account_name }), userSession);
+        if(!recordAccount){
           return res.status(500).send({
             "error": "Action Failed -- Insert account failed.",
             "success": false
           });
         }
       }
-      if(newAccount){
-        docLeadUpdate.converted_account = newAccount._id;
-        let newContact;
+      if(recordAccount){
+        docLeadUpdate.converted_account = recordAccount._id;
+        let recordContact;
         if(body.is_lookup_contact && body.lookup_contact){
-          newContact = await objContacts.findOne(body.lookup_contact);
-          if(!newContact){
+          recordContact = await objContacts.findOne(body.lookup_contact);
+          if(!recordContact){
             return res.status(500).send({
               "error": "Action Failed -- The contact is not found.",
               "success": false
             });
           }
+          // 包括所属客户在内，所有字段属性都是为空才同步更新
+          const docContactEmptyConverts = getDocEmptyConverts(Object.assign({}, docContactConverts, { account: recordAccount._id }), recordContact);
+          if(!_.isEmpty(docContactEmptyConverts)){
+            await objContacts.updateOne(recordContact._id, docContactEmptyConverts, userSession);
+          }
         }
         else{
-          newContact = await objContacts.insert(Object.assign({}, doc, docContactConverts, { name: new_contact_name, account: newAccount._id }), userSession);
-          if(!newContact){
+          recordContact = await objContacts.insert(Object.assign({}, doc, docContactConverts, { name: new_contact_name, account: recordAccount._id }), userSession);
+          if(!recordContact){
             return res.status(500).send({
               "error": "Action Failed -- Insert contact failed.",
               "success": false
             });
           }
         }
-        if (newContact) {
-          docLeadUpdate.converted_contact = newContact._id;
+        if (recordContact) {
+          docLeadUpdate.converted_contact = recordContact._id;
           if (!body.omit_new_opportunity) {
             const objOpportunity = steedosSchema.getObject('opportunity');
-            let newOpportunity;
+            let recordOpportunity;
             if(body.is_lookup_opportunity && body.lookup_opportunity){
-              newOpportunity = await objOpportunity.findOne(body.lookup_opportunity);
-              if(!newOpportunity){
+              recordOpportunity = await objOpportunity.findOne(body.lookup_opportunity);
+              if(!recordOpportunity){
                 return res.status(500).send({
                   "error": "Action Failed -- The opportunity is not found.",
                   "success": false
                 });
               }
+            // 包括所属客户在内，所有字段属性都是为空才同步更新
+              const docOpportunityEmptyConverts = getDocEmptyConverts(Object.assign({}, docOpportunityConverts, { account: recordAccount._id }), recordOpportunity);
+              if(!_.isEmpty(docOpportunityEmptyConverts)){
+                await objOpportunity.updateOne(recordOpportunity._id, docOpportunityEmptyConverts, userSession);
+              }
             }
             else{
-              newOpportunity = await objOpportunity.insert(Object.assign({}, doc, docOpportunityConverts, { name: new_opportunity_name, account: newAccount._id }), userSession);
-              if(!newOpportunity){
+              recordOpportunity = await objOpportunity.insert(Object.assign({}, doc, docOpportunityConverts, { name: new_opportunity_name, account: recordAccount._id }), userSession);
+              if(!recordOpportunity){
                 return res.status(500).send({
                   "error": "Action Failed -- Insert opportunity failed.",
                   "success": false
                 });
               }
             }
-            if (newOpportunity) {
-              docLeadUpdate.converted_opportunity = newOpportunity._id;
+            if (recordOpportunity) {
+              docLeadUpdate.converted_opportunity = recordOpportunity._id;
             }
           }
         }
