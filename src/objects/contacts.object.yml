@@ -178,7 +178,7 @@ fields:
         value: Website
     filterable: true
     inlineHelpText: 潜在客户来源，例如，广告、合作伙伴或 Web。
-    hidden: true
+    # hidden: true
   # contact_currency:
   #   label: 联系人币种
   #   type: lookup
