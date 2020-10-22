@@ -160,6 +160,7 @@ Steedos.CRM.alertLeadConvertedRecords = function (record) {
     const record_id = record._id;
     const object_name = "leads";
     const fields = "converted_account,converted_contact,converted_opportunity";
+    // 注意这里传入两个fields参数，第二个是expand，不可以删除
     const converteds = Creator.odata.get(object_name, record_id, fields, fields);
     let doc = {};
     if (converteds.converted_account) {
