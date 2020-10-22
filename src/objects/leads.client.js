@@ -9,7 +9,7 @@ Steedos.CRM.showLeadConvertForm = function (fields, formId, doc, onConfirm, titl
 }
 
 Steedos.CRM.convertLead = function (record) {
-    if(record.converted){
+    if (record.converted) {
         toastr.error(t("该潜在客户已经转换过了，不能重复转换！"));
         return;
     }
@@ -55,16 +55,19 @@ Steedos.CRM.convertLead = function (record) {
             label: "现有联系人",
             type: 'lookup',
             reference_to: 'contacts',
-            depend_on: ["lookup_account"],
-            optionsFunction: function(values){
-                let account = values.lookup_account;
+            depend_on: ["is_lookup_contact", "is_lookup_account", "lookup_account"],
+            optionsFunction: function (values) {
+                let { is_lookup_contact, is_lookup_account, lookup_account } = values;
+                if (!is_lookup_contact) {
+                    return [];
+                }
                 let options = {
-                  $select: 'name'
+                    $select: 'name'
                 };
                 let queryFilters = [["account", "=", null]];
-                if(account){
+                if (is_lookup_account && lookup_account) {
                     queryFilters.push("or");
-                    queryFilters.push(["account", "=", account]);
+                    queryFilters.push(["account", "=", lookup_account]);
                 }
                 let steedosFilters = require("@steedos/filters");
                 let odataFilter = steedosFilters.formatFiltersToODataQuery(queryFilters);
@@ -72,10 +75,10 @@ Steedos.CRM.convertLead = function (record) {
                 let records = Creator.odata.query('contacts', options, true);
                 let result = [];
                 records.forEach(function (item) {
-                  result.push({
-                    label: item.name,
-                    value: item._id
-                  });
+                    result.push({
+                        label: item.name,
+                        value: item._id
+                    });
                 });
                 return result;
             },
@@ -101,16 +104,19 @@ Steedos.CRM.convertLead = function (record) {
             label: "现有业务机会",
             type: 'lookup',
             reference_to: 'opportunity',
-            depend_on: ["lookup_account"],
-            optionsFunction: function(values){
-                let account = values.lookup_account;
+            depend_on: ["is_lookup_opportunity", "is_lookup_account", "lookup_account"],
+            optionsFunction: function (values) {
+                let { is_lookup_opportunity, is_lookup_account, lookup_account } = values;
+                if (!is_lookup_opportunity) {
+                    return [];
+                }
                 let options = {
-                  $select: 'name'
+                    $select: 'name'
                 };
                 let queryFilters = [["account", "=", null]];
-                if(account){
+                if (is_lookup_account && lookup_account) {
                     queryFilters.push("or");
-                    queryFilters.push(["account", "=", account]);
+                    queryFilters.push(["account", "=", lookup_account]);
                 }
                 let steedosFilters = require("@steedos/filters");
                 let odataFilter = steedosFilters.formatFiltersToODataQuery(queryFilters);
@@ -118,10 +124,10 @@ Steedos.CRM.convertLead = function (record) {
                 let records = Creator.odata.query('opportunity', options, true);
                 let result = [];
                 records.forEach(function (item) {
-                  result.push({
-                    label: item.name,
-                    value: item._id
-                  });
+                    result.push({
+                        label: item.name,
+                        value: item._id
+                    });
                 });
                 return result;
             },
@@ -156,45 +162,45 @@ Steedos.CRM.alertLeadConvertedRecords = function (record) {
     const fields = "converted_account,converted_contact,converted_opportunity";
     const converteds = Creator.odata.get(object_name, record_id, fields, fields);
     let doc = {};
-    if(converteds.converted_account){
+    if (converteds.converted_account) {
         doc.account_name = converteds.converted_account._NAME_FIELD_VALUE;
-        doc.account_url = Steedos.absoluteUrl(Creator.getObjectUrl("accounts", converteds.converted_account._id),true);
+        doc.account_url = Steedos.absoluteUrl(Creator.getObjectUrl("accounts", converteds.converted_account._id), true);
     }
-    if(converteds.converted_contact){
+    if (converteds.converted_contact) {
         doc.contact_name = converteds.converted_contact._NAME_FIELD_VALUE;
-        doc.contact_url = Steedos.absoluteUrl(Creator.getObjectUrl("contacts", converteds.converted_contact._id),true);
+        doc.contact_url = Steedos.absoluteUrl(Creator.getObjectUrl("contacts", converteds.converted_contact._id), true);
     }
-    if(converteds.converted_opportunity){
+    if (converteds.converted_opportunity) {
         doc.opportunity_name = converteds.converted_opportunity._NAME_FIELD_VALUE;
-        doc.opportunity_url = Steedos.absoluteUrl(Creator.getObjectUrl("opportunity", converteds.converted_opportunity._id),true);
+        doc.opportunity_url = Steedos.absoluteUrl(Creator.getObjectUrl("opportunity", converteds.converted_opportunity._id), true);
     }
     let html = `
         <div class="grid grid-cols-1 lg:gap-2">
             <div class="flex items-start">
                 <div class="ml-4">
-                    <p class="text-gray-900"><span>客户：<span><a href="${doc.account_url}" target="_blank">${doc.account_name?doc.account_name:""}</a></p>
+                    <p class="text-gray-900"><span>客户：<span><a href="${doc.account_url}" target="_blank">${doc.account_name ? doc.account_name : ""}</a></p>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="ml-4">
-                    <p class="text-gray-900"><span>联系人：<span><a href="${doc.contact_url}" target="_blank">${doc.contact_name?doc.contact_name:""}</a></p>
+                    <p class="text-gray-900"><span>联系人：<span><a href="${doc.contact_url}" target="_blank">${doc.contact_name ? doc.contact_name : ""}</a></p>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="ml-4">
-                    <p class="text-gray-900"><span>业务机会：<span><a href="${doc.opportunity_url}" target="_blank">${doc.opportunity_name?doc.opportunity_name:""}</a></p>
+                    <p class="text-gray-900"><span>业务机会：<span><a href="${doc.opportunity_url}" target="_blank">${doc.opportunity_name ? doc.opportunity_name : ""}</a></p>
                 </div>
             </div>
         </div>
     `;
     swal({
-            title: "潜在客户已转换",
-            text: html,
-            html: true,
-            type:"success",
-            confirmButtonText:t('OK')
-        },
-        ()=>{
+        title: "潜在客户已转换",
+        text: html,
+        html: true,
+        type: "success",
+        confirmButtonText: t('OK')
+    },
+        () => {
             sweetAlert.close();
         }
     );
