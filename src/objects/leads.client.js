@@ -164,15 +164,15 @@ Steedos.CRM.alertLeadConvertedRecords = function (record) {
     let doc = {};
     if (converteds.converted_account) {
         doc.account_name = converteds.converted_account._NAME_FIELD_VALUE;
-        doc.account_url = Steedos.absoluteUrl(Creator.getObjectUrl("accounts", converteds.converted_account._id), true);
+        doc.account_url = Creator.getObjectAbsoluteUrl("accounts", converteds.converted_account._id);
     }
     if (converteds.converted_contact) {
         doc.contact_name = converteds.converted_contact._NAME_FIELD_VALUE;
-        doc.contact_url = Steedos.absoluteUrl(Creator.getObjectUrl("contacts", converteds.converted_contact._id), true);
+        doc.contact_url = Creator.getObjectAbsoluteUrl("contacts", converteds.converted_contact._id);
     }
     if (converteds.converted_opportunity) {
         doc.opportunity_name = converteds.converted_opportunity._NAME_FIELD_VALUE;
-        doc.opportunity_url = Steedos.absoluteUrl(Creator.getObjectUrl("opportunity", converteds.converted_opportunity._id), true);
+        doc.opportunity_url = Creator.getObjectAbsoluteUrl("opportunity", converteds.converted_opportunity._id);
     }
     let html = `
         <div class="grid grid-cols-1 lg:gap-2">
