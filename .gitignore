@@ -65,5 +65,3 @@ package-lock.json
 
 storage/
 .env.local
-
-steedos-app/
