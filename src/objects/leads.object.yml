@@ -288,12 +288,14 @@ list_views:
       - field: owner
         width: 120
     filter_fields: ["status", "rating", "name", "company"]
+    filters: [["converted", "<>", true]]
   today:
     label: 新的潜在客户
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
           return [
-            ["status","=","New"]
+            ["status","=","New"],
+            ["converted", "<>", true]
           ];
       }
     columns:
@@ -319,7 +321,8 @@ list_views:
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
           return [
-            ["rating","=","Hot"]
+            ["rating","=","Hot"],
+            ["converted", "<>", true]
           ];
       }
     columns:
@@ -360,6 +363,7 @@ list_views:
       - field: owner
         width: 120
     filter_fields: ["status", "rating", "name", "company"]
+    filters: [["converted", "<>", true]]
   mine:
     label: 我的潜在客户
     columns:
@@ -381,6 +385,7 @@ list_views:
         width: 120
     filter_fields: ["status", "rating", "name", "company"]
     filter_scope: mine
+    filters: [["converted", "<>", true]]
 actions:
   convert:
     label: 转换
