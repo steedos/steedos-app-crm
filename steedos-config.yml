@@ -11,3 +11,12 @@ public:
     store: "local"
     local: 
       folder: "./storage"
+plugins:
+  - "@steedos/accounts"
+  - "@steedos/plugin-enterprise"
+tenant:
+  _id: ${TENANTID}
+  enable_register: false
+  enable_forget_password: false
+  saas: false
+  enable_password_login: true

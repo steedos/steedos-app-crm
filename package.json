@@ -20,6 +20,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@steedos/plugin-enterprise": "^1.22.0-alpha.15",
         "dotenv-flow": "^3.2.0",
         "js-yaml": "^3.14.0",
         "underscore": "1.9.2",
