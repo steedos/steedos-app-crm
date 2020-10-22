@@ -9,9 +9,7 @@
         "start": "node server.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "ups": "yarn upgrade -S @steedos --latest && yarn upgrade steedos-server --latest",
-        "pub_next": "npm publish --tag next --registry https://registry.npmjs.org && start https://npm.taobao.org/sync/@steedos/app-crm",
-        "syncField": "node field",
-        "syncObject": "node object"
+        "pub_next": "npm publish --tag next --registry https://registry.npmjs.org && start https://npm.taobao.org/sync/@steedos/app-crm"
     },
     "repository": {
         "type": "git",
@@ -21,9 +19,7 @@
     "license": "ISC",
     "dependencies": {
         "dotenv-flow": "^3.2.0",
-        "js-yaml": "^3.14.0",
-        "underscore": "1.9.2",
-        "walk": "^2.3.14"
+        "underscore": "1.9.2"
     },
     "devDependencies": {
         "@steedos/accounts": "^1.22.0-alpha.15",
