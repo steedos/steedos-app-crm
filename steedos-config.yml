@@ -20,3 +20,15 @@ tenant:
   enable_forget_password: false
   saas: false
   enable_password_login: true
+  enable_mobile_code_login: true
+  enable_email_code_login: false
+  enable_bind_mobile: true
+sms:
+  qcloud:
+    smsqueue_interval: 1000
+    sdkappid: ${STEEDOS_SMS_QCLOUD_SDKAPPID}
+    appkey: ${STEEDOS_SMS_QCLOUD_APPKEY}
+    signname: ${STEEDOS_SMS_QCLOUD_SIGNNAME}
+email:
+  from: 华炎云 <noreply@steedos.com>
+  url: ${MAIL_URL}

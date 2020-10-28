@@ -1,0 +1,63 @@
+name: product_consumed
+label: 产品消耗
+icon: product_consumed
+enable_files: true
+enable_search: true
+enable_audit: true
+fields:
+  product_consumed_number:
+    label: 产品消耗编号
+    type: autonumber
+    formula: "PC-{000}"
+    readonly: true
+    searchable: true
+    index: true
+    is_name: true
+  product_name:
+    type: formula
+    label: 产品名
+    data_type: text
+    formula: "product_items.product.name"
+    inlineHelpText: 产品项下对应的产品名。
+    omit: true
+  product_items:
+    label: 产品项
+    type: master_detail
+    reference_to: product_items
+    required: true
+  quantity:
+    type: number
+    label: 消耗数量
+    required: true
+  unit_price:
+    type: currency
+    label: 单价
+  description:
+    label: 描述
+    type: textarea
+    is_wide: true
+    rows: 3
+    group: 描述
+list_views:
+  all:
+    label: 所有产品项
+    columns:
+      - product_consumed_number
+      - product_name
+      - product_items
+      - quantity
+permission_set:
+  user:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: true 
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true
