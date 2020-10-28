@@ -1,0 +1,5 @@
+label: 订单
+type: master_detail
+reference_to: order
+searchable: true
+inlineHelpText: 本订单产品的父级订单。

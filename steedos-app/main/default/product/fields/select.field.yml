@@ -1,0 +1,8 @@
+type: select
+label: 产品系列
+searchable: true
+sortable: true
+options:
+  - label: 无
+    value: none
+hidden: true

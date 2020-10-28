@@ -1,0 +1,3 @@
+label: 联系人
+type: lookup
+reference_to: contacts

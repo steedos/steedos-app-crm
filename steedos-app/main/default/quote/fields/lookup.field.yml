@@ -1,0 +1,4 @@
+type: lookup
+label: 价格手册条目
+reference_to: price_book_entry
+hidden: true

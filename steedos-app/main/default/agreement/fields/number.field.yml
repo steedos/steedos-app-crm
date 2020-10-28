@@ -1,0 +1,3 @@
+label: 主协议期限（月）
+type: number
+required: true

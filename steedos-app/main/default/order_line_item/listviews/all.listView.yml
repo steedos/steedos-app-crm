@@ -1,0 +1,11 @@
+label: 所有订单产品
+columns:
+  - order_item_number
+  - product_id
+  - order_id
+  - total_price
+  - unit_price
+  - quantity
+  - service_date
+  - end_date
+filter_scope: space

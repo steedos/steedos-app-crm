@@ -1,0 +1,7 @@
+label: 所有产品
+columns:
+  - name
+  - product_code
+  - product_currency
+  - description
+filter_scope: space

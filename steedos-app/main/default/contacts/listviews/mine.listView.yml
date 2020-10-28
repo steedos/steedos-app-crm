@@ -1,0 +1,11 @@
+label: 我的联系人
+columns:
+  - name
+  - account_id
+  - email
+  - phone
+filter_scope: mine
+filter_fields:
+  - name
+  - account_id
+  - email

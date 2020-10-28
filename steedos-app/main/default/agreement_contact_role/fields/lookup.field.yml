@@ -1,0 +1,3 @@
+type: lookup
+label: 启用人
+reference_to: contacts

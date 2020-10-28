@@ -1,0 +1,50 @@
+name: price_book
+label: 价格手册
+icon: pricebook
+enable_files: true
+enable_search: true
+enable_audit: true
+fields:
+  text:
+    type: text
+    label: 价格手册名
+    required: true
+    index: true
+  toggle:
+    label: 已启用
+    type: toggle
+    defaultValue: true
+  textarea:
+    type: textarea
+    label: 描述
+    rows: 3
+  boolean:
+    type: boolean
+    label: 是标准价格手册
+listviews:
+  all:
+    label: 所有价格手册
+    columns:
+      - name
+      - is_active
+      - is_standard
+      - description
+    filter_scope: space
+  recent:
+    label: 最近查看
+    filter_scope: space
+permissions:
+  user:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: true
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true

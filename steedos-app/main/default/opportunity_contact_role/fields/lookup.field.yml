@@ -1,0 +1,5 @@
+label: 联系人
+type: lookup
+reference_to: contacts
+required: true
+inlineHelpText: 联系人或个人客户的姓名。

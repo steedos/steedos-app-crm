@@ -1,0 +1,4 @@
+label: 转换
+'on': record
+name: convert
+todo: "module.exports = { \r\nconvert:function () {\r\n    Steedos.CRM.convertLead(this.record);\r\n  },\r\nconvertVisible:function (object_name, record_id, permissions, record) {\r\n    if(record && !record.converted){\r\n      return true\r\n    }\r\n  }\r\n }"

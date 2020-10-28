@@ -1,0 +1,8 @@
+label: 订单产品编号
+type: autonumber
+formula: '{YYYY}{MM}{00000}'
+readonly: true
+searchable: true
+index: true
+is_name: true
+inlineHelpText: 识别订单产品记录的自动生成的编号。（只读）

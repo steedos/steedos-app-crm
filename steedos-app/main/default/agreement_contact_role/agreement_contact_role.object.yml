@@ -1,0 +1,39 @@
+name: agreement_contact_role
+label: 主协议联系人角色
+icon: contract
+enable_files: true
+enable_search: true
+enable_audit: true
+fields:
+  master_detail:
+    type: master_detail
+    label: 主协议
+    reference_to: agreement
+  lookup:
+    type: lookup
+    label: 启用人
+    reference_to: contacts
+listviews:
+  all:
+    label: 所有主协议联系人角色
+    columns:
+      - agreement
+      - contact
+  recent:
+    label: 最近查看
+    filter_scope: space
+permissions:
+  user:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true

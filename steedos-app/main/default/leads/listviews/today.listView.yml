@@ -1,0 +1,31 @@
+label: 新的潜在客户
+filters: !<tag:yaml.org,2002:js/function> |-
+  function anonymous(
+  ) {
+
+      return [
+        ["status","=","New"]
+      ];
+
+  }
+columns:
+  - field: status
+    width: 60
+  - field: name
+    width: 120
+  - field: company
+    width: 200
+  - field: title
+    width: 150
+  - field: phone
+    width: 150
+  - field: mobile
+    width: 150
+  - field: email
+    width: 200
+  - field: owner
+    width: 120
+filter_fields:
+  - rating
+  - name
+  - company

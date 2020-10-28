@@ -1,0 +1,4 @@
+label: 开户行
+group: 开票信息
+type: text
+name: invoice_bank

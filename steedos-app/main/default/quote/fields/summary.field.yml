@@ -1,0 +1,7 @@
+type: summary
+label: 行项目
+summary_object: quote_line_item
+summary_type: count
+data_type: number
+inlineHelpText: 报价上行项目的数量。
+hidden: true

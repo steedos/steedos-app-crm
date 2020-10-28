@@ -1,0 +1,4 @@
+label: 添加产品
+'on': list
+name: addProduct
+todo: "module.exports = { \r\naddProduct:function(){\r\n      toastr.success(\"添加产品，即将上线，敬请期待\");\r\n    },\r\naddProductVisible:function(){\r\n      return true\r\n    }\r\n }"

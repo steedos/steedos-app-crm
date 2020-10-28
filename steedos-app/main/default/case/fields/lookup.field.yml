@@ -1,0 +1,4 @@
+type: lookup
+label: 父级个案
+reference_to: case
+hidden: true

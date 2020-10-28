@@ -1,0 +1,4 @@
+type: lookup
+label: 潜在客户
+reference_to: leads
+inlineHelpText: 潜在客户姓名（如果市场活动成员基于潜在客户）。

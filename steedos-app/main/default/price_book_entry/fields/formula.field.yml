@@ -1,0 +1,7 @@
+type: formula
+label: 产品代码
+sortable: true
+filterable: true
+data_type: text
+formula: product_id.product_code
+readonly: true

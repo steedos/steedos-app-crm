@@ -1,0 +1,3 @@
+visible: false //禁用新增
+name: standard_new
+todo: "module.exports = { \r\n\r\n }"

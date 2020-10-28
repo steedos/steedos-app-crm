@@ -1,0 +1,98 @@
+name: case
+label: 个案
+icon: case
+enable_files: true
+enable_search: true
+enable_audit: true
+fields:
+  undefined:
+    label: 个案所有人
+    sortable: true
+    omit: false
+    hidden: false
+  text:
+    type: text
+    label: 联系人移动电话
+    hidden: true
+  autonumber:
+    label: 个案编号
+    type: autonumber
+    formula: '{YYYY}{MM}{0000}'
+    readonly: true
+    searchable: true
+    index: true
+    is_name: true
+  email:
+    label: Web电子邮件
+    type: email
+    group: Web信息
+  master_detail:
+    type: master_detail
+    label: 联系人姓名
+    reference_to: contacts
+  lookup:
+    type: lookup
+    label: 父级个案
+    reference_to: case
+    hidden: true
+  select:
+    type: select
+    label: 优先级
+    required: true
+    searchable: true
+    sortable: true
+    options:
+      - label: 高
+        value: High
+      - label: 中
+        value: Medium
+      - label: 低
+        value: Low
+  textarea:
+    label: 内部注释
+    type: textarea
+    is_wide: true
+    rows: 3
+    group: 备注信息
+  url:
+    label: Web公司
+    type: url
+    group: Web信息
+  boolean:
+    label: 已升级
+    type: boolean
+    hidden: true
+  datetime:
+    label: 结束日期
+    type: datetime
+    hidden: true
+listviews:
+  all:
+    label: 所有个案
+    columns:
+      - case_number
+      - subject
+      - account_id
+      - case_reason
+      - priority
+      - status
+      - type
+    filter_scope: space
+  recent:
+    label: 最近查看
+    filter_scope: space
+permissions:
+  user:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: true
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true

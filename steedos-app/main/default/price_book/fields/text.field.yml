@@ -1,0 +1,4 @@
+type: text
+label: 价格手册名
+required: true
+index: true

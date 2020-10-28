@@ -1,0 +1,84 @@
+name: quote_line_item
+label: 报价行条目
+icon: quotes
+enable_files: true
+enable_search: true
+enable_audit: true
+fields:
+  lookup:
+    type: lookup
+    label: 价格手册条目
+    reference_to: price_book_entry
+    hidden: true
+  currency:
+    type: currency
+    label: 销售价格
+    readonly: false
+    inlineHelpText: >-
+      您想使用的产品价格。最初，业务机会或报价产品的销售价格为价格手册中该产品的价目表价格，但您可在此进行更改。如果报价与业务机会同步，该字段会从报价行项目更新到业务机会产品。
+  formula:
+    type: formula
+    label: 总价
+    data_type: currency
+    formula: 'IF(discount == 0, subtotal, ROUND(subtotal * (1 - discount),2))'
+    inlineHelpText: 行项目的销售价格和数量相乘再减去折扣。
+  number:
+    type: number
+    label: 数量
+    min: 1
+    defaultValue: 1
+    inlineHelpText: 报价中包含的该行项目产品的套数。值必须大于或等于 1。如果报价与业务机会同步，该字段会从报价行项目更新到业务机会产品。
+  master_detail:
+    label: 报价名称
+    type: master_detail
+    reference_to: quote
+    searchable: true
+  date:
+    type: date
+    label: 日期
+    inlineHelpText: 产品日期、有效日期或产品的其他日期。
+  textarea:
+    label: 行项目描述
+    type: textarea
+    is_wide: true
+    rows: 3
+  autonumber:
+    label: 行项目编号
+    type: autonumber
+    formula: '{0000000}'
+    readonly: true
+    searchable: true
+    index: true
+    is_name: true
+  boolean:
+    label: 计划
+    type: boolean
+    inlineHelpText: 行项目是否在业务机会中使用计划。当业务机会产品被复制到报价中时，默认计划不会从业务机会中移转。
+listviews:
+  all:
+    label: 所有报价行条目
+    columns:
+      - line_number
+      - product_id
+      - total_price
+      - discount
+      - date
+    filter_scope: space
+  recent:
+    label: 最近查看
+    filter_scope: space
+permissions:
+  user:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true

@@ -1,0 +1,8 @@
+label: 所有报价行条目
+columns:
+  - line_number
+  - product_id
+  - total_price
+  - discount
+  - date
+filter_scope: space

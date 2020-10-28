@@ -1,0 +1,78 @@
+name: campaign_member
+label: 市场活动成员
+icon: campaign
+enable_audit: true
+fields:
+  master_detail:
+    label: 市场活动
+    type: master_detail
+    reference_to: campaign
+    required: true
+    searchable: true
+    inlineHelpText: 潜在客户或联系人所属的市场活动。
+  text:
+    label: 市场活动成员币种
+    type: text
+    inlineHelpText: 市场活动成员中货币字段的默认币种。仅适用于使用多币种的组织。
+    hidden: true
+  lookup:
+    type: lookup
+    label: 潜在客户
+    reference_to: leads
+    inlineHelpText: 潜在客户姓名（如果市场活动成员基于潜在客户）。
+  textarea:
+    label: 地址
+    type: textarea
+    is_wide: true
+    rows: 3
+  email:
+    label: 电子邮件
+    type: email
+  select:
+    type: select
+    label: 状态
+    required: true
+    options:
+      - label: 已发送
+        value: Sent
+      - label: 已响应
+        value: Responded
+    filterable: true
+  boolean:
+    label: 请勿致电
+    type: boolean
+    inlineHelpText: 是否想要通过电话联系联系人。
+    hidden: true
+  date:
+    type: date
+    label: 上次响应日期
+    hidden: true
+listviews:
+  all:
+    label: 所有市场活动成员
+    columns:
+      - campaign_id
+      - campany_or_account
+      - name
+      - status
+      - lead_source
+      - leads
+    filter_scope: space
+  recent:
+    label: 最近查看
+    filter_scope: space
+permissions:
+  user:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true
