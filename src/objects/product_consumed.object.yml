@@ -13,7 +13,7 @@ fields:
     searchable: true
     index: true
     is_name: true
-  product_name:
+  product:
     type: formula
     label: 产品名
     data_type: text
@@ -43,9 +43,10 @@ list_views:
     label: 所有产品项
     columns:
       - product_consumed_number
-      - product_name
+      - product
       - product_items
-      - quantity
+      - field: quantity
+        width: 100
 permission_set:
   user:
     allowCreate: true

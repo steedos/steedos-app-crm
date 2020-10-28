@@ -45,11 +45,11 @@ list_views:
     label: 所有产品项
     columns:
       - product_items_number
-      - product_name
+      - product
       - location
-      - quantity
+      - field: quantity
+        width: 100
       - unit
-      - description
 permission_set:
   user:
     allowCreate: true
