@@ -15,7 +15,7 @@ plugins:
   - "@steedos/accounts"
   - "@steedos/plugin-enterprise"
 tenant:
-  _id: ${TENANTID}
+  _id: 
   enable_register: false
   enable_forget_password: false
   saas: false
