@@ -1,4 +1,3 @@
 label: 新建联系人
 'on': list
 name: addContact
-todo: "module.exports = { \r\naddContact:function(){\r\n        toastr.success(\"新建联系人，即将上线，敬请期待\");\r\n      },\r\naddContactVisible:function(){\r\n        return true\r\n      }\r\n }"

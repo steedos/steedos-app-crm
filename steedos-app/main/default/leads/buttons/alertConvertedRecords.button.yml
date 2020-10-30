@@ -1,4 +1,3 @@
 label: 显示转换状态
 'on': record
 name: alertConvertedRecords
-todo: "module.exports = { \r\nalertConvertedRecords:function () {\r\n    Steedos.CRM.alertLeadConvertedRecords(this.record);\r\n  },\r\nalertConvertedRecordsVisible:function (object_name, record_id, permissions, record) {\r\n    if(record && record.converted){\r\n      return true\r\n    }\r\n  }\r\n }"

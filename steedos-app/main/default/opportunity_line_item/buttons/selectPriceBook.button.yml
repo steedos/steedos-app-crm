@@ -1,4 +1,3 @@
 label: 选择价格手册
 'on': list
 name: selectPriceBook
-todo: "module.exports = { \r\nselectPriceBook:function(){\r\n    toastr.success(\"选择价格手册，即将上线，敬请期待\");\r\n  },\r\nselectPriceBookVisible:function(){\r\n    return true\r\n  }\r\n }"
