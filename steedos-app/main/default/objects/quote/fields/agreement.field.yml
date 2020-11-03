@@ -1,0 +1,4 @@
+type: lookup
+label: 主协议
+reference_to: agreement
+hidden: true

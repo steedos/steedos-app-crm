@@ -1,0 +1,5 @@
+label: 数量
+type: number
+min: 1
+defaultValue: 1
+required: true

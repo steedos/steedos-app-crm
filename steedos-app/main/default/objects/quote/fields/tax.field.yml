@@ -1,0 +1,4 @@
+type: currency
+label: 税收
+group: 总计
+inlineHelpText: 报价的总税额。

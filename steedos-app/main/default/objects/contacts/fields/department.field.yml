@@ -1,0 +1,4 @@
+label: 部门
+type: text
+sortable: true
+inlineHelpText: 关联的业务或组织单元。

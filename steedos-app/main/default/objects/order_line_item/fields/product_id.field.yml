@@ -1,0 +1,4 @@
+type: lookup
+label: 产品
+reference_to: product
+inlineHelpText: 本订单产品记录使用的产品名称。（只读）

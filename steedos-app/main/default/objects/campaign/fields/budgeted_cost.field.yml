@@ -1,0 +1,4 @@
+type: currency
+label: 市场活动中的预算成本
+group: 计划
+inlineHelpText: 市场活动的预算金额。

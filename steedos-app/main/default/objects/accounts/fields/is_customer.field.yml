@@ -1,0 +1,4 @@
+type: boolean
+label: 客户
+hidden: true
+omit: true

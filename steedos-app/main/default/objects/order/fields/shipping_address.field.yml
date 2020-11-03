@@ -1,0 +1,4 @@
+type: textarea
+label: 邮寄地址
+is_wide: true
+rows: 3

@@ -1,0 +1,3 @@
+label: 数量
+type: number
+inlineHelpText: 产品的单位数量。

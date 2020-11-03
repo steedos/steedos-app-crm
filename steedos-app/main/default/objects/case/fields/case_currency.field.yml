@@ -1,0 +1,4 @@
+type: lookup
+label: 个案币种
+reference_to: currency
+hidden: true

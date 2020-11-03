@@ -1,0 +1,6 @@
+label: 公司
+type: text
+sortable: true
+required: true
+filterable: true
+index: true

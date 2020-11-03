@@ -1,0 +1,3 @@
+label: 客户
+type: lookup
+reference_to: accounts

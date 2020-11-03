@@ -1,0 +1,6 @@
+type: text
+label: 产品名称
+required: true
+index: true
+searchable: true
+sortable: true

@@ -1,4 +1,7 @@
-label: 折扣（%）
-type: number
-inlineHelpText: 产品的百分比折扣。
-hidden: true
+label: 序号
+type: autonumber
+formula: '{00000}'
+omit: true
+readonly: true
+searchable: true
+is_name: true

@@ -1,0 +1,4 @@
+type: lookup
+label: 业务机会
+reference_to: opportunity
+hidden: true

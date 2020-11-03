@@ -1,0 +1,3 @@
+label: 公司授权人
+type: lookup
+reference_to: users

@@ -1,0 +1,3 @@
+label: 客户授权人
+type: lookup
+reference_to: contacts

@@ -1,0 +1,4 @@
+type: lookup
+label: 报价
+reference_to: quote
+hidden: true

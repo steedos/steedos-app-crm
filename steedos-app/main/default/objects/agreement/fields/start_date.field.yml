@@ -1,0 +1,3 @@
+label: 主协议开始日期
+type: date
+required: true

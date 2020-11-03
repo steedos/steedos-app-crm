@@ -1,0 +1,5 @@
+type: select
+label: 订单类型
+options:
+  - label: 无
+    value: none

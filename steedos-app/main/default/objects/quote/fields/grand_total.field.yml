@@ -1,0 +1,8 @@
+label: 总计
+type: formula
+data_type: currency
+formula: >-
+  IF(discount == 0, total_price + tax + shipping_handling, total_price + tax +
+  shipping_handling)
+group: 总计
+inlineHelpText: 报价的总价格加上运费和税。

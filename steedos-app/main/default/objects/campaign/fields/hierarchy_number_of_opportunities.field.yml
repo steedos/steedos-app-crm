@@ -1,0 +1,5 @@
+type: number
+label: 层次结构中的业务机会
+readonly: true
+inlineHelpText: 市场活动层次结构相关业务机会总数的计算字段。（只读）
+hidden: true

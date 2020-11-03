@@ -1,0 +1,4 @@
+type: lookup
+label: 联系人
+reference_to: contacts
+required: true
