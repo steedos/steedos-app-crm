@@ -16,7 +16,7 @@ plugins:
   - "@steedos/plugin-enterprise"
 tenant:
   _id: 
-  enable_register: false
+  enable_register: true
   enable_forget_password: false
   saas: false
   enable_password_login: true
@@ -32,3 +32,5 @@ sms:
 email:
   from: 华炎云 <noreply@steedos.com>
   url: ${MAIL_URL}
+cron:
+  instancerecordqueue_interval: 10000
