@@ -1,0 +1,17 @@
+name: default
+label: default
+object_name: agreement_contact_role
+profiles:
+  - admin
+  - user
+actions: {}
+relatedList: {}
+fields:
+  agreement:
+    type: master_detail
+    label: 主协议
+    reference_to: agreement
+  contact:
+    type: lookup
+    label: 启用人
+    reference_to: contacts

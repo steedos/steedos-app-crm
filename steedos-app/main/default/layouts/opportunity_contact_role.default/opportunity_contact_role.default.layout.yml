@@ -1,0 +1,56 @@
+name: default
+label: default
+object_name: opportunity_contact_role
+profiles:
+  - admin
+  - user
+actions: {}
+relatedList: {}
+fields:
+  number:
+    label: 序号
+    type: autonumber
+    formula: '{00000}'
+    omit: true
+    readonly: true
+    searchable: true
+    is_name: true
+  opportunity_id:
+    label: 业务机会名
+    type: master_detail
+    reference_to: opportunity
+    searchable: true
+    required: true
+    inlineHelpText: 与联系人相关的业务机会的名称。
+  contact_id:
+    label: 联系人
+    type: lookup
+    reference_to: contacts
+    required: true
+    inlineHelpText: 联系人或个人客户的姓名。
+  is_primary:
+    label: 主要
+    type: boolean
+    inlineHelpText: 打✔，则该联系人为业务机会的主要联系人。
+  roles:
+    label: 角色
+    type: select
+    options:
+      - label: 普通人
+        value: Ordinary
+      - label: 决策人
+        value: Policymaker
+      - label: 分项决策人
+        value: Itemize_Policymaker
+      - label: 商务决策
+        value: Business_Decision
+      - label: 技术决策
+        value: Tech_Decision
+      - label: 财务决策
+        value: Finance_Decision
+      - label: 使用人
+        value: Recipient
+      - label: 意见影响人
+        value: Opinions_People
+    multiple: true
+    inlineHelpText: 联系人在业务机会中的参与角色；例如：购买者、决策者或评估者。您可以为一个联系人选择多个角色。

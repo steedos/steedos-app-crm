@@ -1,0 +1,193 @@
+name: default
+label: default
+object_name: quote
+profiles:
+  - admin
+  - user
+actions: {}
+relatedList: {}
+fields:
+  quote_number:
+    label: 报价编号
+    type: autonumber
+    formula: '{0000000}'
+    omit: true
+    readonly: true
+    searchable: true
+  expiration_date:
+    type: date
+    label: 到期日期
+    inlineHelpText: 该报价的失效日期。
+  name:
+    type: text
+    label: 报价名称
+    required: true
+    index: true
+    searchable: true
+  is_syncing:
+    label: 正在同步
+    type: boolean
+    inlineHelpText: 报价是否与关联的业务机会同步。(只读)
+  opportunity_id:
+    label: 业务机会名
+    type: master_detail
+    reference_to: opportunity
+    searchable: true
+    required: true
+    inlineHelpText: 与报价关联的业务机会名。
+  status:
+    type: select
+    label: 状态
+    required: true
+    searchable: true
+    sortable: true
+    options:
+      - label: 草稿
+        value: Draft
+      - label: 需要审核
+        value: Needs_Review
+      - label: 审核中
+        value: In_Review
+      - label: 已批准
+        value: Approved
+      - label: 已拒绝
+        value: Projectde
+      - label: 已提交
+        value: Presented
+      - label: 已接受
+        value: Accepted
+      - label: 已否决
+        value: Denied
+    filterable: true
+    defaultValue: Draft
+    inlineHelpText: 报价的状态。
+  account_id:
+    type: lookup
+    label: 客户
+    reference_to: accounts
+    inlineHelpText: 报价的业务机会所链接的客户名。
+  subtotal:
+    type: summary
+    label: 小计
+    summary_object: quote_line_item
+    summary_type: sum
+    summary_field: total_price
+    data_type: currency
+    inlineHelpText: 在应用折扣、税和运费之前的报价行项目的总和。(只读)
+  description:
+    label: 描述
+    type: textarea
+    is_wide: true
+    rows: 3
+  discount:
+    type: number
+    label: 折扣
+    scale: 2
+    max: 1
+    min: 0
+    inlineHelpText: 报价上所有行项目折扣的加权平均值。您可以使用最多两个小数位。
+  tax:
+    type: currency
+    label: 税收
+    group: 总计
+    inlineHelpText: 报价的总税额。
+  shipping_handling:
+    type: currency
+    label: 运费和手续费
+    defaultValue: 0
+    group: 总计
+    inlineHelpText: 报价的总的运费和手续费。
+  grand_total:
+    label: 总计
+    type: formula
+    data_type: currency
+    formula: >-
+      IF(discount == 0, total_price + tax + shipping_handling, total_price + tax
+      + shipping_handling)
+    group: 总计
+    inlineHelpText: 报价的总价格加上运费和税。
+  contact_id:
+    type: lookup
+    label: 联系人姓名
+    reference_to: contacts
+    group: 准备用于
+    inlineHelpText: 与报价关联的联系人姓名。
+  phone:
+    type: text
+    label: 电话
+    group: 准备用于
+    inlineHelpText: 与报价关联的联系人电话号码。如果可用，则在您添加联系人时自动填写。
+  email:
+    type: email
+    label: 电子邮件
+    group: 准备用于
+    inlineHelpText: 与报价关联的联系人电子邮件地址。如果可用，则在您添加联系人时自动填写。
+  fax:
+    type: text
+    label: 传真
+    group: 准备用于
+    inlineHelpText: 与报价关联的联系人传真号码。如果可用，则在您添加联系人时自动填写。
+  billing_name:
+    type: text
+    label: 收票人姓名
+    group: 地址信息
+  shipping_name:
+    type: text
+    label: 收货人姓名
+    group: 地址信息
+    inlineHelpText: 报价行项目的收货的实体（如个人或公司）名称。
+  billing_address:
+    type: textarea
+    label: 收票人地址
+    rows: 3
+    group: 地址信息
+  shipping_address:
+    type: textarea
+    label: 收货人地址
+    rows: 3
+    group: 地址信息
+    inlineHelpText: 与报价关联的客户的发货地址。
+  owner:
+    label: 所有人姓名
+    sortable: true
+    omit: false
+    hidden: true
+  agreement:
+    type: lookup
+    label: 主协议
+    reference_to: agreement
+    hidden: true
+  total_price:
+    type: formula
+    label: 总价
+    data_type: currency
+    formula: 'IF(discount == 0, subtotal, ROUND(subtotal * (1 - discount),2))'
+    inlineHelpText: 折扣后，不含税和运费的报价行项目的总和。(只读)
+  quote_to_name:
+    type: text
+    label: 收报价人姓名
+    hidden: true
+  quote_to_address:
+    type: textarea
+    label: 收报价人地址
+    is_wide: true
+    rows: 3
+    hidden: true
+  line_items:
+    type: summary
+    label: 行项目
+    summary_object: quote_line_item
+    summary_type: count
+    data_type: number
+    inlineHelpText: 报价上行项目的数量。
+    hidden: true
+  quote_currency:
+    type: lookup
+    label: 报价币种
+    reference_to: currency
+    hidden: true
+  price_book_entry_id:
+    type: lookup
+    label: 价格手册条目
+    reference_to: price_book_entry
+    hidden: true

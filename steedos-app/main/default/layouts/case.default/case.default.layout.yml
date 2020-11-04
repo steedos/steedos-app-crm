@@ -1,0 +1,188 @@
+name: default
+label: default
+object_name: case
+profiles:
+  - admin
+  - user
+actions: {}
+relatedList: {}
+fields:
+  owner:
+    label: 个案所有人
+    sortable: true
+    omit: false
+    hidden: false
+  contact_phone:
+    label: 联系人电话
+    type: text
+    readonly: true
+  case_number:
+    label: 个案编号
+    type: autonumber
+    formula: '{YYYY}{MM}{0000}'
+    readonly: true
+    searchable: true
+    index: true
+    is_name: true
+  contact_email:
+    label: 联系人电子邮件
+    type: email
+    readonly: true
+  contact_id:
+    type: master_detail
+    label: 联系人姓名
+    reference_to: contacts
+  account_id:
+    type: lookup
+    label: 客户
+    reference_to: accounts
+  status:
+    type: select
+    label: 状态
+    required: true
+    searchable: true
+    sortable: true
+    options:
+      - label: 暂停
+        value: On_Hold
+      - label: 升级
+        value: Escalated
+      - label: 新建
+        value: New
+    filterable: true
+  type:
+    type: select
+    label: 类型
+    searchable: true
+    sortable: true
+    options:
+      - label: 问题
+        value: Problem
+      - label: 功能需求
+        value: Feature_Request
+      - label: 疑问
+        value: Question
+    filterable: true
+  case_origin:
+    type: select
+    label: 个案来源
+    required: true
+    searchable: true
+    sortable: true
+    options:
+      - label: 电子邮件
+        value: Email
+      - label: 电话
+        value: Phone
+      - label: 网页
+        value: Web
+  case_reason:
+    type: select
+    label: 个案原因
+    searchable: true
+    sortable: true
+    options:
+      - label: 用户未参加培训
+        value: Not_In_Training
+      - label: 功能复杂
+        value: Complex_Function
+      - label: 已有问题
+        value: Existing_Problem
+      - label: 说明不详
+        value: Description_Unknown
+      - label: 新问题
+        value: New_Problem
+  priority:
+    type: select
+    label: 优先级
+    required: true
+    searchable: true
+    sortable: true
+    options:
+      - label: 高
+        value: High
+      - label: 中
+        value: Medium
+      - label: 低
+        value: Low
+  subject:
+    label: 主题
+    type: text
+    is_wide: true
+    group: 备注信息
+  description:
+    label: 描述
+    type: textarea
+    is_wide: true
+    rows: 3
+    group: 备注信息
+  internal_comments:
+    label: 内部注释
+    type: textarea
+    is_wide: true
+    rows: 3
+    group: 备注信息
+  web_email:
+    label: Web电子邮件
+    type: email
+    group: Web信息
+  web_company:
+    label: Web公司
+    type: url
+    group: Web信息
+  web_name:
+    label: Web名称
+    type: text
+    group: Web信息
+  web_phone:
+    label: Web电话
+    type: text
+    group: Web信息
+  asset_id:
+    type: lookup
+    label: 资产
+    reference_to: asset
+    hidden: true
+  order_reference_number:
+    type: text
+    label: 订单参考编号
+    hidden: true
+  case_currency:
+    type: lookup
+    label: 个案币种
+    reference_to: currency
+    hidden: true
+  closed_when_created:
+    label: 创建时关闭
+    type: boolean
+    hidden: true
+  business_hours_id:
+    label: 工作时间
+    type: lookup
+    reference_to: business_hours
+    hidden: true
+  escalated:
+    label: 已升级
+    type: boolean
+    hidden: true
+  datetime_opened:
+    label: 开始日期
+    type: datetime
+    hidden: true
+  parent_case:
+    type: lookup
+    label: 父级个案
+    reference_to: case
+    hidden: true
+  datetime_closeed:
+    label: 结束日期
+    type: datetime
+    hidden: true
+  contact_fax:
+    type: text
+    label: 联系人传真
+    hidden: true
+  contact_mobile:
+    type: text
+    label: 联系人移动电话
+    hidden: true
