@@ -1,0 +1,38 @@
+name: default
+label: default
+profiles:
+  - admin
+  - user
+actions: []
+relatedList: {}
+fields:
+  - field: order_number
+  - field: agreement_id
+  - field: account_id
+  - field: type
+  - field: effective_date
+  - field: status
+  - field: customer_authorized_by_id
+  - field: company_authorized_by_id
+  - field: shipping_address
+  - field: billing_address
+  - field: description
+  - field: opportunity_id
+  - field: price_book_id
+  - field: company_authorized_date
+  - field: agreement_name
+  - field: agreement_end_date
+  - field: activated_by_id
+  - field: activated_date
+  - field: customer_authorized_date
+  - field: account_number
+  - field: bill_to_contact
+  - field: quote_id
+  - field: ship_to_contact_id
+  - field: order_reference_number
+  - field: name
+  - field: owner
+  - field: po_date
+  - field: end_date
+  - field: po_number
+  - field: total_amount

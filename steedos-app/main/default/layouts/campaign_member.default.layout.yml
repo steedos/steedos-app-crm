@@ -1,0 +1,29 @@
+name: default
+label: default
+profiles:
+  - admin
+  - user
+actions: []
+relatedList: {}
+fields:
+  - field: campaign_id
+  - field: campany_or_account
+  - field: contact
+  - field: description
+  - field: email
+  - field: fax
+  - field: name
+  - field: salutation
+  - field: lead
+  - field: lead_source
+  - field: mobile
+  - field: phone
+  - field: responded
+  - field: first_responded_date
+  - field: status
+  - field: address
+  - field: has_opted_out_of_email
+  - field: fax_opt_out
+  - field: do_not_call
+  - field: campaign_member_currency
+  - field: last_responded

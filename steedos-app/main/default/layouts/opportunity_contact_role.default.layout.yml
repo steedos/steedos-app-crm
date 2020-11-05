@@ -1,0 +1,13 @@
+name: default
+label: default
+profiles:
+  - admin
+  - user
+actions: []
+relatedList: {}
+fields:
+  - field: number
+  - field: opportunity_id
+  - field: contact_id
+  - field: is_primary
+  - field: roles

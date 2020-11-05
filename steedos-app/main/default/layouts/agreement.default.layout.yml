@@ -1,0 +1,32 @@
+name: default
+label: default
+enable_instances: true
+enable_trash: true
+profiles:
+  - admin
+  - user
+actions: []
+relatedList: {}
+fields:
+  - field: owner
+  - field: start_date
+  - field: agreement_number
+  - field: end_date
+  - field: account_id
+  - field: agreement_term
+  - field: status
+  - field: owner_expiration_notice
+  - field: price_book_id
+  - field: billing_address
+  - field: shipping_address
+  - field: special_term
+  - field: description
+  - field: customer_signed_id
+  - field: company_signed_id
+  - field: customer_signed_title
+  - field: company_signed_date
+  - field: customer_signed_date
+  - field: activated_by_id
+  - field: activated_date
+  - field: name
+  - field: currency

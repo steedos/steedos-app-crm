@@ -1,0 +1,59 @@
+name: default
+label: default
+profiles:
+  - admin
+  - user
+actions:
+  - enableSupplier
+  - disableSupplier
+  - enableCustomer
+  - disableCustomer
+relatedList: {}
+fields:
+  - field: name
+  - field: owner
+  - field: is_supplier
+  - field: is_customer
+  - field: type
+  - field: parent_id
+  - field: credit_code
+  - field: website
+  - field: phone
+  - field: fax
+  - field: description
+  - field: industry
+  - field: number_of_employees
+  - field: state
+  - field: billing_address
+  - field: shipping_address
+  - field: account_number
+  - field: rating
+  - field: invoice_address
+  - field: invoice_phone
+  - field: invoice_bank
+  - field: invoice_combinenum
+  - field: account_source
+  - field: site
+  - field: annual_revenue
+  - field: ownership
+  - field: account_division
+  - field: partner_account
+  - field: assistant
+  - field: asst_phone
+  - field: birthdate
+  - field: department
+  - field: email
+  - field: do_not_call
+  - field: has_opted_out_of_email
+  - field: fax_opt_out
+  - field: home_phone
+  - field: lead_source
+  - field: mailing_city
+  - field: mailing_street
+  - field: mailing_zip
+  - field: other_city
+  - field: other_street
+  - field: other_zip
+  - field: mobile
+  - field: salutation
+  - field: other_phone

@@ -1,0 +1,44 @@
+name: default
+label: default
+profiles:
+  - admin
+  - user
+actions:
+  - createSupplierSpaceUser
+  - viewSupplierSpaceUser
+  - disableSupplierSpaceUser
+  - createCustomerSpaceUser
+  - viewCustomerSpaceUser
+  - disableCustomerSpaceUser
+relatedList: {}
+fields:
+  - field: name
+  - field: owner
+  - field: account
+  - field: reports_to_id
+  - field: salutation
+  - field: title
+  - field: department
+  - field: email
+  - field: fax
+  - field: phone
+  - field: mobile
+  - field: home_phone
+  - field: birthdate
+  - field: mailing_address
+  - field: user
+  - field: hoddy
+  - field: description
+  - field: last_save_date
+  - field: last_request_date
+  - field: individual
+  - field: other_city
+  - field: other_street
+  - field: other_zip
+  - field: other_phone
+  - field: assistant
+  - field: asst_phone
+  - field: do_not_call
+  - field: has_opted_out_of_email
+  - field: fax_opt_out
+  - field: lead_source
