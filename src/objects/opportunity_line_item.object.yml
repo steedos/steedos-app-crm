@@ -11,6 +11,7 @@ fields:
     readonly: true
     searchable: true
     is_name: true
+    hidden: true
   product_id:
     label: 产品
     type: lookup
@@ -69,8 +70,11 @@ list_views:
   all:
     label: 全部业务机会产品
     columns:
-      - number
       - product_id
+      - product_code
+      - quantity
+      - unit_price
+      - list_price
       - total_price
       - service_date
     filter_scope: space
