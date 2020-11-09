@@ -174,7 +174,7 @@ fields:
   private:
     label: 专用
     type: boolean
-    #hidden: true
+    hidden: true
     inlineHelpText: 业务机会是专用的。只有记录的所有人、层次结构中位于该角色之上的用户和管理员可以查看、编辑或报告专有记录。
   iq_score:
     label: 业务机会得分
