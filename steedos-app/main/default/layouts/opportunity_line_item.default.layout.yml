@@ -3,7 +3,7 @@ label: default
 profiles:
   - admin
   - user
-actions:
+custom_actions:
   - selectPriceBook
   - addProduct
   - standard_new

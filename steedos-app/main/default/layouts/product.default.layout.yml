@@ -4,7 +4,7 @@ relatedList: {}
 profiles:
   - admin
   - user
-actions:
+custom_actions:
   - addToPriceBook
 fields:
   - field: name

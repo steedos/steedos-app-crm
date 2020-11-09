@@ -5,7 +5,7 @@ enable_workflow: true
 profiles:
   - admin
   - user
-actions: []
+custom_actions: []
 relatedList: {}
 fields:
   - field: name

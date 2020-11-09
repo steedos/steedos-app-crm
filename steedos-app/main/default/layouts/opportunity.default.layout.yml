@@ -4,7 +4,7 @@ enable_notes: false
 profiles:
   - admin
   - user
-actions: []
+custom_actions: []
 relatedList: {}
 fields:
   - field: name

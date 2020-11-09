@@ -3,7 +3,7 @@ label: default
 profiles:
   - admin
   - user
-actions: []
+custom_actions: []
 relatedList: {}
 fields:
   - field: quote_number
