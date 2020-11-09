@@ -18,14 +18,16 @@ fields:
     options:
       - label: 新建
         value: New
-      - label: 合作中
+      - label: 已联系
         value: Working
-      - label: 培养中
+      - label: 培育中
         value: Nurturing
-      - label: 已认证
+      - label: 已转化
         value: Qualified
-      - label: 未认证
+      - label: 无意向
         value: Unqualified
+      - label: 已选择其他品牌
+        value: Others
     filterable: true
     defaultValue: 'New'
   owner:
@@ -170,6 +172,8 @@ fields:
         value: Webinar
       - label: 网站
         value: Website
+      - label: 电话
+        value: Phone
     filterable: true
   rating:
     type: select
