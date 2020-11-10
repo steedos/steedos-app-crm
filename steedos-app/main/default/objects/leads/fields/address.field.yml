@@ -3,3 +3,4 @@ type: textarea
 is_wide: true
 rows: 3
 group: 地址信息
+sort_no: 240

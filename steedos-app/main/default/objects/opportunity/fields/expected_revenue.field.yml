@@ -3,3 +3,4 @@ type: formula
 data_type: number
 formula: 'ROUND(amount * (VALUE(probability) * 0.01),2)'
 inlineHelpText: 基于金额和业务机会赢率计算的收入。
+sort_no: 330

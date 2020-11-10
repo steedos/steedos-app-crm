@@ -10,3 +10,4 @@ options:
   - label: 普通
     value: Cold
 filterable: true
+sort_no: 230

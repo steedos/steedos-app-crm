@@ -1,3 +1,4 @@
 type: text
 label: 订单参考编号
 hidden: true
+sort_no: 330

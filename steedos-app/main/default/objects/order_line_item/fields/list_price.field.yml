@@ -2,3 +2,4 @@ label: 价目表价格
 type: currency
 readonly: true
 inlineHelpText: 父级订单上的价格手册设定的默认价格。（只读）
+sort_no: 130

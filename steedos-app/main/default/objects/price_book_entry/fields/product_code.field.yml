@@ -5,3 +5,4 @@ filterable: true
 data_type: text
 formula: product_id.product_code
 readonly: true
+sort_no: 130

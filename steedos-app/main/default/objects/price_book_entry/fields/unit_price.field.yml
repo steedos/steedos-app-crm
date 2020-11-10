@@ -1,3 +1,4 @@
 type: currency
 label: 价目表价格
 inlineHelpText: 价格手册内的产品的价格，包括货币。
+sort_no: 140

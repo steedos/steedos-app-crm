@@ -2,3 +2,4 @@ type: lookup
 label: 客户
 reference_to: accounts
 inlineHelpText: 报价的业务机会所链接的客户名。
+sort_no: 160

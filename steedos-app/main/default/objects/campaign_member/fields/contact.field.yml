@@ -2,3 +2,4 @@ type: lookup
 label: 联系人
 reference_to: contacts
 required: true
+sort_no: 120

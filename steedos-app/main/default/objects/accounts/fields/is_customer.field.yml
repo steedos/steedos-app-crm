@@ -2,3 +2,4 @@ type: boolean
 label: 客户
 hidden: true
 omit: true
+sort_no: 130

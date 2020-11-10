@@ -2,3 +2,4 @@ type: currency
 label: 市场活动中的预期收入
 group: 计划
 inlineHelpText: 预期市场活动产生的收入金额。
+sort_no: 230

@@ -1,3 +1,4 @@
 type: text
 label: 公司(客户)
 inlineHelpText: 公司（如果市场活动成员基于潜在客户），或客户（如果市场活动成员基于联系人）。
+sort_no: 110

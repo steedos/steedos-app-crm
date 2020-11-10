@@ -5,3 +5,4 @@ required: true
 sortable: true
 index: true
 name: name
+sort_no: 100

@@ -14,3 +14,4 @@ options:
     value: Planned
 filterable: true
 defaultValue: Planned
+sort_no: 130

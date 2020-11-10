@@ -4,3 +4,4 @@ label: 主协议编号
 filterable: true
 readonly: true
 is_name: true
+sort_no: 120

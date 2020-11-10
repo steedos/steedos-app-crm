@@ -1,3 +1,4 @@
 type: text
 label: 收入计划类型
 hidden: true
+sort_no: 230

@@ -1,3 +1,4 @@
 label: 已启用收入计划
 type: boolean
 hidden: true
+sort_no: 190

@@ -3,3 +3,4 @@ type: lookup
 reference_to: contacts
 required: true
 inlineHelpText: 联系人或个人客户的姓名。
+sort_no: 120

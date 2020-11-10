@@ -2,3 +2,4 @@ type: lookup
 label: 资产
 reference_to: asset
 hidden: true
+sort_no: 280

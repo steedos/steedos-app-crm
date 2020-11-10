@@ -2,3 +2,4 @@ type: lookup
 label: 启用人
 reference_to: users
 hidden: true
+sort_no: 280

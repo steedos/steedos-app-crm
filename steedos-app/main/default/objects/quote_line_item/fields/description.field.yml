@@ -2,3 +2,4 @@ label: 行项目描述
 type: textarea
 is_wide: true
 rows: 3
+sort_no: 180

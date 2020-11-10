@@ -3,3 +3,4 @@ label: 联系人
 reference_to: contacts
 searchable: true
 inlineHelpText: 与客户相关的人员的姓名。
+sort_no: 170

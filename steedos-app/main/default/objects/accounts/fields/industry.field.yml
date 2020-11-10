@@ -68,3 +68,4 @@ options:
   - label: 公用事业
     value: Utilities
 filterable: true
+sort_no: 210

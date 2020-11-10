@@ -5,3 +5,4 @@ summary_type: sum
 summary_field: total_price
 data_type: currency
 inlineHelpText: 在应用折扣、税和运费之前的报价行项目的总和。(只读)
+sort_no: 170

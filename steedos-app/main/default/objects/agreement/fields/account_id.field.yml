@@ -2,3 +2,4 @@ type: master_detail
 label: 客户名
 reference_to: accounts
 required: true
+sort_no: 140

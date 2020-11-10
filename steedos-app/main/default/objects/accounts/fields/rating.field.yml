@@ -10,3 +10,4 @@ options:
     value: Cold
 filterable: true
 inlineHelpText: 您如何划分此客户等级的分类，例如，普通、重要。
+sort_no: 270

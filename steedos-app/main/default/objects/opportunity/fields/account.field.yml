@@ -5,3 +5,4 @@ inlineHelpText: 业务机会所链接的客户名。您可输入客户名或使�
 sortable: true
 filterable: true
 required: true
+sort_no: 120

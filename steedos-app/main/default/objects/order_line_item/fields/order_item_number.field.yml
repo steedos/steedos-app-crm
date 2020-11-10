@@ -6,3 +6,4 @@ searchable: true
 index: true
 is_name: true
 inlineHelpText: 识别订单产品记录的自动生成的编号。（只读）
+sort_no: 200

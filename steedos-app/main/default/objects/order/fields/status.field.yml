@@ -10,3 +10,4 @@ options:
     value: Activated
 filterable: true
 defaultValue: Draft
+sort_no: 150

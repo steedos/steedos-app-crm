@@ -4,3 +4,4 @@ reference_to: opportunity
 searchable: true
 required: true
 inlineHelpText: 与报价关联的业务机会名。
+sort_no: 140

@@ -4,3 +4,4 @@ searchable: true
 filterable: true
 index: true
 required: true
+sort_no: 100

@@ -1,5 +1,5 @@
 label: 非常重要的客户
-filters: !<tag:yaml.org,2002:js/function> |-
+filters: |-
   function anonymous(
   ) {
 

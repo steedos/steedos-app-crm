@@ -1,3 +1,4 @@
 type: lookup
 label: 父级市场活动
 reference_to: campaign
+sort_no: 140

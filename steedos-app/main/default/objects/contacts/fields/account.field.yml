@@ -4,3 +4,4 @@ reference_to: accounts
 sortable: true
 filterable: true
 inlineHelpText: 联系人所链接的客户。输入客户名称、从列表中选择客户或创建客户。
+sort_no: 120

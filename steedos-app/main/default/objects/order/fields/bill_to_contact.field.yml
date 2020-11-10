@@ -2,3 +2,4 @@ type: lookup
 label: 开单对象联系人
 reference_to: contacts
 hidden: true
+sort_no: 300

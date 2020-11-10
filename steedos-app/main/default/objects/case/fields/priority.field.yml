@@ -10,3 +10,4 @@ options:
     value: Medium
   - label: 低
     value: Low
+sort_no: 200

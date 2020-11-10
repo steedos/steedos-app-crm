@@ -1,3 +1,4 @@
 type: lookup
 label: 价格手册
 reference_to: price_book
+sort_no: 180

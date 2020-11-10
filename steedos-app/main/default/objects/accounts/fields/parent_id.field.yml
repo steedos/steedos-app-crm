@@ -2,3 +2,4 @@ type: lookup
 label: 母公司
 reference_to: accounts
 inlineHelpText: 作为大公司或组织的子公司的母公司。父级客户必须是华炎魔方中的现有客户。您可输入客户名，或使用查找图标选择（或创建）客户。
+sort_no: 150

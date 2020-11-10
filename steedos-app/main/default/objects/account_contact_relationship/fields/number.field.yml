@@ -5,3 +5,4 @@ omit: true
 readonly: true
 searchable: true
 is_name: true
+sort_no: 100

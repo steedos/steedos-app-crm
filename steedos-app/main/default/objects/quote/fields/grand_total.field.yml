@@ -6,3 +6,4 @@ formula: >-
   shipping_handling)
 group: 总计
 inlineHelpText: 报价的总价格加上运费和税。
+sort_no: 220

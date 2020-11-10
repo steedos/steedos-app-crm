@@ -6,3 +6,4 @@ options:
   - label: 新业务
     value: New_Business
 inlineHelpText: 业务机会的类型，例如“现有业务”或“新业务”。
+sort_no: 140

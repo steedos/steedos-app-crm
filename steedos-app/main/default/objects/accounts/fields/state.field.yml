@@ -72,3 +72,4 @@ options:
     value: TW
 filterable: true
 inlineHelpText: 客户被分配至的区域。
+sort_no: 230

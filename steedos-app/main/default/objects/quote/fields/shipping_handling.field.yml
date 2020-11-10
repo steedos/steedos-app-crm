@@ -3,3 +3,4 @@ label: 运费和手续费
 defaultValue: 0
 group: 总计
 inlineHelpText: 报价的总的运费和手续费。
+sort_no: 210

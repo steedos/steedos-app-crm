@@ -2,3 +2,4 @@ type: toggle
 label: 启用
 defaultValue: true
 inlineHelpText: 表示联系人是否积极参与该公司。
+sort_no: 120

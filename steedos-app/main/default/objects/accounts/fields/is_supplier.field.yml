@@ -2,3 +2,4 @@ type: boolean
 label: 供应商
 hidden: true
 omit: true
+sort_no: 120

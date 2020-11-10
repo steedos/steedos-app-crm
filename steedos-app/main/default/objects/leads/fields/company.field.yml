@@ -4,3 +4,4 @@ sortable: true
 required: true
 filterable: true
 index: true
+sort_no: 160
