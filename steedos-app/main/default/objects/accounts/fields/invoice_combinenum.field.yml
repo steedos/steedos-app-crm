@@ -1,4 +1,5 @@
 label: 账号
 group: 开票信息
 type: text
+name: invoice_combinenum
 sort_no: 310

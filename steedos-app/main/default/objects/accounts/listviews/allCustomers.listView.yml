@@ -1,4 +1,13 @@
 label: 所有顾客
+filters: |-
+  function anonymous(
+  ) {
+
+      return [
+        ["type","=","Customer"]
+      ];
+
+  }
 columns:
   - field: name
     width: 300
@@ -18,12 +27,3 @@ filter_fields:
   - type
   - industry
   - name
-filters: |-
-  function anonymous(
-  ) {
-
-      return [
-        ["type","=","Customer"]
-      ];
-
-  }

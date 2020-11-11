@@ -1,4 +1,5 @@
 label: 描述
 type: textarea
 is_wide: true
+name: description
 sort_no: 200
