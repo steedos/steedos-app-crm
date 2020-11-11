@@ -1,13 +1,4 @@
 label: 非常重要的客户
-filters: |-
-  function anonymous(
-  ) {
-
-      return [
-        ["rating","=","hot"]
-      ];
-
-  }
 columns:
   - field: name
     width: 300
@@ -27,3 +18,12 @@ filter_fields:
   - type
   - industry
   - name
+filters: |-
+  function anonymous(
+  ) {
+
+      return [
+        ["rating","=","hot"]
+      ];
+
+  }
