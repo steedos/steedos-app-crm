@@ -28,6 +28,12 @@ fields:
         value: Unqualified
       - label: 已选择其他品牌
         value: Others
+      - label: 无法联系
+        value: Not_Available
+      - label: 经销代
+        value: Agent
+      - label: 企业客户
+        value: Business
     filterable: true
     defaultValue: 'New'
   owner:
@@ -81,6 +87,8 @@ fields:
         value: Biotechnology
       - label: 化工
         value: Chemicals
+      - label: 软件
+        value: Software
       - label: 通信
         value: Communications 
       - label: 建筑
@@ -174,6 +182,10 @@ fields:
         value: Website
       - label: 电话
         value: Phone
+      - label: 企业微信扫码
+        value: WeChat
+      - label: 公众号
+        value: Official_Accounts
     filterable: true
   rating:
     type: select
