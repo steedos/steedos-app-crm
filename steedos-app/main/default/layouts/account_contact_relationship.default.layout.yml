@@ -1,0 +1,18 @@
+name: default
+label: default
+profiles:
+  - admin
+  - user
+custom_actions:
+  - addContact
+relatedList: {}
+fields:
+  - field: number
+  - field: relationship_strength
+  - field: is_active
+  - field: account_id
+  - field: start_date
+  - field: is_direct
+  - field: end_date
+  - field: contact_id
+  - field: role

@@ -1,0 +1,26 @@
+name: default
+label: default
+profiles:
+  - admin
+  - user
+custom_actions: []
+relatedList: {}
+fields:
+  - field: product_id
+  - field: quantity
+  - field: unit_price
+  - field: list_price
+  - field: description
+  - field: service_date
+  - field: total_price
+  - field: quote_line_item_id
+  - field: end_date
+  - field: order_id
+  - field: order_item_number
+  - field: available_quantity
+  - field: original_order_item_id
+  - field: product_code
+  - field: subtotal
+  - field: discount
+  - field: has_schedule
+  - field: price_book_entry_id

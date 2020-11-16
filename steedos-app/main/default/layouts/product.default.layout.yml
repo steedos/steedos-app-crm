@@ -1,0 +1,28 @@
+name: default
+label: default
+relatedList: {}
+profiles:
+  - admin
+  - user
+custom_actions:
+  - addToPriceBook
+fields:
+  - field: name
+  - field: family
+  - field: product_code
+  - field: product_currency
+  - field: is_active
+  - field: description
+  - field: stock_keeping_unit
+  - field: external_id
+  - field: external_data_source
+  - field: revenue_scheduling_enabled
+  - field: quantity_scheduling_enabled
+  - field: revenue_installment_period
+  - field: number_of_revenue_installments
+  - field: revenue_schedule_type
+  - field: quantity_installment_period
+  - field: number_of_quantity_installments
+  - field: quantity_schedule_type
+  - field: quantity_unit_of_measure
+  - field: display_url

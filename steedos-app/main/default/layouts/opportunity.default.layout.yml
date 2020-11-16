@@ -1,0 +1,36 @@
+name: default
+label: default
+enable_notes: false
+profiles:
+  - admin
+  - user
+custom_actions: []
+relatedList: {}
+fields:
+  - field: name
+  - field: owner
+  - field: account
+  - field: due_date
+  - field: type
+  - field: stage
+  - field: campaign_id
+  - field: probability
+  - field: rating
+  - field: budget_confirmed
+  - field: amount
+  - field: discovery_completed
+  - field: roi_analysis_completed
+  - field: loss_reason
+  - field: next_step
+  - field: lead_source
+  - field: description
+  - field: private
+  - field: iq_score
+  - field: price_book_id
+  - field: agreement_id
+  - field: synced_quoted
+  - field: total_opportunity_quantity
+  - field: expected_revenue
+  - field: forecast_category
+  - field: opportunity_currency
+  - field: partner_account

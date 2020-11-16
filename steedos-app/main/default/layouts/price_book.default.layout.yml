@@ -1,0 +1,12 @@
+name: default
+label: default
+profiles:
+  - admin
+  - user
+custom_actions: []
+relatedList: {}
+fields:
+  - field: name
+  - field: is_active
+  - field: description
+  - field: is_standard

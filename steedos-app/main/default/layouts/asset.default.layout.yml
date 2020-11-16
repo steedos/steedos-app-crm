@@ -1,0 +1,24 @@
+name: default
+label: default
+enable_notes: true
+enable_workflow: true
+profiles:
+  - admin
+  - user
+custom_actions: []
+relatedList: {}
+fields:
+  - field: name
+  - field: status
+  - field: product
+  - field: price
+  - field: account
+  - field: quantity
+  - field: contact
+  - field: purchased_date
+  - field: competitor_asset
+  - field: installed_date
+  - field: asset_number
+  - field: obsoleted_date
+  - field: asset_currency
+  - field: description
