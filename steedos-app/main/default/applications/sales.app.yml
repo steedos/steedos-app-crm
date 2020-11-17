@@ -25,3 +25,4 @@ mobile_objects:
   - order
   - product
   - campaign
+visible: true

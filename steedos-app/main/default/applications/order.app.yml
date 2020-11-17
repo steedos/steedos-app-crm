@@ -19,3 +19,4 @@ mobile_objects:
   - order
   - price_book
   - product
+visible: true

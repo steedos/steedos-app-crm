@@ -11,3 +11,4 @@ objects:
   - reports
 mobile_objects:
   - case
+visible: true

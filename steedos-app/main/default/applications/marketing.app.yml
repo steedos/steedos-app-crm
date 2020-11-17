@@ -14,3 +14,4 @@ objects:
 mobile_objects:
   - campaign
   - leads
+visible: true

@@ -19,3 +19,4 @@ mobile_objects:
   - space_users
   - tasks
   - events
+visible: true
