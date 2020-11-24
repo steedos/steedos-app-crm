@@ -1,9 +1,0 @@
-label: 最近查看
-columns:
-  - number
-  - account_id
-  - is_direct
-  - contact_id
-  - start_date
-  - end_date
-filter_scope: space

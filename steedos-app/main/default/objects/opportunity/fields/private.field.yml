@@ -1,4 +1,0 @@
-label: 专用
-type: boolean
-inlineHelpText: 业务机会是专用的。只有记录的所有人、层次结构中位于该角色之上的用户和管理员可以查看、编辑或报告专有记录。
-sort_no: 270

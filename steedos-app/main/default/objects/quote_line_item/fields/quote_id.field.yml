@@ -1,5 +1,0 @@
-label: 报价名称
-type: master_detail
-reference_to: quote
-searchable: true
-sort_no: 150

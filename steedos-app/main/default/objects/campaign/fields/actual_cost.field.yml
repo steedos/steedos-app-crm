@@ -1,5 +1,0 @@
-type: currency
-label: 市场活动中的实际成本
-group: 计划
-inlineHelpText: 运行市场活动所花费的实际金额。
-sort_no: 220
