@@ -1,0 +1,6 @@
+label: 总价
+type: formula
+data_type: number
+formula: 'ROUND(unit_price * quantity,2)'
+inlineHelpText: 订单产品数量乘以单价。
+sort_no: 160

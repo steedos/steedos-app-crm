@@ -1,0 +1,4 @@
+type: text
+label: 数量计划类型
+hidden: true
+sort_no: 260

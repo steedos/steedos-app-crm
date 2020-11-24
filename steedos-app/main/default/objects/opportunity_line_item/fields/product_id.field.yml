@@ -1,0 +1,5 @@
+label: 产品
+type: lookup
+reference_to: product
+required: true
+sort_no: 110

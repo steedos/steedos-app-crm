@@ -1,0 +1,13 @@
+type: select
+label: 分级
+searchable: true
+sortable: true
+options:
+  - label: 非常重要
+    value: Hot
+  - label: 重要
+    value: Warm
+  - label: 普通
+    value: Cold
+filterable: true
+sort_no: 180

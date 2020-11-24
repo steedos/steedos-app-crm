@@ -1,0 +1,4 @@
+label: 正在同步
+type: boolean
+inlineHelpText: 报价是否与关联的业务机会同步。(只读)
+sort_no: 130

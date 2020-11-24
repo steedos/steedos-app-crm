@@ -1,0 +1,3 @@
+label: 添加到价格手册
+'on': record_only
+name: addToPriceBook

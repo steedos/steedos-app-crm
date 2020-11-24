@@ -1,0 +1,13 @@
+type: select
+label: 个案来源
+required: true
+searchable: true
+sortable: true
+options:
+  - label: 电子邮件
+    value: Email
+  - label: 电话
+    value: Phone
+  - label: 网页
+    value: Web
+sort_no: 180

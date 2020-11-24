@@ -1,0 +1,5 @@
+label: 已转换的客户
+type: lookup
+reference_to: accounts
+hidden: true
+sort_no: 380

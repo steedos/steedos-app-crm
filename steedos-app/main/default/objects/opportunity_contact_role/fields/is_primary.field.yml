@@ -1,0 +1,4 @@
+label: 主要
+type: boolean
+inlineHelpText: 打✔，则该联系人为业务机会的主要联系人。
+sort_no: 130

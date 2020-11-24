@@ -1,0 +1,4 @@
+type: text
+label: 纳税人识别号（身份证/其他）
+searchable: true
+sort_no: 160

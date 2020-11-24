@@ -1,0 +1,7 @@
+type: master_detail
+label: 价格手册
+reference_to: price_book
+required: true
+index: true
+inlineHelpText: 价格手册包含此项的价格。
+sort_no: 120

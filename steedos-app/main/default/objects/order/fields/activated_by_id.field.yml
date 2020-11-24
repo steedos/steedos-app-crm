@@ -1,0 +1,5 @@
+label: 启用人
+type: lookup
+reference_to: users
+hidden: true
+sort_no: 260

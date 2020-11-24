@@ -1,0 +1,5 @@
+label: 工作时间
+type: lookup
+reference_to: business_hours
+hidden: true
+sort_no: 320

@@ -1,0 +1,13 @@
+type: select
+label: 类型
+searchable: true
+sortable: true
+options:
+  - label: 问题
+    value: Problem
+  - label: 功能需求
+    value: Feature_Request
+  - label: 疑问
+    value: Question
+filterable: true
+sort_no: 170

@@ -1,0 +1,5 @@
+type: lookup
+label: 收货方联系人
+reference_to: contacts
+hidden: true
+sort_no: 320

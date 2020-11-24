@@ -1,0 +1,7 @@
+label: 业务机会名
+type: master_detail
+reference_to: opportunity
+searchable: true
+required: true
+inlineHelpText: 与联系人相关的业务机会的名称。
+sort_no: 110

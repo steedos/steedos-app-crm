@@ -1,0 +1,5 @@
+type: textarea
+label: 账单地址
+is_wide: true
+rows: 3
+sort_no: 190

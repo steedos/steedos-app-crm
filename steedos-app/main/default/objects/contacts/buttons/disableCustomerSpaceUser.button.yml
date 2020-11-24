@@ -1,0 +1,3 @@
+label: 禁用客户用户
+'on': record_only_more
+name: disableCustomerSpaceUser

@@ -1,0 +1,6 @@
+name: currency
+label: 货币
+icon: currency
+enable_files: true
+enable_search: true
+enable_audit: true

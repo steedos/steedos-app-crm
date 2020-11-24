@@ -1,0 +1,10 @@
+label: 所有联系人
+columns:
+  - name
+  - account_id
+  - email
+  - phone
+filter_fields:
+  - name
+  - account_id
+  - email

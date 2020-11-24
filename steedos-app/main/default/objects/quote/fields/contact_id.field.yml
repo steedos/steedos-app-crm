@@ -1,0 +1,6 @@
+type: lookup
+label: 联系人姓名
+reference_to: contacts
+group: 准备用于
+inlineHelpText: 与报价关联的联系人姓名。
+sort_no: 230

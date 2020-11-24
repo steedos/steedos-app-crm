@@ -1,0 +1,4 @@
+label: 联系人电子邮件
+type: email
+readonly: true
+sort_no: 130
