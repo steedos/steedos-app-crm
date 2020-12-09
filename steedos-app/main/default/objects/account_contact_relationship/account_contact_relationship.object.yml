@@ -1,0 +1,5 @@
+name: account_contact_relationship
+label: 客户联系人关系
+icon: account
+enable_search: true
+enable_chatter: true

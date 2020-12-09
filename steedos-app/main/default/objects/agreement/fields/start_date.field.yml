@@ -1,0 +1,5 @@
+name: start_date
+label: 主协议开始日期
+type: date
+required: true
+sort_no: 110

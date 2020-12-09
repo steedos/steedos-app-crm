@@ -1,0 +1,5 @@
+name: datetime_closeed
+label: 结束日期
+type: datetime
+hidden: true
+sort_no: 360

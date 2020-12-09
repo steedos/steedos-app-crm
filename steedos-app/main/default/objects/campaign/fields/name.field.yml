@@ -1,0 +1,8 @@
+name: name
+type: text
+label: 市场活动名称
+required: true
+index: true
+searchable: true
+sortable: true
+sort_no: 100

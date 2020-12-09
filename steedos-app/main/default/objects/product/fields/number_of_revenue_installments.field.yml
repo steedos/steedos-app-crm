@@ -1,0 +1,5 @@
+name: number_of_revenue_installments
+type: number
+label: 收入分期付款期数
+hidden: true
+sort_no: 220

@@ -1,0 +1,3 @@
+name: disableCustomer
+label: 禁用客户账户
+'on': record_only_more

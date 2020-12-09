@@ -1,0 +1,26 @@
+name: default
+label: default
+profiles:
+  - admin
+  - user
+custom_actions: []
+relatedList: {}
+fields:
+  - field: name
+  - field: owner
+  - field: is_active
+  - field: status
+  - field: parent_id
+  - field: start_date
+  - field: type
+  - field: end_date
+  - field: description
+  - field: number_sent
+  - field: budgeted_cost
+  - field: expected_response
+  - field: actual_cost
+  - field: expected_revenue
+  - field: hierarchy_number_of_opportunities
+  - field: hierarchy_amount_all_opportunities
+  - field: inhierarchy_amount_won_opportunities
+  - field: hierarchy_number_sent

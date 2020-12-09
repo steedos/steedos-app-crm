@@ -1,0 +1,17 @@
+name: default
+label: default
+profiles:
+  - admin
+  - user
+custom_actions:
+  - addProduct
+  - standard_new
+relatedList: {}
+fields:
+  - field: product_id
+  - field: is_active
+  - field: price_book_id
+  - field: product_code
+  - field: unit_price
+  - field: use_standard_price
+  - field: currency

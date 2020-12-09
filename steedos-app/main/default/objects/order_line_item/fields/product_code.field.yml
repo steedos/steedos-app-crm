@@ -1,0 +1,7 @@
+name: product_code
+type: text
+label: 产品代码
+readonly: true
+inlineHelpText: 用于识别产品的内部代码或产品号。（只读）
+hidden: true
+sort_no: 230

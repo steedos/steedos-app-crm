@@ -1,0 +1,11 @@
+name: all
+label: 所有个案
+columns:
+  - case_number
+  - subject
+  - account_id
+  - case_reason
+  - priority
+  - status
+  - type
+filter_scope: space

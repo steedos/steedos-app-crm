@@ -1,0 +1,5 @@
+name: escalated
+label: 已升级
+type: boolean
+hidden: true
+sort_no: 330

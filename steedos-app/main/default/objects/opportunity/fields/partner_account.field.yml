@@ -1,0 +1,7 @@
+name: partner_account
+label: 合作伙伴客户
+type: boolean
+readonly: true
+hidden: true
+inlineHelpText: 表示该业务机会属于某合作伙伴（只读）
+sort_no: 360

@@ -1,0 +1,5 @@
+name: fax_opt_out
+label: 退出传真列表
+type: boolean
+hidden: true
+sort_no: 320

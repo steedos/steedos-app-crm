@@ -1,0 +1,5 @@
+name: contact_mobile
+type: text
+label: 联系人移动电话
+hidden: true
+sort_no: 380

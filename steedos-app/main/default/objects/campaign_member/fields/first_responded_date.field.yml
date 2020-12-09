@@ -1,0 +1,6 @@
+name: first_responded_date
+type: date
+label: 首次响应日期
+readonly: true
+inlineHelpText: 市场活动成员首次响应的日期。（只读）
+sort_no: 230
