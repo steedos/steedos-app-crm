@@ -1,8 +1,0 @@
-label: 个案编号
-type: autonumber
-formula: '{YYYY}{MM}{0000}'
-readonly: true
-searchable: true
-index: true
-is_name: true
-sort_no: 120

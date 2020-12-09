@@ -1,7 +1,0 @@
-label: 所有价格手册
-columns:
-  - name
-  - is_active
-  - is_standard
-  - description
-filter_scope: space

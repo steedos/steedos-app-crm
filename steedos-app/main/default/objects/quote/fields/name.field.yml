@@ -1,6 +1,0 @@
-type: text
-label: 报价名称
-required: true
-index: true
-searchable: true
-sort_no: 120

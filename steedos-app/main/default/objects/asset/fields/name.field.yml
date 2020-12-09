@@ -1,7 +1,0 @@
-type: text
-label: 资产名称
-searchable: true
-filterable: true
-index: true
-required: true
-sort_no: 100

@@ -1,5 +1,0 @@
-label: 市场活动成员币种
-type: text
-inlineHelpText: 市场活动成员中货币字段的默认币种。仅适用于使用多币种的组织。
-hidden: true
-sort_no: 290
