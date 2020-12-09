@@ -21,3 +21,7 @@ filter_fields:
   - rating
   - name
   - company
+filters:
+  - - converted
+    - <>
+    - true

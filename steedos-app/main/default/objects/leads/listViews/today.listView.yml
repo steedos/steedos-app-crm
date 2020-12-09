@@ -4,7 +4,8 @@ filters: |-
   ) {
 
       return [
-        ["status","=","New"]
+        ["status","=","New"],
+        ["converted", "<>", true]
       ];
 
   }

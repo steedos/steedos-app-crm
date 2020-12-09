@@ -22,3 +22,7 @@ filter_fields:
   - name
   - company
 filter_scope: mine
+filters:
+  - - converted
+    - <>
+    - true
