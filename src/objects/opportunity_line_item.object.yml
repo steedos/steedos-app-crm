@@ -11,6 +11,7 @@ fields:
     readonly: true
     searchable: true
     is_name: true
+    hidden: true
   product_id:
     label: 产品
     type: lookup
@@ -47,7 +48,7 @@ fields:
   total_price:
     label: 总价
     type: formula
-    data_type: number
+    data_type: currency
     scale: 2
     formula: "ROUND(unit_price * quantity,2)"
     inlineHelpText: 业务机会产品所有产品金额的总计。
@@ -55,11 +56,11 @@ fields:
     label: 价目表价格
     type: currency
     inlineHelpText: 价格手册中的产品价格（包含币种）。只读。
-    readonly: false
   product_code:
     label: 产品代码
-    type: text
-    readonly: false
+    type: formula
+    data_type: text
+    formula: 'product_id.product_code'
   opportunity_id:
     label: 业务机会名
     type: master_detail
@@ -69,9 +70,9 @@ list_views:
   all:
     label: 全部业务机会产品
     columns:
-      - number
       - product_id
-      - total_price
+      - quantity
+      - unit_price
       - service_date
     filter_scope: space
 actions:

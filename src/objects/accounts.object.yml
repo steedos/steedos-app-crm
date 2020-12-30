@@ -352,9 +352,11 @@ fields:
   department:
     label: 部门
     type: text
+    hidden: true
   email:
     label: 电子邮件
     type: email
+    hidden: true
   do_not_call:
     label: 请勿致电
     type: boolean
@@ -436,6 +438,7 @@ fields:
   mobile:
     label: 手机
     type: text
+    hidden: true
   salutation:
     type: select
     label: 性别
@@ -444,6 +447,7 @@ fields:
         value: Male
       - label: 女
         value: Female
+    hidden: true
   other_phone:
     label: 其他电话
     type: text
