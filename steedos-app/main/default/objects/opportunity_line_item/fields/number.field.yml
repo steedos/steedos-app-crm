@@ -6,5 +6,4 @@ omit: true
 readonly: true
 searchable: true
 is_name: true
-hidden: true
 sort_no: 100

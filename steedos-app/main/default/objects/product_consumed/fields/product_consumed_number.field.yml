@@ -1,9 +1,0 @@
-name: product_consumed_number
-label: 产品消耗编号
-type: autonumber
-formula: 'PC-{000}'
-readonly: true
-searchable: true
-index: true
-is_name: true
-sort_no: 100

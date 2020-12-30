@@ -1,7 +1,0 @@
-name: description
-label: 描述
-type: textarea
-is_wide: true
-rows: 3
-group: 描述
-sort_no: 150

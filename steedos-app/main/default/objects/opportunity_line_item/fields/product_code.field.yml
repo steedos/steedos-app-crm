@@ -1,6 +1,5 @@
 name: product_code
 label: 产品代码
-type: formula
-data_type: text
-formula: product_id.product_code
+type: text
+readonly: false
 sort_no: 200

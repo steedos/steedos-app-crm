@@ -2,7 +2,7 @@ Steedos.CRM = {};
 
 Steedos.CRM.showLeadConvertForm = function (fields, formId, doc, onConfirm, title) {
     var schema = Creator.getObjectSchema({ fields: fields });
-    Modal.show("quickFormModal", { formId: formId, title: title || "转换潜在客户", confirmBtnText: `转换`, schema: schema, autoExpandGroup: true, doc: doc, onConfirm: onConfirm }, {
+    Modal.show("quickFormModal", { formId: formId, title: title || "转换潜在客户", confirmBtnText: `转换`, schema: schema, doc: doc, onConfirm: onConfirm }, {
         backdrop: 'static',
         keyboard: true
     });
