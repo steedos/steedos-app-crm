@@ -14,6 +14,7 @@ public:
 plugins:
   - "@steedos/accounts"
   - "@steedos/plugin-enterprise"
+  - "@steedos/metadata-api"
 tenant:
   enable_register: false
   enable_forget_password: false
