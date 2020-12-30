@@ -1,8 +1,8 @@
 name: all
 label: 全部业务机会产品
 columns:
-  - number
   - product_id
-  - total_price
+  - quantity
+  - unit_price
   - service_date
 filter_scope: space

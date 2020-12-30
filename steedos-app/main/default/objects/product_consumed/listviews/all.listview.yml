@@ -1,0 +1,8 @@
+name: all
+label: 所有产品消耗
+columns:
+  - product_consumed_number
+  - product
+  - product_items
+  - field: quantity
+    width: 100

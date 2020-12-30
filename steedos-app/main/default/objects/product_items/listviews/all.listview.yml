@@ -1,0 +1,9 @@
+name: all
+label: 所有产品项
+columns:
+  - product_items_number
+  - product
+  - location
+  - field: quantity
+    width: 100
+  - unit

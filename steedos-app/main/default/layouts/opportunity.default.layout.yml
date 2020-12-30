@@ -16,6 +16,7 @@ fields:
   - field: campaign_id
   - field: probability
   - field: rating
+  - field: price_book_id
   - field: budget_confirmed
   - field: amount
   - field: discovery_completed
@@ -26,7 +27,6 @@ fields:
   - field: description
   - field: private
   - field: iq_score
-  - field: price_book_id
   - field: agreement_id
   - field: synced_quoted
   - field: total_opportunity_quantity

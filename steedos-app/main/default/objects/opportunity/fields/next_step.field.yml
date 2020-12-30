@@ -2,4 +2,4 @@ name: next_step
 label: 下一步
 type: text
 inlineHelpText: 说明关闭业务机会后下一步的任务。
-sort_no: 240
+sort_no: 250

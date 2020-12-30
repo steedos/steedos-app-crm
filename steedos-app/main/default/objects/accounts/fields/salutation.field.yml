@@ -6,4 +6,5 @@ options:
     value: Male
   - label: 女
     value: Female
+hidden: true
 sort_no: 550

@@ -2,5 +2,4 @@ name: price_book_id
 type: lookup
 label: 价格手册
 reference_to: price_book
-hidden: true
-sort_no: 290
+sort_no: 190

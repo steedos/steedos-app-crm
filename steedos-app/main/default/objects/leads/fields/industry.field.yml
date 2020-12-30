@@ -14,6 +14,8 @@ options:
     value: Biotechnology
   - label: 化工
     value: Chemicals
+  - label: 软件
+    value: Software
   - label: 通信
     value: Communications
   - label: 建筑

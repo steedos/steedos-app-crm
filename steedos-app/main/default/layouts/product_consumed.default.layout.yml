@@ -1,0 +1,14 @@
+name: default
+label: default
+profiles:
+  - admin
+  - user
+custom_actions: []
+relatedList: {}
+fields:
+  - field: product_consumed_number
+  - field: product
+  - field: product_items
+  - field: quantity
+  - field: unit_price
+  - field: description

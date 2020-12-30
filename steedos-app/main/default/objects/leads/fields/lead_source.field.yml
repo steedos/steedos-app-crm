@@ -24,5 +24,11 @@ options:
     value: Webinar
   - label: 网站
     value: Website
+  - label: 电话
+    value: Phone
+  - label: 企业微信扫码
+    value: WeChat
+  - label: 公众号
+    value: Official_Accounts
 filterable: true
 sort_no: 220
