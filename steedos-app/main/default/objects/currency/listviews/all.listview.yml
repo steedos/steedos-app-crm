@@ -1,0 +1,6 @@
+name: all
+label: 所有货币
+columns:
+  - name
+  - shorthand
+  - exchange_rate

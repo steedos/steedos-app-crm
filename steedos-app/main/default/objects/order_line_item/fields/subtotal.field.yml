@@ -1,0 +1,5 @@
+name: subtotal
+label: 小计
+type: currency
+hidden: true
+sort_no: 240

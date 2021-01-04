@@ -1,0 +1,6 @@
+name: product_consumed
+label: 产品消耗
+icon: product_consumed
+enable_files: true
+enable_search: true
+enable_audit: true

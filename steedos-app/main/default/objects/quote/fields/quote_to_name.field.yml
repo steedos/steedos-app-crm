@@ -1,0 +1,5 @@
+name: quote_to_name
+type: text
+label: 收报价人姓名
+hidden: true
+sort_no: 340

@@ -1,0 +1,3 @@
+name: viewCustomerSpaceUser
+label: 查看客户用户
+'on': record_only_more

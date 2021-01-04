@@ -1,0 +1,5 @@
+name: customer_signed_title
+type: text
+label: 客户签字人职务
+group: 签名信息
+sort_no: 250

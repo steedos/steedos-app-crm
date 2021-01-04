@@ -1,0 +1,5 @@
+name: has_schedule
+label: 计划
+type: boolean
+hidden: true
+sort_no: 260

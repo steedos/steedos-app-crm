@@ -1,0 +1,5 @@
+name: converted
+label: 已转换
+type: boolean
+hidden: true
+sort_no: 370

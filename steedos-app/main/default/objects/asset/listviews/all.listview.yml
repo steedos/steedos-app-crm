@@ -1,0 +1,11 @@
+name: all
+label: 所有资产
+columns:
+  - name
+  - asset_number
+  - product
+  - price
+  - status
+  - purchased_date
+  - account
+  - contact

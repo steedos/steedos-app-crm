@@ -1,0 +1,6 @@
+name: customer_signed_id
+type: lookup
+label: 客户签字人
+reference_to: contacts
+group: 签名信息
+sort_no: 230

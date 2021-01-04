@@ -1,0 +1,15 @@
+code: service
+_id: service
+name: 服务
+sort: 50
+description: 通过客户、联系人、个案等管理客户服务
+icon_slds: service_resource
+is_creator: true
+objects:
+  - accounts
+  - contacts
+  - case
+  - reports
+mobile_objects:
+  - case
+visible: true

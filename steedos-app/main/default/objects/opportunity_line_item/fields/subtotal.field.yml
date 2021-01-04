@@ -1,0 +1,6 @@
+name: subtotal
+label: 小计
+type: currency
+inlineHelpText: 标准和折扣价格之间的差值。业务机会币种与用户币种不同时转换后的币种金额。
+hidden: true
+sort_no: 170

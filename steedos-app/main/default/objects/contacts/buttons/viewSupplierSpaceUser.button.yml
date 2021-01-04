@@ -1,0 +1,3 @@
+name: viewSupplierSpaceUser
+label: 查看供应商用户
+'on': record_only_more

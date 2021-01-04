@@ -1,0 +1,5 @@
+name: company_authorized_date
+type: date
+label: 公司授权日期
+hidden: true
+sort_no: 230

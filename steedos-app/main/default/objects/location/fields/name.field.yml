@@ -1,0 +1,8 @@
+name: name
+type: text
+label: 位置名称
+searchable: true
+filterable: true
+index: true
+required: true
+sort_no: 100

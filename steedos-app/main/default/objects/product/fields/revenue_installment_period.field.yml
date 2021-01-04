@@ -1,0 +1,5 @@
+name: revenue_installment_period
+type: text
+label: 收入分期付款周期
+hidden: true
+sort_no: 210

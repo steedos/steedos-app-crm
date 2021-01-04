@@ -1,0 +1,5 @@
+name: all
+label: 所有主协议联系人角色
+columns:
+  - agreement
+  - contact

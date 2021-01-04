@@ -3,9 +3,9 @@ datasources:
     connection:
       url: ${MONGO_URL}
     objectFiles:
-      - "./src/**"
+      - "./steedos-app/**"
     appFiles:
-      - "./src/**"
+      - "./steedos-app/**"
 public:
   cfs:
     store: "local"

@@ -1,0 +1,5 @@
+name: quantity
+type: number
+label: 消耗数量
+required: true
+sort_no: 130

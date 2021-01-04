@@ -1,0 +1,6 @@
+name: campaign
+label: 市场活动
+icon: campaign
+enable_files: true
+enable_search: true
+enable_audit: true

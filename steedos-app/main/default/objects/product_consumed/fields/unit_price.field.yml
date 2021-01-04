@@ -1,0 +1,4 @@
+name: unit_price
+type: currency
+label: 单价
+sort_no: 140

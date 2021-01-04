@@ -1,0 +1,4 @@
+name: name
+type: text
+label: 主协议名
+sort_no: 300

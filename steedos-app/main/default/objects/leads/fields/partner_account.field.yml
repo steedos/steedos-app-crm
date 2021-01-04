@@ -1,0 +1,5 @@
+name: partner_account
+label: 合作伙伴客户
+type: text
+hidden: true
+sort_no: 340

@@ -1,0 +1,7 @@
+name: product
+type: lookup
+label: 产品名
+reference_to: product
+searchable: true
+required: true
+sort_no: 110

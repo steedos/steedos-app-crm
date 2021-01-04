@@ -1,0 +1,6 @@
+name: converted_opportunity
+label: 已转换的业务机会
+type: lookup
+reference_to: opportunity
+hidden: true
+sort_no: 400

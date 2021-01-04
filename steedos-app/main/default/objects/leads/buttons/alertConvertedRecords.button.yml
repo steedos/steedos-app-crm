@@ -1,0 +1,3 @@
+name: alertConvertedRecords
+label: 显示转换状态
+'on': record
