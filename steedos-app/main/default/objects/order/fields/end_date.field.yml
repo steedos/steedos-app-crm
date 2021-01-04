@@ -1,5 +1,0 @@
-name: end_date
-label: 订单结束日期
-type: date
-hidden: true
-sort_no: 370

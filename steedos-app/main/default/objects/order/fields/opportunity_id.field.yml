@@ -1,6 +1,0 @@
-name: opportunity_id
-type: lookup
-label: 业务机会
-reference_to: opportunity
-hidden: true
-sort_no: 210

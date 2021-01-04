@@ -1,6 +1,0 @@
-name: discount
-label: 折扣（%）
-type: number
-inlineHelpText: 产品的百分比折扣。
-hidden: true
-sort_no: 160

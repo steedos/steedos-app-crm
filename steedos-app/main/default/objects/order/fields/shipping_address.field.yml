@@ -1,6 +1,0 @@
-name: shipping_address
-type: textarea
-label: 邮寄地址
-is_wide: true
-rows: 3
-sort_no: 180

@@ -1,5 +1,0 @@
-name: iq_score
-label: 业务机会得分
-type: number
-hidden: true
-sort_no: 280

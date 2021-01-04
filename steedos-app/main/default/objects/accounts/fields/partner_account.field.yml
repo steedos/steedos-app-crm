@@ -1,5 +1,0 @@
-name: partner_account
-label: 合作伙伴客户
-type: boolean
-hidden: true
-sort_no: 370

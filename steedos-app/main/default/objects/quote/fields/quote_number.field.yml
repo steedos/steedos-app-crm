@@ -1,8 +1,0 @@
-name: quote_number
-label: 报价编号
-type: autonumber
-formula: '{0000000}'
-omit: true
-readonly: true
-searchable: true
-sort_no: 100

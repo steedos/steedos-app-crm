@@ -1,5 +1,0 @@
-name: has_opted_out_of_email
-label: 退出邮件列表
-type: boolean
-hidden: true
-sort_no: 260

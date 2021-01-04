@@ -1,5 +1,0 @@
-name: account_number
-type: text
-label: 客户编号
-hidden: true
-sort_no: 290

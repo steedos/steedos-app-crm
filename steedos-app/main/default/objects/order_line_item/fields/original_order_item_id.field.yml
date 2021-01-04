@@ -1,7 +1,0 @@
-name: original_order_item_id
-type: text
-label: 原始订单产品
-readonly: true
-inlineHelpText: 要减少订单产品的编号。如果订单产品正减少另一个订单产品时必填。（只读）
-hidden: true
-sort_no: 220

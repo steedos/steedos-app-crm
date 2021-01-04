@@ -1,5 +1,0 @@
-name: contact
-type: lookup
-label: 启用人
-reference_to: contacts
-sort_no: 110

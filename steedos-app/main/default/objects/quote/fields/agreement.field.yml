@@ -1,6 +1,0 @@
-name: agreement
-type: lookup
-label: 主协议
-reference_to: agreement
-hidden: true
-sort_no: 320

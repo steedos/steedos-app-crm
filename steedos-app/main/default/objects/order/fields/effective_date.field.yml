@@ -1,6 +1,0 @@
-name: effective_date
-type: date
-label: 订单开始日期
-required: true
-index: true
-sort_no: 140

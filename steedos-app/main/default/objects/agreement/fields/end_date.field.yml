@@ -1,6 +1,0 @@
-name: end_date
-label: 主协议结束日期
-type: date
-readonly: true
-hidden: true
-sort_no: 130

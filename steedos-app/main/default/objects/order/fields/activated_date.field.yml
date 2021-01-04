@@ -1,5 +1,0 @@
-name: activated_date
-label: 启用日期
-type: datetime
-hidden: true
-sort_no: 270
