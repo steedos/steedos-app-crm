@@ -4,7 +4,7 @@ name: 订单
 description: 管理主协议、订单、产品、价格
 icon_slds: contract
 sort: 30
-is_creator: false
+is_creator: true
 objects:
   - agreement
   - order
@@ -20,4 +20,4 @@ mobile_objects:
   - order
   - price_book
   - product
-visible: true
+visible: false

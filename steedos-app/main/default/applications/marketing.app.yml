@@ -4,7 +4,7 @@ name: 市场营销
 sort: 40
 description: 自动化市场营销
 icon_slds: campaign
-is_creator: false
+is_creator: true
 objects:
   - campaign
   - leads
@@ -15,4 +15,4 @@ objects:
 mobile_objects:
   - campaign
   - leads
-visible: true
+visible: false

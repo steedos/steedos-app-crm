@@ -13,4 +13,4 @@ mobile_objects:
   - location
   - product_items
   - product_consumed
-visible: true
+visible: false
