@@ -1,5 +1,5 @@
 name: fax
-label: 传真
-type: text
 hidden: true
+label: 传真
 sort_no: 270
+type: text

@@ -1,5 +1,4 @@
 name: recent
-label: 最近查看
 columns:
   - field: status
     width: 60
@@ -26,3 +25,5 @@ filters:
   - - converted
     - <>
     - true
+label: 最近查看
+shared: true

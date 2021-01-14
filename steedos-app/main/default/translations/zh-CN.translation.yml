@@ -1,6 +1,6 @@
 CustomApplications:
   service:
-    name: 服务
+    name: Service
     description: 通过客户、联系人、个案等管理客户服务
   inventory:
     name: 库存

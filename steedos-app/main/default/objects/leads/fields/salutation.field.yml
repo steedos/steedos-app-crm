@@ -1,5 +1,4 @@
 name: salutation
-type: select
 label: 性别
 options:
   - label: 男
@@ -7,3 +6,4 @@ options:
   - label: 女
     value: Female
 sort_no: 130
+type: select

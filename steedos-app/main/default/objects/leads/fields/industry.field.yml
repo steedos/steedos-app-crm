@@ -1,8 +1,6 @@
 name: industry
-type: select
+filterable: true
 label: 行业
-searchable: true
-sortable: true
 options:
   - label: 农业
     value: Agriculture
@@ -70,5 +68,7 @@ options:
     value: Transportation
   - label: 公用事业
     value: Utilities
-filterable: true
+searchable: true
 sort_no: 180
+sortable: true
+type: select

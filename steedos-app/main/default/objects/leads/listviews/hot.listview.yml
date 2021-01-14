@@ -1,15 +1,4 @@
 name: hot
-label: 非常重要的潜在客户
-filters: |-
-  function anonymous(
-  ) {
-
-      return [
-        ["rating","=","Hot"],
-        ["converted", "<>", true]
-      ];
-
-  }
 columns:
   - field: status
     width: 60
@@ -31,3 +20,15 @@ filter_fields:
   - status
   - name
   - company
+filters: |-
+  function anonymous(
+  ) {
+
+      return [
+        ["rating","=","Hot"],
+        ["converted", "<>", true]
+      ];
+
+  }
+label: 非常重要的潜在客户
+shared: true

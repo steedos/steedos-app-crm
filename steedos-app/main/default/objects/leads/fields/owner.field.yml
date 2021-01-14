@@ -1,6 +1,7 @@
 name: owner
-label: 我方客户经理
-sortable: true
-omit: false
 hidden: false
+index: true
+label: 我方客户经理
+omit: false
 sort_no: 110
+sortable: true

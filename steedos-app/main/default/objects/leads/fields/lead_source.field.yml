@@ -1,8 +1,6 @@
 name: lead_source
-type: select
+filterable: true
 label: 潜在客户来源
-searchable: true
-sortable: true
 options:
   - label: 广告
     value: Advertisement
@@ -30,5 +28,7 @@ options:
     value: WeChat
   - label: 公众号
     value: Official_Accounts
-filterable: true
+searchable: true
 sort_no: 220
+sortable: true
+type: select

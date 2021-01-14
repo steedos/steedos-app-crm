@@ -1,5 +1,5 @@
 name: leads
-label: 潜在客户
+label: Lead
 description: 
 fields:
   address:

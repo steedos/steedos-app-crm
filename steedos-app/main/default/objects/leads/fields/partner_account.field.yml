@@ -1,5 +1,5 @@
 name: partner_account
-label: 合作伙伴客户
-type: text
 hidden: true
+label: 合作伙伴客户
 sort_no: 340
+type: text

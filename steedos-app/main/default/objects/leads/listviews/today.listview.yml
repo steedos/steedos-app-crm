@@ -1,15 +1,4 @@
 name: today
-label: 新的潜在客户
-filters: |-
-  function anonymous(
-  ) {
-
-      return [
-        ["status","=","New"],
-        ["converted", "<>", true]
-      ];
-
-  }
 columns:
   - field: status
     width: 60
@@ -31,3 +20,15 @@ filter_fields:
   - rating
   - name
   - company
+filters: |-
+  function anonymous(
+  ) {
+
+      return [
+        ["status","=","New"],
+        ["converted", "<>", true]
+      ];
+
+  }
+label: 新的潜在客户
+shared: true

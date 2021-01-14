@@ -1,28 +1,37 @@
 name: all
-label: 所有潜在客户
 columns:
-  - field: status
-    width: 60
   - field: name
-    width: 120
+    width: '120'
+    wrap: false
   - field: company
-    width: 200
-  - field: title
-    width: 150
-  - field: phone
-    width: 150
-  - field: mobile
-    width: 150
-  - field: email
-    width: 200
+    width: '200'
+    wrap: false
   - field: owner
-    width: 120
+    width: '120'
+    wrap: false
+  - field: rating
+    width: '120'
+    wrap: false
+  - field: lead_source
+    width: '120'
+    wrap: false
+  - field: status
+    width: '120'
+    wrap: false
+  - field: created
+    width: '120'
+    wrap: false
 filter_fields:
   - status
   - rating
-  - name
-  - company
+  - lead_source
+  - owner
 filters:
   - - converted
     - <>
     - true
+label: 所有潜在客户
+shared: true
+sort:
+  - field_name: created
+    order: desc

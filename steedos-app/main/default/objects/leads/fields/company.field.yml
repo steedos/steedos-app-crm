@@ -1,8 +1,8 @@
 name: company
-label: 公司
-type: text
-sortable: true
-required: true
 filterable: true
 index: true
+label: 公司
+required: true
 sort_no: 160
+sortable: true
+type: text

@@ -1,9 +1,7 @@
 name: status
-type: select
+defaultValue: New
+filterable: true
 label: 状态
-required: true
-searchable: true
-sortable: true
 options:
   - label: 新建
     value: New
@@ -23,6 +21,8 @@ options:
     value: Agent
   - label: 企业客户
     value: Business
-filterable: true
-defaultValue: New
+required: true
+searchable: true
 sort_no: 100
+sortable: true
+type: select

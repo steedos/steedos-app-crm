@@ -1,5 +1,4 @@
 name: mine
-label: 我的潜在客户
 columns:
   - field: status
     width: 60
@@ -27,3 +26,5 @@ filters:
   - - converted
     - <>
     - true
+label: 我的潜在客户
+shared: true

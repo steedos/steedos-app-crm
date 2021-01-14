@@ -1,5 +1,5 @@
 name: individual
-label: 个人
-type: text
 hidden: true
+label: 个人
 sort_no: 260
+type: text
