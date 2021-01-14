@@ -1,8 +1,8 @@
 name: name
-label: 业务机会名
-type: text
-searchable: true
-required: true
-sortable: true
 index: true
+label: 业务机会名
+required: true
+searchable: true
 sort_no: 100
+sortable: true
+type: text

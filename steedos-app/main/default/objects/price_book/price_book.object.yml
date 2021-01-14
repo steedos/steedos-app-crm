@@ -1,6 +1,6 @@
 name: price_book
-label: 价格手册
-icon: pricebook
+enable_audit: true
 enable_files: true
 enable_search: true
-enable_audit: true
+icon: pricebook
+label: 价格手册

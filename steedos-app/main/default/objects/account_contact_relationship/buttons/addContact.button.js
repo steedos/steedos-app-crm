@@ -1,8 +1,10 @@
-module.exports = { 
-addContact:function(){
+module.exports = {
+
+    addContact: function() {
         toastr.success("新建联系人，即将上线，敬请期待");
-      },
-addContactVisible:function(){
+    },
+    addContactVisible: function() {
         return true
-      }
- }
+    }
+
+}

@@ -1,8 +1,5 @@
 name: loss_reason
-type: select
 label: 失败原因
-searchable: true
-sortable: true
 options:
   - label: 竞争失败
     value: Lost_to_Competitor
@@ -14,4 +11,7 @@ options:
     value: Price
   - label: 其他
     value: Other
+searchable: true
 sort_no: 240
+sortable: true
+type: select

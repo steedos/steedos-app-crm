@@ -1,5 +1,4 @@
 name: owner_expiration_notice
-type: select
 label: 通知所有人到期日
 options:
   - label: 15天
@@ -15,3 +14,4 @@ options:
   - label: 120天
     value: 120天
 sort_no: 170
+type: select

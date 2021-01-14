@@ -1,6 +1,6 @@
 name: activated_by_id
-label: 启用人
-type: lookup
-reference_to: users
 hidden: true
+label: 启用人
+reference_to: users
 sort_no: 260
+type: lookup

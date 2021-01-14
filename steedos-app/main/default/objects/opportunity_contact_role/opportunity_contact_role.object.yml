@@ -1,6 +1,6 @@
 name: opportunity_contact_role
-label: 业务机会联系人角色
-icon: opportunity
-enable_search: true
 enable_api: true
 enable_audit: true
+enable_search: true
+icon: opportunity
+label: 业务机会联系人角色

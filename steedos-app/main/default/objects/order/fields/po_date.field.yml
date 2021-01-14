@@ -1,5 +1,5 @@
 name: po_date
-label: 订单日期
-type: date
 hidden: true
+label: 订单日期
 sort_no: 360
+type: date

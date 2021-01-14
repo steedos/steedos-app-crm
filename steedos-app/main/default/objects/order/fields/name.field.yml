@@ -1,5 +1,5 @@
 name: name
-type: text
-label: 订单名
 hidden: true
+label: 订单名
 sort_no: 340
+type: text

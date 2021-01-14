@@ -1,6 +1,6 @@
 name: parent_case
-type: lookup
+hidden: true
 label: 父级个案
 reference_to: case
-hidden: true
 sort_no: 350
+type: lookup

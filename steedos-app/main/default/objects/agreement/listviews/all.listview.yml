@@ -1,5 +1,4 @@
 name: all
-label: 所有主协议
 columns:
   - field: agreement_number
     width: 150
@@ -16,6 +15,8 @@ columns:
     width: 150
   - owner
 filter_scope: space
+label: 所有主协议
+shared: true
 sort:
   - - create_date
     - desc

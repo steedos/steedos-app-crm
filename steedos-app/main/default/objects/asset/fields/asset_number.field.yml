@@ -1,6 +1,6 @@
 name: asset_number
-label: 序列号
-type: text
 filterable: true
+label: 序列号
 searchable: true
 sort_no: 200
+type: text

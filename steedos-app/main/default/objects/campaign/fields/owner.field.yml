@@ -1,6 +1,7 @@
 name: owner
-label: 市场活动所有人
-sortable: true
-omit: false
 hidden: false
+index: true
+label: 市场活动所有人
+omit: false
 sort_no: 110
+sortable: true

@@ -1,9 +1,8 @@
 name: status
-type: select
+defaultValue: Draft
+filterable: true
+inlineHelpText: 报价的状态。
 label: 状态
-required: true
-searchable: true
-sortable: true
 options:
   - label: 草稿
     value: Draft
@@ -21,7 +20,8 @@ options:
     value: Accepted
   - label: 已否决
     value: Denied
-filterable: true
-defaultValue: Draft
-inlineHelpText: 报价的状态。
+required: true
+searchable: true
 sort_no: 150
+sortable: true
+type: select

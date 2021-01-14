@@ -1,8 +1,8 @@
 name: name
-type: text
+index: true
 label: 市场活动名称
 required: true
-index: true
 searchable: true
-sortable: true
 sort_no: 100
+sortable: true
+type: text

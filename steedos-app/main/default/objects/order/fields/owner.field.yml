@@ -1,6 +1,7 @@
 name: owner
-label: 订单所有人
-sortable: true
-omit: false
 hidden: true
+index: true
+label: 订单所有人
+omit: false
 sort_no: 350
+sortable: true

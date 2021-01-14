@@ -1,8 +1,5 @@
 name: case_reason
-type: select
 label: 个案原因
-searchable: true
-sortable: true
 options:
   - label: 用户未参加培训
     value: Not_In_Training
@@ -14,4 +11,7 @@ options:
     value: Description_Unknown
   - label: 新问题
     value: New_Problem
+searchable: true
 sort_no: 190
+sortable: true
+type: select

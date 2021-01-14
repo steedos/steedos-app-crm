@@ -1,8 +1,6 @@
 name: type
-type: select
+filterable: true
 label: 类型
-searchable: true
-sortable: true
 options:
   - label: 广告
     value: Advertisement
@@ -24,5 +22,7 @@ options:
     value: Webinar
   - label: 网站
     value: Website
-filterable: true
+searchable: true
 sort_no: 160
+sortable: true
+type: select

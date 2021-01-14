@@ -1,9 +1,9 @@
 name: product
-label: 产品
-icon: product
+enable_audit: true
 enable_files: true
 enable_search: true
-enable_audit: true
+icon: product
+label: 产品
 relatedList:
   - cms_files
   - price_book_entry

@@ -1,6 +1,6 @@
 name: bill_to_contact
-type: lookup
+hidden: true
 label: 开单对象联系人
 reference_to: contacts
-hidden: true
 sort_no: 300
+type: lookup

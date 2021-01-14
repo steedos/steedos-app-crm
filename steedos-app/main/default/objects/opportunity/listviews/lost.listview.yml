@@ -1,5 +1,4 @@
 name: lost
-label: 已失败的业务机会
 columns:
   - field: name
     width: 220
@@ -13,13 +12,15 @@ columns:
     width: 220
   - field: owner
     width: 120
-filter_scope: space
-filters:
-  - - stage
-    - '='
-    - Closed_Lost
 filter_fields:
   - loss_reason
   - lead_source
   - account
   - name
+filter_scope: space
+filters:
+  - - stage
+    - '='
+    - Closed_Lost
+label: 已失败的业务机会
+shared: true

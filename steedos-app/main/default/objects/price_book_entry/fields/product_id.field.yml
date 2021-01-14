@@ -1,7 +1,7 @@
 name: product_id
-type: lookup
+index: true
 label: 产品
 reference_to: product
 required: true
-index: true
 sort_no: 100
+type: lookup

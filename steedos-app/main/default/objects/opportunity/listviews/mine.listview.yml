@@ -1,5 +1,4 @@
 name: mine
-label: 我的业务机会
 columns:
   - field: name
     width: 220
@@ -17,9 +16,11 @@ columns:
     width: 120
   - field: owner
     width: 120
-filter_scope: mine
 filter_fields:
   - stage
   - lead_source
   - account
   - name
+filter_scope: mine
+label: 我的业务机会
+shared: true

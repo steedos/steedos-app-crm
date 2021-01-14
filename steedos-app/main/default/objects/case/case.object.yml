@@ -1,6 +1,6 @@
 name: case
-label: 个案
-icon: case
+enable_audit: true
 enable_files: true
 enable_search: true
-enable_audit: true
+icon: case
+label: 个案

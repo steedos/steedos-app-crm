@@ -1,7 +1,6 @@
 name: status
-type: select
+defaultValue: Draft
 label: 状态
-searchable: true
 options:
   - label: 草稿
     value: Draft
@@ -14,5 +13,6 @@ options:
   - label: 意外终止
     value: Terminated
 required: true
-defaultValue: Draft
+searchable: true
 sort_no: 160
+type: select

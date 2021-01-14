@@ -1,8 +1,8 @@
 name: name
-type: text
-label: 位置名称
-searchable: true
 filterable: true
 index: true
+label: 位置名称
 required: true
+searchable: true
 sort_no: 100
+type: text

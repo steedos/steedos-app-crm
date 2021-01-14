@@ -1,6 +1,6 @@
 name: quote
-label: 报价
-icon: quotes
+enable_audit: true
 enable_files: true
 enable_search: true
-enable_audit: true
+icon: quotes
+label: 报价

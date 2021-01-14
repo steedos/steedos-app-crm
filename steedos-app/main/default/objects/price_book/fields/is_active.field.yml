@@ -1,5 +1,5 @@
 name: is_active
-label: 已启用
-type: toggle
 defaultValue: true
+label: 已启用
 sort_no: 110
+type: toggle

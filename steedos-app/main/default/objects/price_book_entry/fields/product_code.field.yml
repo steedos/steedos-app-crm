@@ -1,9 +1,9 @@
 name: product_code
-type: formula
-label: 产品代码
-sortable: true
-filterable: true
 data_type: text
+filterable: true
 formula: product_id.product_code
+label: 产品代码
 readonly: true
 sort_no: 130
+sortable: true
+type: formula

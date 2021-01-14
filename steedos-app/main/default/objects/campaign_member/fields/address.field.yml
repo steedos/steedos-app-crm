@@ -1,6 +1,6 @@
 name: address
-label: 地址
-type: textarea
 is_wide: true
+label: 地址
 rows: 3
 sort_no: 250
+type: textarea

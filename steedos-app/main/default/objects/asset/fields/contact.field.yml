@@ -1,5 +1,5 @@
 name: contact
 label: 联系人
-type: lookup
 reference_to: contacts
 sort_no: 160
+type: lookup

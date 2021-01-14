@@ -1,3 +1,4 @@
 name: recent
-label: 最近查看
 filter_scope: space
+label: 最近查看
+shared: true

@@ -1,10 +1,10 @@
 name: family
-type: select
+hidden: true
 label: 产品系列
-searchable: true
-sortable: true
 options:
   - label: 无
     value: none
-hidden: true
+searchable: true
 sort_no: 110
+sortable: true
+type: select

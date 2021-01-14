@@ -1,5 +1,4 @@
 name: all
-label: 所有价格手册条目
 columns:
   - product_id
   - price_book_id
@@ -8,3 +7,5 @@ columns:
   - unit_price
   - use_standard_price
 filter_scope: space
+label: 所有价格手册条目
+shared: true

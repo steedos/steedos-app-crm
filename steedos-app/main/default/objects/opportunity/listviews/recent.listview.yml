@@ -1,5 +1,4 @@
 name: recent
-label: 最近查看
 columns:
   - field: name
     width: 220
@@ -17,9 +16,11 @@ columns:
     width: 120
   - field: owner
     width: 120
-filter_scope: space
 filter_fields:
   - stage
   - lead_source
   - account
   - name
+filter_scope: space
+label: 最近查看
+shared: true

@@ -1,9 +1,9 @@
 name: line_items
-type: summary
+data_type: number
+hidden: true
+inlineHelpText: 报价上行项目的数量。
 label: 行项目
+sort_no: 360
 summary_object: quote_line_item
 summary_type: count
-data_type: number
-inlineHelpText: 报价上行项目的数量。
-hidden: true
-sort_no: 360
+type: summary

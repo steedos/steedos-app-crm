@@ -1,8 +1,8 @@
 name: campaign_id
+inlineHelpText: 潜在客户或联系人所属的市场活动。
 label: 市场活动
-type: master_detail
 reference_to: campaign
 required: true
 searchable: true
-inlineHelpText: 潜在客户或联系人所属的市场活动。
 sort_no: 100
+type: master_detail

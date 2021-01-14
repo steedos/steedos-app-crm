@@ -1,5 +1,5 @@
 name: end_date
-label: 订单结束日期
-type: date
 hidden: true
+label: 订单结束日期
 sort_no: 370
+type: date

@@ -1,5 +1,5 @@
 name: subtotal
-label: 小计
-type: currency
 hidden: true
+label: 小计
 sort_no: 240
+type: currency

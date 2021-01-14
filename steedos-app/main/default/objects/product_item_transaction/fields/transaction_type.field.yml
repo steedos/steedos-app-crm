@@ -1,5 +1,4 @@
 name: transaction_type
-type: select
 label: 类型
 options:
   - label: 已创建
@@ -9,3 +8,4 @@ options:
   - label: 已消耗
     value: Consumed
 sort_no: 110
+type: select

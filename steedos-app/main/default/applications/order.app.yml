@@ -1,10 +1,13 @@
-code: order
-_id: order
 name: 订单
+code: order
 description: 管理主协议、订单、产品、价格
 icon_slds: contract
-sort: 30
 is_creator: true
+mobile_objects:
+  - agreement
+  - order
+  - price_book
+  - product
 objects:
   - agreement
   - order
@@ -15,9 +18,5 @@ objects:
   - tasks
   - events
   - reports
-mobile_objects:
-  - agreement
-  - order
-  - price_book
-  - product
+sort: 30
 visible: false

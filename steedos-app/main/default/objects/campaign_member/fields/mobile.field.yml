@@ -1,5 +1,5 @@
 name: mobile
-label: 手机
-type: text
 inlineHelpText: 潜在客户或联系人的手机号。
+label: 手机
 sort_no: 200
+type: text

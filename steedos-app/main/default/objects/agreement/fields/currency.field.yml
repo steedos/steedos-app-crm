@@ -1,6 +1,6 @@
 name: currency
-type: lookup
+hidden: true
 label: 主协议币种
 reference_to: currency
-hidden: true
 sort_no: 310
+type: lookup

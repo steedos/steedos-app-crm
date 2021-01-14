@@ -1,6 +1,6 @@
 name: discount
-label: 折扣（%）
-type: number
-inlineHelpText: 产品的百分比折扣。
 hidden: true
+inlineHelpText: 产品的百分比折扣。
+label: 折扣（%）
 sort_no: 160
+type: number

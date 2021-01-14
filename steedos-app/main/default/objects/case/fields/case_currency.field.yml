@@ -1,6 +1,6 @@
 name: case_currency
-type: lookup
+hidden: true
 label: 个案币种
 reference_to: currency
-hidden: true
 sort_no: 300
+type: lookup

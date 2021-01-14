@@ -1,6 +1,7 @@
 name: owner
-label: 所有人姓名
-sortable: true
-omit: false
 hidden: true
+index: true
+label: 所有人姓名
+omit: false
 sort_no: 310
+sortable: true

@@ -1,6 +1,6 @@
 name: external_data_source
-type: lookup
+hidden: true
 label: 外部数据源
 reference_to: datasources
-hidden: true
 sort_no: 180
+type: lookup

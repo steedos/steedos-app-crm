@@ -1,5 +1,4 @@
 name: all
-label: 所有产品项
 columns:
   - product_items_number
   - product
@@ -7,3 +6,5 @@ columns:
   - field: quantity
     width: 100
   - unit
+label: 所有产品项
+shared: true

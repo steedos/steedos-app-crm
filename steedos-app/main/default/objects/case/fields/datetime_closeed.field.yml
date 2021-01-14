@@ -1,5 +1,5 @@
 name: datetime_closeed
-label: 结束日期
-type: datetime
 hidden: true
+label: 结束日期
 sort_no: 360
+type: datetime

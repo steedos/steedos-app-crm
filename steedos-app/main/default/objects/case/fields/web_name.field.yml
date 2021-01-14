@@ -1,5 +1,5 @@
 name: web_name
-label: Web名称
-type: text
 group: Web信息
+label: Web名称
 sort_no: 260
+type: text

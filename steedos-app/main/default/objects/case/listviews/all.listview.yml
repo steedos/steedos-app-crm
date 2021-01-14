@@ -1,5 +1,4 @@
 name: all
-label: 所有个案
 columns:
   - case_number
   - subject
@@ -9,3 +8,5 @@ columns:
   - status
   - type
 filter_scope: space
+label: 所有个案
+shared: true

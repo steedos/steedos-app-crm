@@ -1,6 +1,6 @@
 name: order_line_item
-label: 订单产品
-icon: orders
+enable_audit: true
 enable_files: true
 enable_search: true
-enable_audit: true
+icon: orders
+label: 订单产品

@@ -1,5 +1,5 @@
 name: external_id
-type: text
-label: 外部ID
 hidden: true
+label: 外部ID
 sort_no: 170
+type: text

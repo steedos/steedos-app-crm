@@ -1,5 +1,5 @@
 name: customer_signed_date
-type: date
-label: 客户签字日期
 group: 签名信息
+label: 客户签字日期
 sort_no: 270
+type: date

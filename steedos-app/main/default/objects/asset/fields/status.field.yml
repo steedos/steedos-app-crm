@@ -1,9 +1,6 @@
 name: status
-type: select
+filterable: true
 label: 状态
-required: true
-searchable: true
-sortable: true
 options:
   - label: 已购买
     value: Purchased
@@ -15,5 +12,8 @@ options:
     value: Registered
   - label: 已废弃
     value: Obsolete
-filterable: true
+required: true
+searchable: true
 sort_no: 110
+sortable: true
+type: select

@@ -1,6 +1,6 @@
 name: order
-label: 订单
-icon: orders
+enable_audit: true
 enable_files: true
 enable_search: true
-enable_audit: true
+icon: orders
+label: 订单

@@ -1,6 +1,7 @@
 name: role
+inlineHelpText: 联系人在业务机会中的参与角色；例如：购买者、决策者或评估者。您可以为一个联系人选择多个角色。
 label: 角色
-type: select
+multiple: true
 options:
   - label: 普通人
     value: Ordinary
@@ -18,6 +19,5 @@ options:
     value: Recipient
   - label: 意见影响人
     value: Opinions_People
-multiple: true
-inlineHelpText: 联系人在业务机会中的参与角色；例如：购买者、决策者或评估者。您可以为一个联系人选择多个角色。
 sort_no: 180
+type: select

@@ -1,6 +1,6 @@
 name: description
-label: 行项目描述
-type: textarea
 is_wide: true
+label: 行项目描述
 rows: 3
 sort_no: 180
+type: textarea

@@ -1,5 +1,5 @@
 name: phone
-label: 电话
-type: text
 inlineHelpText: 潜在客户或联系人的电话号码。
+label: 电话
 sort_no: 210
+type: text

@@ -1,5 +1,4 @@
 name: won
-label: 已成功的业务机会
 columns:
   - field: name
     width: 220
@@ -13,12 +12,14 @@ columns:
     width: 120
   - field: owner
     width: 120
+filter_fields:
+  - lead_source
+  - account
+  - name
 filter_scope: space
 filters:
   - - stage
     - '='
     - Closed_Won
-filter_fields:
-  - lead_source
-  - account
-  - name
+label: 已成功的业务机会
+shared: true

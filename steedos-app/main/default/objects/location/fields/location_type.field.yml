@@ -1,10 +1,7 @@
 name: location_type
-type: select
-label: 位置类型
-required: true
-searchable: true
-sortable: true
 defaultValue: Location
+filterable: true
+label: 位置类型
 options:
   - label: 仓库
     value: Location
@@ -14,5 +11,8 @@ options:
     value: Van
   - label: 工厂
     value: Factory
-filterable: true
+required: true
+searchable: true
 sort_no: 110
+sortable: true
+type: select

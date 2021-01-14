@@ -1,8 +1,6 @@
 name: type
-type: select
+filterable: true
 label: 类型
-searchable: true
-sortable: true
 options:
   - label: 问题
     value: Problem
@@ -10,5 +8,7 @@ options:
     value: Feature_Request
   - label: 疑问
     value: Question
-filterable: true
+searchable: true
 sort_no: 170
+sortable: true
+type: select

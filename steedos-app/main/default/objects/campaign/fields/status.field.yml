@@ -1,9 +1,7 @@
 name: status
-type: select
+defaultValue: Planned
+filterable: true
 label: 状态
-required: true
-searchable: true
-sortable: true
 options:
   - label: 进行中
     value: In_Progress
@@ -13,6 +11,8 @@ options:
     value: Terminated
   - label: 已计划
     value: Planned
-filterable: true
-defaultValue: Planned
+required: true
+searchable: true
 sort_no: 130
+sortable: true
+type: select
