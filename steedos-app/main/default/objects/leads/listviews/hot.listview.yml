@@ -20,9 +20,8 @@ filter_fields:
   - status
   - name
   - company
-filters: |-
-  function anonymous(
-  ) {
+filters: !<tag:yaml.org,2002:js/function> |-
+  function () {
 
       return [
         ["rating","=","Hot"],
