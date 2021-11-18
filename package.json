@@ -1,6 +1,6 @@
 {
     "name": "@steedos/app-crm",
-    "version": "1.23.38",
+    "version": "1.23.39",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -12,12 +12,12 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@steedos/accounts": "^1.23.37",
-        "@steedos/plugin-enterprise": "^1.23.37",
+        "@steedos/accounts": "^1.23.39",
+        "@steedos/plugin-enterprise": "^1.23.39",
         "@steedos/steedos-plugin-workflow": "^2.0.8",
         "dotenv-flow": "^3.1.0",
         "nodemon": "^1.19.1",
-        "steedos-server": "^1.23.37"
+        "steedos-server": "^1.23.39"
     },
     "homepage": "https://developer.steedos.com",
     "resolutions": {
