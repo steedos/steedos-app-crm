@@ -1,6 +1,6 @@
 {
     "name": "@steedos-labs/crm",
-    "version": "2.6.1",
+    "version": "2.6.2",
     "description": "CRM管理",
     "main": "package.service.js",
     "scripts": {
@@ -14,7 +14,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@steedos-labs/master": "2.6.1"
+        "@steedos-labs/master": "2.6.2"
     },
     "devDependencies": {
         "webpack": "^5.88.2",
