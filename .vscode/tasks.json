@@ -1,0 +1,100 @@
+{
+  "version": "2.0.0",
+  "tasks2": [
+    {
+        "label": "mongodb-initialize-replica-set",
+        "type": "shell",
+        "command": "echo Mongodb Initialize ",
+        "linux": {
+          "command": "mongosh",
+          "args": [
+              "--eval",
+              "rs.initiate({ _id: \"steedos\", members: [{_id: 0, host: \"localhost:27017\"}]})"
+          ],
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "runOptions": {
+          "runOn": "folderOpen"
+        }
+    },
+    {
+      "label": "Run Init Script",
+      "type": "shell",
+      "command": "echo Run Init Script",
+      "linux": {
+        "command": "chmod +x init.sh && ./init.sh"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "Install Steedos DX",
+      "type": "shell",
+      "command": "echo Please Install Steedos DX Extensions",
+      "linux": {
+        "command": "npx json5 .vscode/extensions.json | npx json-cli-tool --path=recommendations --output=newline | xargs -L 1 code --install-extension",
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },{
+      "label": "Run Init Yarn",
+      "type": "shell",
+      "command": "echo Run Yarn",
+      "linux": {
+        "command": "yarn"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "Start Platform",
+      "type": "shell",
+      "command": "echo Start Platform",
+      "linux": {
+        "command": "yarn start:platform",
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "dependsOn": "Run Init Yarn"
+    },
+    {
+      "label": "Start Project",
+      "type": "shell",
+      "command": "echo Start Project",
+      "linux": {
+        "command": "yarn start",
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "dependsOn": "Run Init Yarn"
+    }
+  ]
+}
