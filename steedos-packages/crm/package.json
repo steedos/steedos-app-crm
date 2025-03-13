@@ -1,11 +1,12 @@
 {
     "name": "@steedos-labs/crm",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "description": "CRM管理",
     "main": "package.service.js",
     "scripts": {
         "build": "webpack --config webpack.config.js",
-        "build:watch": "webpack --config webpack.config.js --watch"
+        "build:watch": "webpack --config webpack.config.js --watch",
+        "publish": "npm publish --registry=https://registry.npmjs.com"
     },
     "author": "",
     "license": "ISC",
@@ -14,7 +15,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@steedos-labs/master": "2.6.2"
+        "@steedos-labs/master": "2.6.4"
     },
     "devDependencies": {
         "webpack": "^5.88.2",
