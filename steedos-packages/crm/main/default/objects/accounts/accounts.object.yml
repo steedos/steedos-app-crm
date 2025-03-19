@@ -9,4 +9,5 @@ enable_api: true
 enable_share: true
 enable_audit: true
 enable_enhanced_lookup: true
+enable_chatter: true
 version: 2

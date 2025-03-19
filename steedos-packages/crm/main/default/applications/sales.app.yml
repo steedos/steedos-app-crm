@@ -9,6 +9,8 @@ sort: 30
 tab_groups:
   - group_name: 销售管理
     default_open: true
+  - group_name: 物料管理
+    default_open: true
 tab_items:
   object_opportunity:
     group: 销售管理
@@ -28,6 +30,12 @@ tab_items:
   object_campaign:
     group: 销售管理
     index: 6
+  object_asset_type:
+    group: 物料管理
+    index: 1
+  object_material_group:
+    group: 物料管理
+    index: 2
 tabs:
   - object_opportunity
   - object_leads
@@ -35,4 +43,6 @@ tabs:
   - object_contacts
   - object_product
   - object_campaign
+  - object_asset_type
+  - object_material_group
 visible: true

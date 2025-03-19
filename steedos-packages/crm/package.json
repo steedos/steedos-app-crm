@@ -6,6 +6,7 @@
     "scripts": {
         "build": "webpack --config webpack.config.js",
         "build:watch": "webpack --config webpack.config.js --watch",
+        "login": "npm login --registry=https://registry.npmjs.com",
         "publish": "npm publish --registry=https://registry.npmjs.com"
     },
     "author": "",

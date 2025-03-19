@@ -1,6 +1,6 @@
 name: object_product
 desktop: true
-label: 物料
+label: 产品
 mobile: true
 object: product
 permissions: []

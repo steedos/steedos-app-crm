@@ -7,4 +7,5 @@ enable_events: true
 enable_tasks: true
 enable_api: true
 enable_audit: true
+enable_chatter: true
 version: 2
